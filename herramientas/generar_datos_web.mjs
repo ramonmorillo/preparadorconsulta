@@ -34,12 +34,20 @@ for (const id of ORDEN) {
     id, herramienta: b.herramienta, url: b.url, tipo_catalogo: b.tipo_catalogo,
     origen: `${b.repositorio} @ ${b.commit} (${b.fecha_commit})`,
     reestratificar_ademas: b.reestratificar_ademas || null,
+    periodicidad_complementaria: b.periodicidad_complementaria || null,
     aviso: b.aviso || b.nota_acumulacion || null,
     niveles,
   };
 }
 
 const reglas = leer('datos/reglas/reglas.json');
+
+// Guías de entrevista motivacional (una por adaptación CMO publicada; cada punto con página y ancla verificada).
+const guias = {};
+for (const f of fs.readdirSync(path.join(RAIZ, 'datos/guia')).filter((x) => x.endsWith('.json')).sort()) {
+  const g = leer(`datos/guia/${f}`);
+  guias[g.modelo] = g;
+}
 
 const ejemplos = {};
 for (const id of fs.readdirSync(path.join(RAIZ, 'datos/pacientes')).sort()) {
@@ -56,7 +64,9 @@ const salida = `// Archivo generado por herramientas/generar_datos_web.mjs. No e
 export const BIBLIOTECA = ${JSON.stringify(biblioteca, null, 1)};
 export const REGLAS = ${JSON.stringify(reglas, null, 1)};
 export const EJEMPLOS = ${JSON.stringify(ejemplos, null, 1)};
+export const GUIAS = ${JSON.stringify(guias, null, 1)};
 `;
 fs.mkdirSync(path.join(RAIZ, 'app'), { recursive: true });
 fs.writeFileSync(path.join(RAIZ, 'app/datos.js'), salida);
+console.log('guías:', Object.keys(guias).join(', '));
 for (const id of ORDEN) console.log(id.padEnd(24), ['1', '2', '3'].map((n) => biblioteca[id].niveles[n].intervenciones.length).join(' / '));

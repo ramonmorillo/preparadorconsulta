@@ -1,0 +1,35 @@
+{
+  "modelo": "vih",
+  "documento": { "titulo": "Adaptación del modelo de Atención Farmacéutica CMO al paciente con infección por VIH", "editor": "SEFH (proyecto MAPEX)", "anio": "2023", "url": "https://www.sefh.es/mapex/images/adaptacion-cmo-paciente-vih-octubre-2023.pdf", "capitulo": "4. Motivación (entrevista motivacional)", "paginas": "24-34", "huella_pdf": "e23547c0aed60cb2" },
+  "estructura": {
+    "nombre": "Dos fases: generar discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+    "pagina": "26", "ancla": "generar dis- crepancias internas",
+    "pasos": [
+      { "fase": "Fase 1", "titulo": "Establecer la relación", "hacer": ["Crear un clima de confianza que permita llegar a un acuerdo sobre las metas."], "pagina": "27", "ancla": "Establecer la relación farmacéutico-paciente" },
+      { "fase": "Fase 1", "titulo": "Obtener datos", "hacer": ["Explorar creencias y expectativas del paciente y sus emociones (miedo, ansiedad), atendiendo a la comunicación no verbal.", "No mezclar la exploración con recomendaciones: estas van al final."], "pagina": "27", "ancla": "no mezclar la exploración de los problemas con recomendaciones" },
+      { "fase": "Fase 1", "titulo": "Sintetizar y priorizar", "hacer": ["Priorizar los problemas: abordar hoy lo más urgente y dejar el resto para las siguientes consultas."], "pagina": "27", "ancla": "priorizar y abordar lo más urgente" },
+      { "fase": "Fase 1", "titulo": "Promover la autoeficacia", "hacer": ["Poner de relieve las situaciones de autocontrol del paciente.", "No terminar sin que el paciente formule alguna afirmación automotivadora."], "pagina": "27-28", "ancla": "sin que el paciente plantee ninguna afirmación auto motivadora" },
+      { "fase": "Fase 2", "titulo": "Enunciar los problemas e informar del plan", "hacer": ["Seleccionar y ordenar antes la información clave; darla con el menor impacto emocional posible."], "pagina": "28-29", "ancla": "la información debe ser previamente seleccionada y ordenada" },
+      { "fase": "Fase 2", "titulo": "Negociar", "hacer": ["Negociar desde el respeto a sus creencias y valores, teniendo en cuenta su entorno y necesidades."], "pagina": "28-29", "ancla": "negociar con el paciente desde el respeto por sus creencias" },
+      { "fase": "Fase 2", "titulo": "Mantener los cambios", "hacer": ["Persuadir, convencer y motivar respetando que la decisión es del paciente."], "pagina": "28-29", "ancla": "Lograr mantener los cambios" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Cuidar la comunicación verbal y no verbal; saber empezar y terminar; planificar; actitud asertiva; controlar el tiempo; escucha activa; empatía (Tabla 4).", "pagina": "26", "ancla": "Tener una actitud asertiva" }
+  ],
+  "preguntas": [
+    { "tema": "Problemas derivados de la farmacoterapia", "ejemplos": ["¿A qué lo atribuye?", "¿A qué cree usted que puede deberse?"], "pagina": "28", "ancla": "¿A qué cree usted que puede deberse?", "para": ["adherencia", "efectos_adversos", "control"] },
+    { "tema": "Emociones", "ejemplos": ["Lo veo preocupado.", "¿Qué es lo que más le preocupa de todo este problema?"], "pagina": "28", "ancla": "¿Qué es lo que más le preocupa de todo este problema?", "para": ["efectos_adversos", "control", "adherencia"] },
+    { "tema": "Situación actual y objetivos", "ejemplos": ["¿Qué cree que ocurriría si el objetivo X no se consiguiera en el período de tiempo hasta nuestra próxima consulta?", "¿Qué tal si nos planteamos juntos objetivos a corto plazo con respecto a su medicación?"], "pagina": "28", "ancla": "¿Qué tal si nos planteamos juntos objetivos a corto plazo", "para": ["adherencia", "control", "reestratificacion", "mantenimiento"] }
+  ],
+  "resistencias": [
+    { "texto": "Devolución simple: reconocer el desacuerdo.", "pagina": "28", "ancla": "reconocer el desacuerdo" },
+    { "texto": "Devolución amplificada: devolver lo que plantea el paciente, sin sarcasmos ni condicionantes.", "pagina": "28", "ancla": "sin sarcas- mos ni condicionantes" },
+    { "texto": "Reorientar el problema.", "pagina": "28", "ancla": "la reorientación propia del problema" }
+  ],
+  "objetivos": { "texto": "Los objetivos deben ser claros, realistas y alcanzables, y alinear el corto plazo con el medio y largo plazo.", "pagina": "26", "ancla": "claros, realistas y alcanzables" },
+  "escalas": [
+    { "nombre": "PAM / PAM-13", "uso": "Activación del paciente (conocimientos, habilidades y confianza para su autocuidado); existe adaptación al español para crónicos.", "pagina": "25", "ancla": "Patient Activation Measure (PAM)" }
+  ],
+  "por_problema": {}
+}

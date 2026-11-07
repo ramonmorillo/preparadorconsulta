@@ -1,0 +1,29 @@
+{
+  "modelo": "respiratorio",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Patologías Respiratorias", "editor": "SEFH (proyecto MAPEX)", "anio": "2023", "url": "https://www.sefh.es/mapex/images/modelo-CMO-al-paciente-con-patologias-respiratorias.pdf", "capitulo": "Motivación", "paginas": "23-32", "huella_pdf": "b5be7d42bf725a84" },
+  "estructura": {
+    "nombre": "Cuatro procesos de la entrevista motivacional",
+    "pagina": "29", "ancla": "En la EM podemos encontrar 4 procesos fundamentales",
+    "pasos": [
+      { "fase": "Proceso 1", "titulo": "Lograr una relación terapéutica", "hacer": ["Evitar el interrogatorio de preguntas cerradas («partido de tenis»).", "Evitar el «reflejo de enderezar» (decir enseguida qué tiene que hacer) y la actitud de experto o paternalista.", "Consulta privada y con tiempo."], "pagina": "29-30", "ancla": "reflejo de enderezar" },
+      { "fase": "Proceso 2", "titulo": "Enfocar en objetivos", "hacer": ["Consensuar una agenda con los objetivos y prioridades del paciente y los del profesional."], "pagina": "31", "ancla": "consensuar una agenda con la persona que asistimos" },
+      { "fase": "Proceso 3", "titulo": "Evocar la motivación y el lenguaje de cambio", "hacer": ["Detectar y reforzar las expresiones a favor del cambio («yo quiero…», «me gustaría…», «yo puedo…»).", "La motivación viene del propio paciente: evocarla, no imponerla."], "pagina": "31", "ancla": "lenguaje de cambio" },
+      { "fase": "Proceso 4", "titulo": "Generar un plan de acción", "hacer": ["Plan específico, medible, alcanzable, relevante y con plazo.", "Técnica POP: paciente, objetivo y plan de acción, individualizado y dinámico."], "pagina": "32", "ancla": "Paciente-objetivo-plan de acción" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Preguntas abiertas para que exprese preocupaciones, prioridades y valores (ejemplo del documento: en lugar de «¿Cuánto alcohol toma diariamente?», preguntar «¿Cómo cree que el alcohol afecta a su salud?»).", "pagina": "28", "ancla": "¿Cómo cree que el alcohol afecta a su salud?" },
+    { "texto": "Afirmaciones que refuercen logros para fortalecer la autoconfianza (ejemplo: «Ha logrado hacer este cambio en el pasado.»).", "pagina": "28", "ancla": "Ha logrado hacer este cambio en el pasado." },
+    { "texto": "Escucha reflexiva: devolver en forma de afirmación lo que la persona siente o dice.", "pagina": "28", "ancla": "Escucha reflexiva" },
+    { "texto": "Resúmenes que recojan selectivamente las razones para cambiar.", "pagina": "29", "ancla": "resumiendo selectivamente las razones para cambiar" },
+    { "texto": "Espíritu de la entrevista: colaboración, evocación, compasión y respeto por la autonomía.", "pagina": "27", "ancla": "la colaboración, evocación, compasión y respeto por la autonomía" }
+  ],
+  "errores": [
+    { "texto": "Errores que evitar: descuidar la comunicación no verbal, no saber empezar ni terminar, improvisar, déficit o exceso de emoción, descontrol del tiempo, falta de escucha y arrogancia.", "pagina": "30-31", "ancla": "No saber empezar ni terminar una entrevista" }
+  ],
+  "preguntas": [],
+  "resistencias": [],
+  "objetivos": { "texto": "Plan consensuado, específico, medible, alcanzable, relevante y con plazo, mediante la técnica POP (paciente-objetivo-plan de acción).", "pagina": "32", "ancla": "específico, medible, posible de lograr, relevante y definido en el tiempo" },
+  "escalas": [],
+  "por_problema": {}
+}

@@ -302,5 +302,10 @@
   "repositorio": "github.com/ramonmorillo/cmoinmunomediadas",
   "commit": "244c383",
   "fecha_commit": "2026-10-30",
-  "niveles": null
+  "niveles": null,
+  "periodicidad_complementaria": {
+    "1": "Cada 3 meses (indicación del autor).",
+    "2": "Cada 12 meses (indicación del autor).",
+    "3": "Cada 18 meses (indicación del autor)."
+  }
 }

@@ -13,7 +13,15 @@ publicado. Genera una **hoja de consulta** con:
 
 ## Dos versiones
 
-### 1. Versión web (gratuita, para todos)
+### 1. Versión web (gratuita, para todos) — v2.0
+
+Acompaña toda la consulta:
+
+- **Antes:** perfil, PDC, reestratificación según la adaptación CMO, alertas, puntos clave y, si se carga el archivo de la visita anterior, sus acuerdos.
+- **Durante:** guion de entrevista motivacional del capítulo de Motivación de la adaptación CMO publicada de su patología (estructura, preguntas del propio documento, estrategias por problema, resistencias, objetivos y escalas, cada punto con su página), y registro de lo que ocurre.
+- **Después:** próxima reestratificación, medicación cubierta hasta, seguimiento entre visitas que contempla su nivel, texto para la historia clínica, hoja de acuerdos para el paciente y archivo de seguimiento para la próxima consulta.
+- **Medicamentos desde CIMA** (AEMPS): presentación, código nacional, grupo ATC, unidades por envase para calcular los días de suministro y alerta de problemas de suministro.
+
 
 **https://ramonmorillo.es/preparadorconsulta/**
 
@@ -37,15 +45,16 @@ Se lanza con `/preparar-consulta VIH-01`.
 | `datos/biblioteca/` | Intervenciones y periodicidad de las 10 herramientas CMO del hub, extraídas literalmente de su código, con versión de origen |
 | `datos/reglas/` | Umbral de adherencia y traducción a meses de las periodicidades |
 | `datos/pacientes/` | 4 pacientes ficticios (2 VIH, 2 respiratorio) |
-| `pruebas/` | `node --test pruebas/nucleo.test.mjs`: la versión web da el mismo cálculo que la versión con agentes |
+| `datos/guia/` | Guion de entrevista motivacional de cada adaptación CMO: estructura, preguntas, estrategias y escalas, con página y un fragmento literal («ancla») del documento |
+| `pruebas/` | `node --test pruebas/nucleo.test.mjs` (13 pruebas) y `python3 pruebas/verificar_guias.py <textos>` (135 anclas comprobadas contra los documentos originales) |
 
 Si cambia la biblioteca o las reglas, regenerar los datos de la web con `node herramientas/generar_datos_web.mjs`.
 
 ## Estado
 
-Versión 1.0 (taller de Santiago, 16/11/2026). Pendiente de validar por el autor: traducción de
+Versión 2.0 (talleres del 16 y 18 de noviembre de 2026). Pendiente de validar por el autor: traducción de
 periodicidades a meses, ventana del PDC (180 días) y arrastre de sobrantes en cambios de régimen,
-periodicidad de Esclerosis Múltiple e Inmunomediadas.
+tabla de estados motivacionales de migraña (reconstruida del documento en Markdown) y periodicidad de Inmunomediadas (indicada por el autor; sin adaptación publicada).
 
 Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH).
 Autor: Dr. Ramón Morillo Verdugo.

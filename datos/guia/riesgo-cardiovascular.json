@@ -1,0 +1,180 @@
+{
+  "modelo": "riesgo-cardiovascular",
+  "documento": {
+    "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO en el Paciente con Patologías Cardiovasculares",
+    "editor": "SEFH (proyecto MAPEX)",
+    "anio": "2025",
+    "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-patologias-cardiovasculares.pdf",
+    "capitulo": "Motivación",
+    "paginas": "28-42",
+    "huella_pdf": "fba537eb678eaf32",
+    "desfase_pdf": 1
+  },
+  "estructura": {
+    "nombre": "Dos fases: generación de discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+    "pagina": "37",
+    "ancla": "La entrevista motivacional se divide en dos fases clave",
+    "pasos": [
+      {
+        "fase": "Fase I",
+        "titulo": "Establecer la relación",
+        "hacer": [
+          "Saludar cordialmente, llamarle por su nombre, entorno ordenado, privado y confidencial; permitir que exprese emociones."
+        ],
+        "pagina": "37",
+        "ancla": "Dirigirse al paciente por su nombre"
+      },
+      {
+        "fase": "Fase I",
+        "titulo": "Obtener datos",
+        "hacer": [
+          "Conocer creencias y expectativas del paciente sobre el problema."
+        ],
+        "pagina": "37",
+        "ancla": "es importante conocer las creencias y expectativas del paciente"
+      },
+      {
+        "fase": "Fase I",
+        "titulo": "Sintetizar, promover la autoeficacia y acordar",
+        "hacer": [
+          "Priorizar lo más urgente para esta consulta.",
+          "Recordarle cuándo ha mantenido bien su tratamiento para reforzar su autoeficacia.",
+          "Negociar un plan a corto y medio plazo y provocar el compromiso."
+        ],
+        "pagina": "37-38",
+        "ancla": "Negociar un plan de acción a corto y medio plazo"
+      },
+      {
+        "fase": "Fase II",
+        "titulo": "Informar",
+        "hacer": [
+          "Usar la información como herramienta para educar y modificar conductas."
+        ],
+        "pagina": "38",
+        "ancla": "Información al paciente"
+      },
+      {
+        "fase": "Fase II",
+        "titulo": "Negociar",
+        "hacer": [
+          "Conocer entorno, necesidades y creencias; ante una actitud contraria, suscitar la duda mostrando incoherencias en sus argumentos."
+        ],
+        "pagina": "38",
+        "ancla": "suscitar la duda mostrando incoherencias o contradicciones"
+      },
+      {
+        "fase": "Fase II",
+        "titulo": "Mantener los cambios",
+        "hacer": [
+          "Evitar la persuasión directa, la coacción y el control externo excesivo; respetar la libertad de elección.",
+          "Plan de acción específico, medible, alcanzable, relevante y con plazo."
+        ],
+        "pagina": "38",
+        "ancla": "evitar la persuasión directa, la coacción y el control"
+      }
+    ]
+  },
+  "tecnicas": [
+    {
+      "texto": "Método de devolución de información (teach-back) para comprobar que ha entendido las instrucciones.",
+      "pagina": "34",
+      "ancla": "teach-back method"
+    },
+    {
+      "texto": "Balanza decisional: identificar con el paciente beneficios y barreras del cambio.",
+      "pagina": "34",
+      "ancla": "balanza decisional"
+    },
+    {
+      "texto": "Celebrar avances mínimos y mantener metas a corto plazo.",
+      "pagina": "34",
+      "ancla": "Celebración de avances mínimos"
+    },
+    {
+      "texto": "Ciclo del hábito (señal, anhelo, respuesta, recompensa) y adaptar el entorno, por ejemplo, dejar la medicación en un lugar visible.",
+      "pagina": "39",
+      "ancla": "señal, anhelo, respuesta y recompensa"
+    }
+  ],
+  "preguntas": [
+    {
+      "tema": "Creencias y atribución",
+      "ejemplos": [
+        "¿A qué lo atribuye?",
+        "¿Qué cree que puede estar causando sus síntomas?"
+      ],
+      "pagina": "37",
+      "ancla": "¿Qué cree que puede estar causando sus síntomas?",
+      "para": [
+        "efectos_adversos",
+        "control",
+        "adherencia"
+      ]
+    },
+    {
+      "tema": "Motivación intrínseca",
+      "ejemplos": [
+        "¿Cómo te imaginas tu vida si tu presión arterial estuviera controlada?"
+      ],
+      "pagina": "33",
+      "ancla": "¿Cómo te imaginas tu vida si tu presión",
+      "para": [
+        "control",
+        "adherencia"
+      ]
+    }
+  ],
+  "resistencias": [
+    {
+      "texto": "Suscitar la duda mostrando incoherencias o contradicciones en sus argumentos, sin coacción.",
+      "pagina": "38",
+      "ancla": "suscitar la duda mostrando incoherencias o contradicciones"
+    }
+  ],
+  "objetivos": {
+    "texto": "Plan de acción específico, medible, alcanzable, relevante y definido en el tiempo, que crea un doble vínculo con el paciente y con el equipo.",
+    "pagina": "38",
+    "ancla": "específico, medible, alcanzable, relevante y definido en el tiempo"
+  },
+  "escalas": [
+    {
+      "nombre": "PAM",
+      "uso": "Capacidad y disposición para un papel activo en su atención.",
+      "pagina": "39",
+      "ancla": "Patient Activation Measure (PAM)"
+    },
+    {
+      "nombre": "SEAMS",
+      "uso": "Autoeficacia en el uso de la medicación.",
+      "pagina": "39",
+      "ancla": "Self-Efficacy for Appropriate Medication Use Scale (SEAMS)"
+    },
+    {
+      "nombre": "SCHFI, B-IPQ, CADE-QSV",
+      "uso": "Autocuidado en insuficiencia cardiaca, percepción de la enfermedad y conocimiento en enfermedad coronaria.",
+      "pagina": "39",
+      "ancla": "Self-Care of Heart Failure Index (SCHFI)"
+    }
+  ],
+  "por_problema": {
+    "adherencia": [
+      {
+        "texto": "Barreras cognitivas: lenguaje claro, sin tecnicismos; preguntas abiertas sobre sus razones para mejorar su salud.",
+        "pagina": "33",
+        "ancla": "Potenciar la capacidad del paciente utilizando un lenguaje claro"
+      },
+      {
+        "texto": "Barreras conductuales: balanza decisional y celebrar avances mínimos.",
+        "pagina": "34",
+        "ancla": "Resistencia al cambio por"
+      }
+    ],
+    "control": [
+      {
+        "texto": "Barreras emocionales (miedo, ansiedad, negación): reconocer emociones sin juzgar y reconectar con sus valores y metas; valorar visitas más frecuentes.",
+        "pagina": "33",
+        "ancla": "Reconocer los sentimientos y emociones del paciente, sin juzgar"
+      }
+    ]
+  }
+}

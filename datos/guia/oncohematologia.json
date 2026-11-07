@@ -1,0 +1,38 @@
+{
+  "modelo": "oncohematologia",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Neoplasias Oncológicas y Hematológicas", "editor": "SEFH (Grupo GEDEFO)", "anio": "2020", "url": "https://gruposdetrabajo.sefh.es/gedefo/images/Adaptacin_Modelo_CMO_al_paciente_OH.pdf", "capitulo": "Motivación", "paginas": "23-46", "huella_pdf": "d812e1f71fd62f3b", "desfase_pdf": 0 },
+  "estructura": {
+    "nombre": "Dos fases: generación de discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+    "pagina": "24", "ancla": "La entrevista motivacional consta de dos fases",
+    "pasos": [
+      { "fase": "Fase I", "titulo": "Relación y obtención de datos", "hacer": ["Explorar conocimiento de la patología y del tratamiento, creencias y expectativas, actitudes y experiencias previas con la medicación.", "No dar recomendaciones hasta el final de la entrevista."], "pagina": "24-25", "ancla": "sin introducir recomendaciones o instrucciones" },
+      { "fase": "Fase I", "titulo": "Saber cuánto quiere conocer", "hacer": ["Averiguar hasta qué punto le ha informado el médico y cuánto desea saber; puede cambiar según el momento de la enfermedad.", "Valorar entrevistar al cuidador, o al paciente a solas, si el entorno condiciona sus respuestas."], "pagina": "26-27", "ancla": "hasta qué punto el paciente desea conocer detalles de su enfermedad" },
+      { "fase": "Fase II", "titulo": "Informar", "hacer": ["Enunciar los problemas e informar del plan, con la información seleccionada y ordenada."], "pagina": "25", "ancla": "enunciar los problemas hallados e informar al paciente" },
+      { "fase": "Fase II", "titulo": "Negociar y mantener los cambios", "hacer": ["Conocer entorno, necesidades y creencias; negociar desde el respeto a sus valores."], "pagina": "25", "ancla": "negociar con el paciente desde el respeto por sus" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Comunicación verbal y no verbal, saber empezar y terminar, planificar, asertividad, control del tiempo, escucha activa y empatía (Tabla 2).", "pagina": "24", "ancla": "Tener actitud de asertividad" },
+    { "texto": "Técnicas de apoyo narrativo: facilitación («Continúe, por favor», silencio), empatía, señalamiento, clarificación, validación (Tabla 4).", "pagina": "30", "ancla": "Ejemplos de técnicas de apoyo narrativo" }
+  ],
+  "preguntas": [
+    { "tema": "Conocimiento de la patología y el tratamiento", "ejemplos": ["¿Podría explicarme el motivo por el que le han prescrito este medicamento?", "¿Qué espera de su tratamiento?"], "pagina": "28", "ancla": "¿Qué espera de su tratamiento?", "para": ["mantenimiento", "reestratificacion", "control"] },
+    { "tema": "Problemas derivados de la farmacoterapia", "ejemplos": ["¿Tolera bien la medicación que está tomando?", "¿Nota algún efecto o sensación distinta a antes de tomar la medicación que le preocupe?", "¿A qué lo atribuye?"], "pagina": "28", "ancla": "¿Nota algún efecto o sensación distinta a antes de tomar la medicación que le preocupe?", "para": ["efectos_adversos", "control"] },
+    { "tema": "Promover la adherencia", "ejemplos": ["¿Le cuesta mantener, por cualquier motivo, la pauta de medicación que está recibiendo en estos momentos?", "¿Cuáles cree que podrían ser las consecuencias de no tomar adecuadamente la medicación?"], "pagina": "29", "ancla": "¿Cuáles cree que podrían ser las consecuencias de no tomar adecuadamente la medicación?", "para": ["adherencia"] },
+    { "tema": "Vulnerabilidad, ansiedad o miedo", "ejemplos": ["Es habitual cierto grado de preocupación en estas situaciones... ¿Le sucede a usted?", "¿Qué es lo que más le preocupa de todo este problema?"], "pagina": "29", "ancla": "Es habitual cierto grado de preocupación en estas situaciones", "para": ["efectos_adversos", "control", "adherencia"] }
+  ],
+  "resistencias": [],
+  "objetivos": { "texto": "Objetivos claros, realistas y alcanzables, adaptados a la situación y pronóstico; la calidad de vida puede ser un objetivo en sí misma.", "pagina": "31", "ancla": "claros, realistas y alcanzables" },
+  "escalas": [
+    { "nombre": "Termómetro de Distrés (NCCN) / HADS", "uso": "Detectar distrés; una puntuación mayor de 4 en el termómetro debe alertar e indagar o derivar.", "pagina": "40", "ancla": "una puntuación mayor de 4 en el Termómetro de Distrés" }
+  ],
+  "por_problema": {
+    "adherencia": [
+      { "texto": "Asegurar que entiende, conoce y distingue su medicación; simplificar el tratamiento, calendarios o plantillas de tomas y asociar las tomas a actividades diarias.", "pagina": "42", "ancla": "elaborar calendarios o plantillas para" },
+      { "texto": "Los efectos adversos pueden estar en el origen de la falta de adherencia.", "pagina": "42", "ancla": "los efectos adversos pueden estar en el origen de la falta de adherencia" }
+    ],
+    "efectos_adversos": [
+      { "texto": "Entrenar al paciente o cuidador en signos y síntomas que requieren atención inmediata; dosificar la información en sucesivas visitas; farmacéutico de referencia con contacto.", "pagina": "43", "ancla": "identificación de signos y síntomas que requieran atención inmediata" }
+    ]
+  }
+}

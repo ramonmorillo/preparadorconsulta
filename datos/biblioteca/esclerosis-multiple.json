@@ -225,5 +225,10 @@
         }
       ]
     }
+  },
+  "periodicidad_complementaria": {
+    "1": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18).",
+    "2": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18).",
+    "3": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18)."
   }
 }

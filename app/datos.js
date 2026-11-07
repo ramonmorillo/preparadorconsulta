@@ -7,6 +7,7 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "acumulativo por nivel",
   "origen": "github.com/ramonmorillo/cmo-vih-app @ c963da9 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": null,
   "aviso": "Acumulativo por decisión de Ramón Morillo (07/11/2026). La versión actual de la herramienta en el hub muestra solo las del nivel propio: discrepancia pendiente de corregir en la herramienta, con revisión clínica.",
   "niveles": {
    "1": {
@@ -119,6 +120,7 @@ export const BIBLIOTECA = {
   "reestratificar_ademas": [
    "Todos los pacientes VHB/VHB-VHD: evaluación al inicio del tratamiento."
   ],
+  "periodicidad_complementaria": null,
   "aviso": "Herramienta sin batería de pruebas según CMO-CLINICAL-SAFETY.md del hub",
   "niveles": {
    "1": {
@@ -269,6 +271,7 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "acumulativo por prioridad",
   "origen": "github.com/ramonmorillo/cmorespiratorio @ ac39655 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -487,6 +490,7 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "seleccionable por necesidad (el farmacéutico elige)",
   "origen": "github.com/ramonmorillo/cmoriesgocardiovascular @ 23290a6 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -585,6 +589,11 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "acumulativo por prioridad",
   "origen": "github.com/ramonmorillo/estratificacionEM @ 489df35 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": {
+   "1": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18).",
+   "2": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18).",
+   "3": "Al inicio, ante un cambio de tratamiento y cada 12 meses (documento de la adaptación, p. 18)."
+  },
   "aviso": "La herramienta no declara periodicidad de reestratificación",
   "niveles": {
    "1": {
@@ -814,6 +823,7 @@ export const BIBLIOTECA = {
    "Al inicio del tratamiento.",
    "Cuando exista un cambio en el tratamiento."
   ],
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -912,6 +922,11 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "seleccionable por necesidad (el farmacéutico elige)",
   "origen": "github.com/ramonmorillo/cmoinmunomediadas @ 244c383 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": {
+   "1": "Cada 3 meses (indicación del autor).",
+   "2": "Cada 12 meses (indicación del autor).",
+   "3": "Cada 18 meses (indicación del autor)."
+  },
   "aviso": "Herramienta sin batería de pruebas según CMO-CLINICAL-SAFETY.md del hub; periodicidad no localizada",
   "niveles": {
    "1": {
@@ -1134,6 +1149,7 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "acumulativo por prioridad",
   "origen": "github.com/ramonmorillo/cmopediatria @ f03218c (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -1424,6 +1440,7 @@ export const BIBLIOTECA = {
    "Ante un cambio de esquema de tratamiento.",
    "Siempre que el farmacéutico lo considere necesario."
   ],
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -1674,6 +1691,7 @@ export const BIBLIOTECA = {
   "tipo_catalogo": "acumulativo por prioridad",
   "origen": "github.com/ramonmorillo/cmocoagulopatias @ e113a42 (2026-10-30)",
   "reestratificar_ademas": null,
+  "periodicidad_complementaria": null,
   "aviso": null,
   "niveles": {
    "1": {
@@ -2040,7 +2058,7 @@ export const BIBLIOTECA = {
 };
 export const REGLAS = {
  "_aviso": "Reglas del preparador de consulta. Los textos de periodicidad son literales de cada herramienta CMO del hub (ver datos/biblioteca). Los campos 'plazo_*_meses' y 'reestratificar_si_cambio' son una INTERPRETACIÓN de esos textos para poder calcular fechas: PENDIENTE DE VALIDAR por Ramón Morillo Verdugo.",
- "version": "0.1.0",
+ "version": "0.2.0",
  "adherencia": {
   "indicador": "PDC (proporción de días cubiertos)",
   "umbral": 0.9,
@@ -2115,13 +2133,14 @@ export const REGLAS = {
     "plazo_min_meses": null,
     "plazo_max_meses": 12,
     "reestratificar_si_cambio": false
-   }
+   },
+   "_fuente": "Adaptación CMO VIH, p. 16: P1 cada 3 meses, P2 cada 6 meses, P3 cada 12 meses."
   },
   "vhb-vhd": {
    "1": {
     "plazo_min_meses": null,
     "plazo_max_meses": 3,
-    "reestratificar_si_cambio": false
+    "reestratificar_si_cambio": true
    },
    "2": {
     "plazo_min_meses": null,
@@ -2132,7 +2151,8 @@ export const REGLAS = {
     "plazo_min_meses": null,
     "plazo_max_meses": 12,
     "reestratificar_si_cambio": false
-   }
+   },
+   "_fuente": "Adaptación CMO VHB/VHD, Tabla 3, p. 17: N1 cada 3 meses o antes si cambio clínico, evento adverso grave o modificación del régimen; N2 cada 6 meses y después anual; N3 anual."
   },
   "migrana": {
    "1": {
@@ -2155,18 +2175,19 @@ export const REGLAS = {
    "1": {
     "plazo_min_meses": null,
     "plazo_max_meses": 1,
-    "reestratificar_si_cambio": false
+    "reestratificar_si_cambio": true
    },
    "2": {
     "plazo_min_meses": null,
     "plazo_max_meses": 6,
-    "reestratificar_si_cambio": false
+    "reestratificar_si_cambio": true
    },
    "3": {
     "plazo_min_meses": null,
     "plazo_max_meses": 12,
-    "reestratificar_si_cambio": false
-   }
+    "reestratificar_si_cambio": true
+   },
+   "_fuente": "Adaptación CMO Coagulopatías congénitas, pp. 18-19: al inicio, ante cambio de tratamiento, cambio clínico o acontecimientos adversos; P1 mensual, P2 cada 6 meses, P3 cada 12 meses."
   },
   "oncohematologia": {
    "1": {
@@ -2187,10 +2208,40 @@ export const REGLAS = {
    "_nota": "Periodicidad por ciclos de tratamiento: no calculable con fechas. Se muestra el texto literal."
   },
   "esclerosis-multiple": {
-   "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)."
+   "1": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 12,
+    "reestratificar_si_cambio": true
+   },
+   "2": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 12,
+    "reestratificar_si_cambio": true
+   },
+   "3": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 12,
+    "reestratificar_si_cambio": true
+   },
+   "_fuente": "Adaptación CMO Esclerosis Múltiple, p. 18: al inicio, ante un cambio de tratamiento y cada 12 meses."
   },
   "inmunomediadas": {
-   "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)."
+   "1": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 3,
+    "reestratificar_si_cambio": false
+   },
+   "2": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 12,
+    "reestratificar_si_cambio": false
+   },
+   "3": {
+    "plazo_min_meses": null,
+    "plazo_max_meses": 18,
+    "reestratificar_si_cambio": false
+   },
+   "_fuente": "Indicación del autor (07/11/2026): nivel 1 cada 3 meses, nivel 2 cada 12 meses, nivel 3 cada 18 meses. Sin adaptación CMO publicada para comprobarlo."
   }
  }
 };
@@ -2266,5 +2317,1262 @@ export const EJEMPLOS = {
   "dispensaciones": "fecha;grupo;medicamento;dias_suministro\n2026-05-10;TAR;bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;30\n2026-06-09;TAR;bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;30\n2026-07-09;TAR;bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;30\n2026-08-08;TAR;bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;30\n2026-09-01;TAR;dolutegravir/lamivudina 50/300 mg;30\n2026-10-01;TAR;dolutegravir/lamivudina 50/300 mg;30\n2026-10-31;TAR;dolutegravir/lamivudina 50/300 mg;30\n",
   "prescripcion": "medicamento;grupo;pauta;fecha_inicio;fecha_fin;ambito\nbictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;TAR;1 comprimido cada 24 h;2023-05-04;2026-08-31;hospitalaria\ndolutegravir/lamivudina 50/300 mg;TAR;1 comprimido cada 24 h;2026-09-01;;hospitalaria\n",
   "notas": "# Notas de consulta (FICTICIAS)\n\n## 2026-06-15 · Consulta de atención farmacéutica\nPaciente estable, carga viral indetectable mantenida. Buena adherencia referida.\nSin medicación concomitante. No refiere dificultades con el tratamiento.\n\n## 2026-08-28 · Nota de la consulta de enfermedades infecciosas\nSe decide cambio de tratamiento antirretroviral a dolutegravir/lamivudina por simplificación, a partir del 1 de septiembre.\n\n## 2026-10-01 · Llamada de telefarmacia\nRefiere náuseas leves durante las primeras semanas con el nuevo tratamiento, ya resueltas.\n"
+ }
+};
+export const GUIAS = {
+ "coagulopatias": {
+  "modelo": "coagulopatias",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con coagulopatías congénitas",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2026",
+   "url": "https://www.sefh.es/mapex/images/Adaptacion-Modelo-CMO-Coagulopatias-Congenitas.pdf",
+   "capitulo": "Motivación",
+   "paginas": "27-42",
+   "huella_pdf": "78440b8f8046f322",
+   "desfase_pdf": 1
+  },
+  "estructura": {
+   "nombre": "Cuatro procesos superpuestos: vincular, enfocar, evocar y planificar (Tabla 10)",
+   "pagina": "34-36",
+   "ancla": "cuatro procesos básicos superpuestos",
+   "pasos": [
+    {
+     "fase": "Proceso 1",
+     "titulo": "Vincular",
+     "hacer": [
+      "Escucha activa, empatía, afirmaciones y preguntas abiertas; espacio seguro para expresar miedos sobre sangrados o fatiga del tratamiento."
+     ],
+     "pagina": "36",
+     "ancla": "Escucha activa, actitud"
+    },
+    {
+     "fase": "Proceso 2",
+     "titulo": "Enfocar",
+     "hacer": [
+      "Definir qué le preocupa más: adherencia a la profilaxis, miedo a la administración o integración del tratamiento en su vida diaria y social."
+     ],
+     "pagina": "35-36",
+     "ancla": "identificando el área prioritaria que el paciente desee abordar"
+    },
+    {
+     "fase": "Proceso 3",
+     "titulo": "Evocar",
+     "hacer": [
+      "Que el paciente explicite sus propias razones con preguntas abiertas, escucha reflexiva y afirmaciones."
+     ],
+     "pagina": "35",
+     "ancla": "explicitar sus propias motivaciones intrínsecas"
+    },
+    {
+     "fase": "Proceso 4",
+     "titulo": "Planificar",
+     "hacer": [
+      "Plan de acción concreto y negociado con objetivos SMART y estrategias de autocontrol (plan de infusión realista, cómo recordar dosis, actividad física segura)."
+     ],
+     "pagina": "35-36",
+     "ancla": "plan de acción concreto y negociado"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Principios: expresar empatía, desarrollar la discrepancia, evitar discusiones, dar un giro a la resistencia y reforzar la autoeficacia.",
+    "pagina": "33-34",
+    "ancla": "Dar un giro a la resistencia"
+   }
+  ],
+  "estadios": [
+   {
+    "estadio": "Precontemplación",
+    "abordaje": "Informar sobre riesgos y beneficios.",
+    "pagina": "36",
+    "ancla": "proporcionar información sobre los riesgos y beneficios"
+   },
+   {
+    "estadio": "Contemplación",
+    "abordaje": "Facilitar la reflexión y que verbalice dudas y motivaciones.",
+    "pagina": "37",
+    "ancla": "favorecer la verbalización de sus dudas y motivaciones"
+   },
+   {
+    "estadio": "Preparación",
+    "abordaje": "Desarrollar planes de autocontrol.",
+    "pagina": "37",
+    "ancla": "desarrollar planes de autocontrol"
+   },
+   {
+    "estadio": "Acción",
+    "abordaje": "Acompañar el inicio del cambio.",
+    "pagina": "37",
+    "ancla": "acompañar el inicio del cambio"
+   }
+  ],
+  "preguntas": [],
+  "resistencias": [
+   {
+    "texto": "La resistencia es señal de ambivalencia: explorarla y reformularla sin confrontación ni imposición, orientando hacia soluciones.",
+    "pagina": "34",
+    "ancla": "una señal de ambivalencia"
+   }
+  ],
+  "objetivos": {
+   "texto": "Objetivos SMART (específicos, medibles, alcanzables, relevantes y temporalizados) dentro de un plan negociado.",
+   "pagina": "35",
+   "ancla": "Alcanzables, Relevantes, Temporalizados"
+  },
+  "escalas": [],
+  "por_problema": {
+   "adherencia": [
+    {
+     "texto": "Olvidos: recordatorios digitales (aplicaciones, alarmas), simplificar el régimen y organizar la medicación por administraciones (Tabla 9).",
+     "pagina": "32",
+     "ancla": "Implementación de"
+    },
+    {
+     "texto": "Fatiga del tratamiento: asesoramiento psicológico, conservación de energía, hábitos saludables y simplificar el régimen cuando sea posible.",
+     "pagina": "32",
+     "ancla": "técnicas de conservación de"
+    },
+    {
+     "texto": "Interferencia con el estilo de vida (adolescencia y adulto joven): fomentar la autonomía, personalizar el tratamiento e implicarle en las decisiones.",
+     "pagina": "33",
+     "ancla": "Fomento de la autonomía"
+    }
+   ],
+   "efectos_adversos": [
+    {
+     "texto": "Miedo a sangrados o trombosis: apoyo psicosocial, terapia cognitivo-conductual, exposición gradual, educar a cuidadores sobre autonomía y grupos de apoyo.",
+     "pagina": "32",
+     "ancla": "técnicas de exposición"
+    }
+   ],
+   "control": [
+    {
+     "texto": "Negación de la enfermedad: entrevista motivacional para desarrollar discrepancias y educación personalizada sobre riesgos y beneficios.",
+     "pagina": "32",
+     "ancla": "Entrevista motivacional para"
+    },
+    {
+     "texto": "Impacto psicosocial (ansiedad, depresión, baja autoestima): derivar a psicología o trabajo social y fomentar grupos de apoyo.",
+     "pagina": "33",
+     "ancla": "Derivación a profesionales de"
+    }
+   ]
+  }
+ },
+ "esclerosis-multiple": {
+  "modelo": "esclerosis-multiple",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con Esclerosis Múltiple",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2025",
+   "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-esclerosis-multiple.pdf",
+   "capitulo": "Motivación",
+   "paginas": "23-33",
+   "huella_pdf": "ae29d3499b9aa968",
+   "desfase_pdf": 1
+  },
+  "estructura": {
+   "nombre": "Siete pasos para aplicar la entrevista motivacional en la práctica diaria",
+   "pagina": "24",
+   "ancla": "un esquema de los pasos a seguir para aplicar esta herramienta",
+   "pasos": [
+    {
+     "fase": "Paso 1",
+     "titulo": "Preparar la consulta",
+     "hacer": [
+      "Revisar historial, tratamiento, adherencia, efectos secundarios y calidad de vida percibida.",
+      "Espacio privado, cómodo y sin distracciones."
+     ],
+     "pagina": "24",
+     "ancla": "Preparación de la consulta"
+    },
+    {
+     "fase": "Paso 2",
+     "titulo": "Iniciar explicando el propósito",
+     "hacer": [
+      "Explicar que el objetivo es apoyarle en el manejo de su enfermedad y mejorar su calidad de vida."
+     ],
+     "pagina": "24",
+     "ancla": "establezca claramente el propósito de la entrevista"
+    },
+    {
+     "fase": "Paso 3",
+     "titulo": "Explorar objetivos y valores",
+     "hacer": [
+      "Preguntas abiertas, escucha activa, afirmaciones y resúmenes.",
+      "Metas a corto y largo plazo, específicas, medibles y alcanzables; celebrar pequeños logros."
+     ],
+     "pagina": "24",
+     "ancla": "Exploración de objetivos y valores del paciente"
+    },
+    {
+     "fase": "Paso 4",
+     "titulo": "Identificar barreras y estrategias",
+     "hacer": [
+      "Explorar barreras (miedo a efectos secundarios, falta de tiempo) y diseñar estrategias junto al paciente."
+     ],
+     "pagina": "25",
+     "ancla": "Identificación de barreras y estrategias de superación"
+    },
+    {
+     "fase": "Paso 5",
+     "titulo": "Promover autocuidado y adherencia",
+     "hacer": [
+      "Educar en adherencia y hábitos (dieta, tabaco, ejercicio, estrés); ofrecer recursos prácticos (folletos, aplicaciones de seguimiento)."
+     ],
+     "pagina": "25",
+     "ancla": "Promoción del autocuidado y adherencia al tratamiento"
+    },
+    {
+     "fase": "Paso 6",
+     "titulo": "Reforzar y empoderar",
+     "hacer": [
+      "Reconocer y elogiar los logros (por ejemplo, haber mantenido la adherencia el último mes) para promover la autoeficacia."
+     ],
+     "pagina": "25",
+     "ancla": "Fortalecimiento positivo y empoderamiento"
+    },
+    {
+     "fase": "Paso 7",
+     "titulo": "Resumir y cerrar",
+     "hacer": [
+      "Resumir puntos clave y metas acordadas; programar la cita de seguimiento; agradecer."
+     ],
+     "pagina": "25",
+     "ancla": "es esencial resumir los puntos clave discutidos y las metas acordadas"
+    }
+   ]
+  },
+  "tecnicas": [],
+  "preguntas": [
+   {
+    "tema": "Objetivos y valores",
+    "ejemplos": [
+     "¿Qué es lo más importante para usted en este momento?",
+     "¿Cuáles son sus principales preocupaciones en relación con su enfermedad?"
+    ],
+    "pagina": "24",
+    "ancla": "¿Qué es lo más importante para usted en este momento?",
+    "para": [
+     "control",
+     "reestratificacion",
+     "mantenimiento",
+     "adherencia"
+    ]
+   },
+   {
+    "tema": "Barreras",
+    "ejemplos": [
+     "¿Qué dificultades ha encontrado al manejar su enfermedad?"
+    ],
+    "pagina": "25",
+    "ancla": "¿Qué dificultades ha encontrado al manejar su enfermedad?",
+    "para": [
+     "adherencia",
+     "efectos_adversos",
+     "control"
+    ]
+   }
+  ],
+  "resistencias": [],
+  "objetivos": {
+   "texto": "Listado de objetivos farmacoterapéuticos, de hábitos y de competencias, dinámico y priorizado (activos o inactivos), alineado con el equipo y registrado en la historia clínica.",
+   "pagina": "27",
+   "ancla": "objetivos se prioricen y clasifiquen como activos o inactivos"
+  },
+  "escalas": [],
+  "por_problema": {}
+ },
+ "migrana": {
+  "modelo": "migrana",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Migraña",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "pendiente de publicación",
+   "url": null,
+   "capitulo": "Motivación",
+   "paginas": "24-42",
+   "huella_pdf": "versión final aportada por el coordinador (Markdown)",
+   "desfase_pdf": 0
+  },
+  "estructura": {
+   "nombre": "Estados de situación motivacional (Tabla 9): no son una secuencia rígida y pueden cambiar con el momento clínico",
+   "pagina": "29-30",
+   "ancla": "conviene hablar de estados de situación motivacional",
+   "pasos": [
+    {
+     "fase": "Estado 1",
+     "titulo": "Baja percepción de necesidad del preventivo",
+     "hacer": [
+      "Validar su experiencia sin reforzar la minimización; explorar el impacto real de las crisis en su vida.",
+      "Pregunta sugerida: «¿Cómo le está afectando realmente la migraña en su día a día, más allá del propio dolor?»",
+      "Evitar: insistir en el preventivo sin haber explorado antes su percepción de carga."
+     ],
+     "pagina": "30",
+     "ancla": "Baja"
+    },
+    {
+     "fase": "Estado 2",
+     "titulo": "Ambivalencia ante iniciar o mantener el preventivo",
+     "hacer": [
+      "Explorar la ambivalencia sin resolverla por el paciente; identificar beneficios esperados y temores concretos.",
+      "Pregunta sugerida: «¿Qué parte de empezar este tratamiento le genera más esperanza y qué parte le genera más dudas?»",
+      "Evitar: responder a la ambivalencia solo con argumentos técnicos de eficacia."
+     ],
+     "pagina": "30",
+     "ancla": "Ambivalencia"
+    },
+    {
+     "fase": "Estado 3",
+     "titulo": "Preparación compartida del plan",
+     "hacer": [
+      "Objetivos concretos, progresivos y medibles; priorizar pocos cambios.",
+      "Pregunta sugerida: «De todo lo que hemos hablado, ¿qué cambio le parece más realista empezar a trabajar desde hoy?»",
+      "Evitar: plantear demasiados objetivos a la vez en una sola consulta."
+     ],
+     "pagina": "30",
+     "ancla": "Preparación"
+    },
+    {
+     "fase": "Estado 4",
+     "titulo": "Implementación acompañada",
+     "hacer": [
+      "Revisar cómo funciona el plan, reforzar logros y detectar dificultades antes de que generen abandono.",
+      "Pregunta sugerida: «¿Qué ha sido lo más fácil y qué lo más difícil desde que empezamos con este plan?»",
+      "Evitar: asumir que iniciar el tratamiento equivale a haberlo consolidado."
+     ],
+     "pagina": "30",
+     "ancla": "Implementación"
+    },
+    {
+     "fase": "Estado 5",
+     "titulo": "Consolidación con riesgo de fatiga terapéutica",
+     "hacer": [
+      "Revisar periódicamente los objetivos, detectar señales de fatiga y reforzar el valor de lo conseguido.",
+      "Pregunta sugerida: «¿Qué le está ayudando a seguir con el tratamiento y qué empieza a resultarle más pesado?»",
+      "Evitar: confundir adherencia sostenida con ausencia de necesidades."
+     ],
+     "pagina": "30",
+     "ancla": "Consolidación"
+    },
+    {
+     "fase": "Estado 6",
+     "titulo": "Retroceso, abandono o abuso de medicación aguda",
+     "hacer": [
+      "Reabrir la conversación sin juicio, identificar qué ocurrió y replantear objetivos si es necesario.",
+      "Pregunta sugerida: «He visto que hubo un periodo en el que el tratamiento no se mantuvo como estaba previsto. ¿Qué cree que influyó más?»",
+      "Evitar: culpabilizar al paciente o reiniciar el plan como si no hubiera historia previa."
+     ],
+     "pagina": "31",
+     "ancla": "Culpabilizar al"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Explorar creencias como conversación guiada, no como cuestionario cerrado: qué entiende por migraña, qué desencadena sus crisis, qué espera del preventivo y en qué plazo, qué teme de la medicación.",
+    "pagina": "31",
+    "ancla": "no debe plantearse como un cuestionario cerrado"
+   }
+  ],
+  "preguntas": [
+   {
+    "tema": "Creencias sobre la enfermedad",
+    "ejemplos": [
+     "¿Qué cree usted que le provoca las crisis? ¿Ha identificado algún patrón?"
+    ],
+    "pagina": "31",
+    "ancla": "¿Qué cree usted que le provoca las crisis?",
+    "para": [
+     "control",
+     "mantenimiento"
+    ]
+   }
+  ],
+  "resistencias": [],
+  "objetivos": {
+   "texto": "Documentar el estado motivacional en la historia junto con los objetivos acordados y revisarlo en cada punto crítico: nuevo preventivo, cambio de línea, efectos adversos, falta de respuesta o transiciones vitales.",
+   "pagina": "31",
+   "ancla": "Esta valoración debe documentarse en la historia farmacoterapéutica"
+  },
+  "escalas": [],
+  "por_problema": {}
+ },
+ "oncohematologia": {
+  "modelo": "oncohematologia",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Neoplasias Oncológicas y Hematológicas",
+   "editor": "SEFH (Grupo GEDEFO)",
+   "anio": "2020",
+   "url": "https://gruposdetrabajo.sefh.es/gedefo/images/Adaptacin_Modelo_CMO_al_paciente_OH.pdf",
+   "capitulo": "Motivación",
+   "paginas": "23-46",
+   "huella_pdf": "d812e1f71fd62f3b",
+   "desfase_pdf": 0
+  },
+  "estructura": {
+   "nombre": "Dos fases: generación de discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+   "pagina": "24",
+   "ancla": "La entrevista motivacional consta de dos fases",
+   "pasos": [
+    {
+     "fase": "Fase I",
+     "titulo": "Relación y obtención de datos",
+     "hacer": [
+      "Explorar conocimiento de la patología y del tratamiento, creencias y expectativas, actitudes y experiencias previas con la medicación.",
+      "No dar recomendaciones hasta el final de la entrevista."
+     ],
+     "pagina": "24-25",
+     "ancla": "sin introducir recomendaciones o instrucciones"
+    },
+    {
+     "fase": "Fase I",
+     "titulo": "Saber cuánto quiere conocer",
+     "hacer": [
+      "Averiguar hasta qué punto le ha informado el médico y cuánto desea saber; puede cambiar según el momento de la enfermedad.",
+      "Valorar entrevistar al cuidador, o al paciente a solas, si el entorno condiciona sus respuestas."
+     ],
+     "pagina": "26-27",
+     "ancla": "hasta qué punto el paciente desea conocer detalles de su enfermedad"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Informar",
+     "hacer": [
+      "Enunciar los problemas e informar del plan, con la información seleccionada y ordenada."
+     ],
+     "pagina": "25",
+     "ancla": "enunciar los problemas hallados e informar al paciente"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Negociar y mantener los cambios",
+     "hacer": [
+      "Conocer entorno, necesidades y creencias; negociar desde el respeto a sus valores."
+     ],
+     "pagina": "25",
+     "ancla": "negociar con el paciente desde el respeto por sus"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Comunicación verbal y no verbal, saber empezar y terminar, planificar, asertividad, control del tiempo, escucha activa y empatía (Tabla 2).",
+    "pagina": "24",
+    "ancla": "Tener actitud de asertividad"
+   },
+   {
+    "texto": "Técnicas de apoyo narrativo: facilitación («Continúe, por favor», silencio), empatía, señalamiento, clarificación, validación (Tabla 4).",
+    "pagina": "30",
+    "ancla": "Ejemplos de técnicas de apoyo narrativo"
+   }
+  ],
+  "preguntas": [
+   {
+    "tema": "Conocimiento de la patología y el tratamiento",
+    "ejemplos": [
+     "¿Podría explicarme el motivo por el que le han prescrito este medicamento?",
+     "¿Qué espera de su tratamiento?"
+    ],
+    "pagina": "28",
+    "ancla": "¿Qué espera de su tratamiento?",
+    "para": [
+     "mantenimiento",
+     "reestratificacion",
+     "control"
+    ]
+   },
+   {
+    "tema": "Problemas derivados de la farmacoterapia",
+    "ejemplos": [
+     "¿Tolera bien la medicación que está tomando?",
+     "¿Nota algún efecto o sensación distinta a antes de tomar la medicación que le preocupe?",
+     "¿A qué lo atribuye?"
+    ],
+    "pagina": "28",
+    "ancla": "¿Nota algún efecto o sensación distinta a antes de tomar la medicación que le preocupe?",
+    "para": [
+     "efectos_adversos",
+     "control"
+    ]
+   },
+   {
+    "tema": "Promover la adherencia",
+    "ejemplos": [
+     "¿Le cuesta mantener, por cualquier motivo, la pauta de medicación que está recibiendo en estos momentos?",
+     "¿Cuáles cree que podrían ser las consecuencias de no tomar adecuadamente la medicación?"
+    ],
+    "pagina": "29",
+    "ancla": "¿Cuáles cree que podrían ser las consecuencias de no tomar adecuadamente la medicación?",
+    "para": [
+     "adherencia"
+    ]
+   },
+   {
+    "tema": "Vulnerabilidad, ansiedad o miedo",
+    "ejemplos": [
+     "Es habitual cierto grado de preocupación en estas situaciones... ¿Le sucede a usted?",
+     "¿Qué es lo que más le preocupa de todo este problema?"
+    ],
+    "pagina": "29",
+    "ancla": "Es habitual cierto grado de preocupación en estas situaciones",
+    "para": [
+     "efectos_adversos",
+     "control",
+     "adherencia"
+    ]
+   }
+  ],
+  "resistencias": [],
+  "objetivos": {
+   "texto": "Objetivos claros, realistas y alcanzables, adaptados a la situación y pronóstico; la calidad de vida puede ser un objetivo en sí misma.",
+   "pagina": "31",
+   "ancla": "claros, realistas y alcanzables"
+  },
+  "escalas": [
+   {
+    "nombre": "Termómetro de Distrés (NCCN) / HADS",
+    "uso": "Detectar distrés; una puntuación mayor de 4 en el termómetro debe alertar e indagar o derivar.",
+    "pagina": "40",
+    "ancla": "una puntuación mayor de 4 en el Termómetro de Distrés"
+   }
+  ],
+  "por_problema": {
+   "adherencia": [
+    {
+     "texto": "Asegurar que entiende, conoce y distingue su medicación; simplificar el tratamiento, calendarios o plantillas de tomas y asociar las tomas a actividades diarias.",
+     "pagina": "42",
+     "ancla": "elaborar calendarios o plantillas para"
+    },
+    {
+     "texto": "Los efectos adversos pueden estar en el origen de la falta de adherencia.",
+     "pagina": "42",
+     "ancla": "los efectos adversos pueden estar en el origen de la falta de adherencia"
+    }
+   ],
+   "efectos_adversos": [
+    {
+     "texto": "Entrenar al paciente o cuidador en signos y síntomas que requieren atención inmediata; dosificar la información en sucesivas visitas; farmacéutico de referencia con contacto.",
+     "pagina": "43",
+     "ancla": "identificación de signos y síntomas que requieran atención inmediata"
+    }
+   ]
+  }
+ },
+ "pediatria": {
+  "modelo": "pediatria",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente Pediátrico",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2025",
+   "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-pacientes-pediatricos.pdf",
+   "capitulo": "Motivación",
+   "paginas": "22-37",
+   "huella_pdf": "c0c829fca1bf3408",
+   "desfase_pdf": 1
+  },
+  "estructura": {
+   "nombre": "Dos fases adaptadas al niño, al adolescente y a su cuidador",
+   "pagina": "29",
+   "ancla": "La entrevista motivacional se divide en dos fases clave",
+   "pasos": [
+    {
+     "fase": "Fase I",
+     "titulo": "Establecer la relación",
+     "hacer": [
+      "Empezar por un tema de interés para el menor (aficiones, curso escolar) y dirigirse primero a él.",
+      "Presentarse por el nombre y explicar la propia función; cuidar el tono, sin habla infantilizada; sillas a la misma altura."
+     ],
+     "pagina": "29-30",
+     "ancla": "iniciar la conversación con un tema diferente del motivo de la consulta"
+    },
+    {
+     "fase": "Fase I",
+     "titulo": "Obtener datos",
+     "hacer": [
+      "Pedir permiso al menor para preguntar; lenguaje sin términos médicos, despacio y con pausas; no aumentar su ansiedad («no es un examen»).",
+      "Explorar creencias y expectativas, sin dar todavía recomendaciones."
+     ],
+     "pagina": "31",
+     "ancla": "Dirigirse primero al niño y pedirle permiso"
+    },
+    {
+     "fase": "Fase I",
+     "titulo": "Dirigir la entrevista",
+     "hacer": [
+      "Devolver la palabra al menor cuando responde el cuidador («¿tú qué opinas?»).",
+      "Ir de preguntas abiertas a cerradas a medida que avanza la entrevista.",
+      "Equilibrar paciente y cuidador: invitar al cuidador a exponer sus dudas al inicio."
+     ],
+     "pagina": "32-33",
+     "ancla": "devolvamos la palabra"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Afrontar resistencias y mantener fortalezas",
+     "hacer": [
+      "Acordar un plan conjunto con el niño y su cuidador y supervisar el compromiso."
+     ],
+     "pagina": "29",
+     "ancla": "Fase II: Se enfoca en afrontar las resistencias del paciente"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Preguntas abiertas al inicio para ganar confianza (ejemplo del documento: «¿Juegas con tus compañeros en el recreo?») y cerradas al final para datos de adherencia.",
+    "pagina": "32",
+    "ancla": "¿Juegas con tus compañeros en el recreo?"
+   },
+   {
+    "texto": "Escala de caritas o de 1 a 5 para que el niño exprese si ha entendido, si ha podido contar lo que le preocupa o si traga bien los comprimidos (Tabla 13).",
+    "pagina": "33",
+    "ancla": "¿Has entendido lo que te han"
+   }
+  ],
+  "preguntas": [
+   {
+    "tema": "Entrar en el tema con permiso",
+    "ejemplos": [
+     "Bueno, Javier, hoy vamos a hablar de tus medicinas, ¿qué te parece?",
+     "¿Te puedo preguntar sobre cómo estás tomando tus medicinas?"
+    ],
+    "pagina": "31",
+    "ancla": "hoy vamos a hablar de tus medicinas",
+    "para": [
+     "adherencia",
+     "mantenimiento",
+     "control",
+     "efectos_adversos",
+     "reestratificacion"
+    ]
+   },
+   {
+    "tema": "Adherencia (pregunta cerrada, al final)",
+    "ejemplos": [
+     "Entonces, ¿dices que te tomas las medicinas tú solo todos los días? ¿Cómo haces para acordarte de cuál tienes que tomar?"
+    ],
+    "pagina": "32",
+    "ancla": "cómo haces para acordarte de cual tienes que tomar",
+    "para": [
+     "adherencia"
+    ]
+   }
+  ],
+  "resistencias": [],
+  "objetivos": {
+   "texto": "Los objetivos farmacoterapéuticos se acuerdan en consenso con el paciente y su cuidador en la Fase II, y se supervisa el compromiso.",
+   "pagina": "29",
+   "ancla": "Fase II: Se enfoca en afrontar las resistencias del paciente"
+  },
+  "escalas": [],
+  "por_problema": {}
+ },
+ "respiratorio": {
+  "modelo": "respiratorio",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Patologías Respiratorias",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2023",
+   "url": "https://www.sefh.es/mapex/images/modelo-CMO-al-paciente-con-patologias-respiratorias.pdf",
+   "capitulo": "Motivación",
+   "paginas": "23-32",
+   "huella_pdf": "b5be7d42bf725a84"
+  },
+  "estructura": {
+   "nombre": "Cuatro procesos de la entrevista motivacional",
+   "pagina": "29",
+   "ancla": "En la EM podemos encontrar 4 procesos fundamentales",
+   "pasos": [
+    {
+     "fase": "Proceso 1",
+     "titulo": "Lograr una relación terapéutica",
+     "hacer": [
+      "Evitar el interrogatorio de preguntas cerradas («partido de tenis»).",
+      "Evitar el «reflejo de enderezar» (decir enseguida qué tiene que hacer) y la actitud de experto o paternalista.",
+      "Consulta privada y con tiempo."
+     ],
+     "pagina": "29-30",
+     "ancla": "reflejo de enderezar"
+    },
+    {
+     "fase": "Proceso 2",
+     "titulo": "Enfocar en objetivos",
+     "hacer": [
+      "Consensuar una agenda con los objetivos y prioridades del paciente y los del profesional."
+     ],
+     "pagina": "31",
+     "ancla": "consensuar una agenda con la persona que asistimos"
+    },
+    {
+     "fase": "Proceso 3",
+     "titulo": "Evocar la motivación y el lenguaje de cambio",
+     "hacer": [
+      "Detectar y reforzar las expresiones a favor del cambio («yo quiero…», «me gustaría…», «yo puedo…»).",
+      "La motivación viene del propio paciente: evocarla, no imponerla."
+     ],
+     "pagina": "31",
+     "ancla": "lenguaje de cambio"
+    },
+    {
+     "fase": "Proceso 4",
+     "titulo": "Generar un plan de acción",
+     "hacer": [
+      "Plan específico, medible, alcanzable, relevante y con plazo.",
+      "Técnica POP: paciente, objetivo y plan de acción, individualizado y dinámico."
+     ],
+     "pagina": "32",
+     "ancla": "Paciente-objetivo-plan de acción"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Preguntas abiertas para que exprese preocupaciones, prioridades y valores (ejemplo del documento: en lugar de «¿Cuánto alcohol toma diariamente?», preguntar «¿Cómo cree que el alcohol afecta a su salud?»).",
+    "pagina": "28",
+    "ancla": "¿Cómo cree que el alcohol afecta a su salud?"
+   },
+   {
+    "texto": "Afirmaciones que refuercen logros para fortalecer la autoconfianza (ejemplo: «Ha logrado hacer este cambio en el pasado.»).",
+    "pagina": "28",
+    "ancla": "Ha logrado hacer este cambio en el pasado."
+   },
+   {
+    "texto": "Escucha reflexiva: devolver en forma de afirmación lo que la persona siente o dice.",
+    "pagina": "28",
+    "ancla": "Escucha reflexiva"
+   },
+   {
+    "texto": "Resúmenes que recojan selectivamente las razones para cambiar.",
+    "pagina": "29",
+    "ancla": "resumiendo selectivamente las razones para cambiar"
+   },
+   {
+    "texto": "Espíritu de la entrevista: colaboración, evocación, compasión y respeto por la autonomía.",
+    "pagina": "27",
+    "ancla": "la colaboración, evocación, compasión y respeto por la autonomía"
+   }
+  ],
+  "errores": [
+   {
+    "texto": "Errores que evitar: descuidar la comunicación no verbal, no saber empezar ni terminar, improvisar, déficit o exceso de emoción, descontrol del tiempo, falta de escucha y arrogancia.",
+    "pagina": "30-31",
+    "ancla": "No saber empezar ni terminar una entrevista"
+   }
+  ],
+  "preguntas": [],
+  "resistencias": [],
+  "objetivos": {
+   "texto": "Plan consensuado, específico, medible, alcanzable, relevante y con plazo, mediante la técnica POP (paciente-objetivo-plan de acción).",
+   "pagina": "32",
+   "ancla": "específico, medible, posible de lograr, relevante y definido en el tiempo"
+  },
+  "escalas": [],
+  "por_problema": {}
+ },
+ "riesgo-cardiovascular": {
+  "modelo": "riesgo-cardiovascular",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO en el Paciente con Patologías Cardiovasculares",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2025",
+   "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-patologias-cardiovasculares.pdf",
+   "capitulo": "Motivación",
+   "paginas": "28-42",
+   "huella_pdf": "fba537eb678eaf32",
+   "desfase_pdf": 1
+  },
+  "estructura": {
+   "nombre": "Dos fases: generación de discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+   "pagina": "37",
+   "ancla": "La entrevista motivacional se divide en dos fases clave",
+   "pasos": [
+    {
+     "fase": "Fase I",
+     "titulo": "Establecer la relación",
+     "hacer": [
+      "Saludar cordialmente, llamarle por su nombre, entorno ordenado, privado y confidencial; permitir que exprese emociones."
+     ],
+     "pagina": "37",
+     "ancla": "Dirigirse al paciente por su nombre"
+    },
+    {
+     "fase": "Fase I",
+     "titulo": "Obtener datos",
+     "hacer": [
+      "Conocer creencias y expectativas del paciente sobre el problema."
+     ],
+     "pagina": "37",
+     "ancla": "es importante conocer las creencias y expectativas del paciente"
+    },
+    {
+     "fase": "Fase I",
+     "titulo": "Sintetizar, promover la autoeficacia y acordar",
+     "hacer": [
+      "Priorizar lo más urgente para esta consulta.",
+      "Recordarle cuándo ha mantenido bien su tratamiento para reforzar su autoeficacia.",
+      "Negociar un plan a corto y medio plazo y provocar el compromiso."
+     ],
+     "pagina": "37-38",
+     "ancla": "Negociar un plan de acción a corto y medio plazo"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Informar",
+     "hacer": [
+      "Usar la información como herramienta para educar y modificar conductas."
+     ],
+     "pagina": "38",
+     "ancla": "Información al paciente"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Negociar",
+     "hacer": [
+      "Conocer entorno, necesidades y creencias; ante una actitud contraria, suscitar la duda mostrando incoherencias en sus argumentos."
+     ],
+     "pagina": "38",
+     "ancla": "suscitar la duda mostrando incoherencias o contradicciones"
+    },
+    {
+     "fase": "Fase II",
+     "titulo": "Mantener los cambios",
+     "hacer": [
+      "Evitar la persuasión directa, la coacción y el control externo excesivo; respetar la libertad de elección.",
+      "Plan de acción específico, medible, alcanzable, relevante y con plazo."
+     ],
+     "pagina": "38",
+     "ancla": "evitar la persuasión directa, la coacción y el control"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Método de devolución de información (teach-back) para comprobar que ha entendido las instrucciones.",
+    "pagina": "34",
+    "ancla": "teach-back method"
+   },
+   {
+    "texto": "Balanza decisional: identificar con el paciente beneficios y barreras del cambio.",
+    "pagina": "34",
+    "ancla": "balanza decisional"
+   },
+   {
+    "texto": "Celebrar avances mínimos y mantener metas a corto plazo.",
+    "pagina": "34",
+    "ancla": "Celebración de avances mínimos"
+   },
+   {
+    "texto": "Ciclo del hábito (señal, anhelo, respuesta, recompensa) y adaptar el entorno, por ejemplo, dejar la medicación en un lugar visible.",
+    "pagina": "39",
+    "ancla": "señal, anhelo, respuesta y recompensa"
+   }
+  ],
+  "preguntas": [
+   {
+    "tema": "Creencias y atribución",
+    "ejemplos": [
+     "¿A qué lo atribuye?",
+     "¿Qué cree que puede estar causando sus síntomas?"
+    ],
+    "pagina": "37",
+    "ancla": "¿Qué cree que puede estar causando sus síntomas?",
+    "para": [
+     "efectos_adversos",
+     "control",
+     "adherencia"
+    ]
+   },
+   {
+    "tema": "Motivación intrínseca",
+    "ejemplos": [
+     "¿Cómo te imaginas tu vida si tu presión arterial estuviera controlada?"
+    ],
+    "pagina": "33",
+    "ancla": "¿Cómo te imaginas tu vida si tu presión",
+    "para": [
+     "control",
+     "adherencia"
+    ]
+   }
+  ],
+  "resistencias": [
+   {
+    "texto": "Suscitar la duda mostrando incoherencias o contradicciones en sus argumentos, sin coacción.",
+    "pagina": "38",
+    "ancla": "suscitar la duda mostrando incoherencias o contradicciones"
+   }
+  ],
+  "objetivos": {
+   "texto": "Plan de acción específico, medible, alcanzable, relevante y definido en el tiempo, que crea un doble vínculo con el paciente y con el equipo.",
+   "pagina": "38",
+   "ancla": "específico, medible, alcanzable, relevante y definido en el tiempo"
+  },
+  "escalas": [
+   {
+    "nombre": "PAM",
+    "uso": "Capacidad y disposición para un papel activo en su atención.",
+    "pagina": "39",
+    "ancla": "Patient Activation Measure (PAM)"
+   },
+   {
+    "nombre": "SEAMS",
+    "uso": "Autoeficacia en el uso de la medicación.",
+    "pagina": "39",
+    "ancla": "Self-Efficacy for Appropriate Medication Use Scale (SEAMS)"
+   },
+   {
+    "nombre": "SCHFI, B-IPQ, CADE-QSV",
+    "uso": "Autocuidado en insuficiencia cardiaca, percepción de la enfermedad y conocimiento en enfermedad coronaria.",
+    "pagina": "39",
+    "ancla": "Self-Care of Heart Failure Index (SCHFI)"
+   }
+  ],
+  "por_problema": {
+   "adherencia": [
+    {
+     "texto": "Barreras cognitivas: lenguaje claro, sin tecnicismos; preguntas abiertas sobre sus razones para mejorar su salud.",
+     "pagina": "33",
+     "ancla": "Potenciar la capacidad del paciente utilizando un lenguaje claro"
+    },
+    {
+     "texto": "Barreras conductuales: balanza decisional y celebrar avances mínimos.",
+     "pagina": "34",
+     "ancla": "Resistencia al cambio por"
+    }
+   ],
+   "control": [
+    {
+     "texto": "Barreras emocionales (miedo, ansiedad, negación): reconocer emociones sin juzgar y reconectar con sus valores y metas; valorar visitas más frecuentes.",
+     "pagina": "33",
+     "ancla": "Reconocer los sentimientos y emociones del paciente, sin juzgar"
+    }
+   ]
+  }
+ },
+ "vhb-vhd": {
+  "modelo": "vhb-vhd",
+  "documento": {
+   "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con hepatitis B crónica y/o hepatitis delta",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2026",
+   "url": "https://www.sefh.es/mapex/images/CMO-VHB-VHD.pdf",
+   "capitulo": "Motivación",
+   "paginas": "23-33",
+   "huella_pdf": "6891f1029bee0592",
+   "desfase_pdf": 0
+  },
+  "estructura": {
+   "nombre": "Cuatro fases de la entrevista motivacional: vincular, enfocar, evocar y planificar (Tabla 11)",
+   "pagina": "28",
+   "ancla": "Fases de la entrevista motivacional y estrategias clave en VHB/VHD",
+   "pasos": [
+    {
+     "fase": "Fase 1",
+     "titulo": "Vincular",
+     "hacer": [
+      "Escucha activa, empatía y preguntas abiertas; espacio seguro para expresar miedos sobre la progresión, el estigma o la carga de la inyección."
+     ],
+     "pagina": "28",
+     "ancla": "Crear un espacio seguro"
+    },
+    {
+     "fase": "Fase 2",
+     "titulo": "Enfocar",
+     "hacer": [
+      "Identificar el área de cambio prioritaria: adherencia al análogo, autoadministración o estigma percibido."
+     ],
+     "pagina": "28",
+     "ancla": "2. Enfocar"
+    },
+    {
+     "fase": "Fase 3",
+     "titulo": "Evocar",
+     "hacer": [
+      "Desarrollar la discrepancia y explorar sus razones para el cambio con escucha reflexiva."
+     ],
+     "pagina": "28",
+     "ancla": "3. Evocar"
+    },
+    {
+     "fase": "Fase 4",
+     "titulo": "Planificar",
+     "hacer": [
+      "Objetivos SMART, estrategias de autocontrol y refuerzo positivo; plan realista de adherencia."
+     ],
+     "pagina": "28",
+     "ancla": "4. Planificar"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Principios: expresar empatía, desarrollar la discrepancia, evitar discusiones, dar un giro a la resistencia y reforzar la autoeficacia.",
+    "pagina": "27",
+    "ancla": "Dar un giro a la resistencia"
+   }
+  ],
+  "estadios": [
+   {
+    "estadio": "Precontemplación",
+    "abordaje": "Informar de los riesgos sin confrontación.",
+    "pagina": "29",
+    "ancla": "Precontemplación"
+   },
+   {
+    "estadio": "Contemplación",
+    "abordaje": "Explorar la ambivalencia, desarrollar la discrepancia, validar sentimientos.",
+    "pagina": "29",
+    "ancla": "Contemplación"
+   },
+   {
+    "estadio": "Preparación",
+    "abordaje": "Ayudar a fijar objetivos SMART y un plan concreto.",
+    "pagina": "29",
+    "ancla": "Ayudar a establecer"
+   },
+   {
+    "estadio": "Acción",
+    "abordaje": "Reforzar el progreso, apoyar la resolución de problemas y celebrar logros.",
+    "pagina": "29",
+    "ancla": "Reforzar el progreso"
+   }
+  ],
+  "preguntas": [],
+  "resistencias": [
+   {
+    "texto": "La resistencia al tratamiento indefinido o a la autoadministración es ambivalencia: explorarla sin confrontación y orientar hacia soluciones.",
+    "pagina": "27",
+    "ancla": "no es oposición sino ambivalencia"
+   }
+  ],
+  "objetivos": {
+   "texto": "Objetivos SMART: específicos, medibles, alcanzables, relevantes y temporalizados.",
+   "pagina": "28",
+   "ancla": "Objetivos SMART: Específicos, Medibles, Alcanzables, Relevantes, Temporalizados"
+  },
+  "escalas": [
+   {
+    "nombre": "BMQ",
+    "uso": "Creencias sobre necesidad y preocupaciones del tratamiento; detecta ambivalencia.",
+    "pagina": "32",
+    "ancla": "detecta ambivalencia"
+   },
+   {
+    "nombre": "HADS / PHQ-9",
+    "uso": "Cribado de ansiedad y depresión (antes y durante Peg-IFN).",
+    "pagina": "32",
+    "ancla": "Primera línea de cribado"
+   },
+   {
+    "nombre": "PAM-13",
+    "uso": "Activación del paciente; determina la intensidad de la intervención motivacional.",
+    "pagina": "32",
+    "ancla": "determina la intensidad"
+   },
+   {
+    "nombre": "SECD-6, MMAS-8, IEXPAC",
+    "uso": "Autoeficacia, adherencia y experiencia del paciente crónico.",
+    "pagina": "32",
+    "ancla": "Autoeficacia en"
+   }
+  ],
+  "por_problema": {
+   "adherencia": [
+    {
+     "texto": "Olvidos: recordatorios digitales, simplificar el régimen y organizar la medicación por administraciones.",
+     "pagina": "26",
+     "ancla": "Recordatorios digitales"
+    },
+    {
+     "texto": "Fatiga del tratamiento: asesoramiento psicológico, técnicas de afrontamiento, revisar el objetivo terapéutico.",
+     "pagina": "26",
+     "ancla": "Asesoramiento"
+    }
+   ],
+   "efectos_adversos": [
+    {
+     "texto": "Miedo a efectos adversos o a la inyección: entrevista motivacional para resolver la ambivalencia, información sobre el perfil real de efectos adversos y refuerzo de la técnica.",
+     "pagina": "26",
+     "ancla": "EM para resolver"
+    }
+   ],
+   "control": [
+    {
+     "texto": "Negación o no percibir el beneficio («me siento bien»): desarrollar discrepancias y educar sobre la historia natural y el riesgo silente.",
+     "pagina": "26",
+     "ancla": "EM para desarrollar"
+    }
+   ]
+  }
+ },
+ "vih": {
+  "modelo": "vih",
+  "documento": {
+   "titulo": "Adaptación del modelo de Atención Farmacéutica CMO al paciente con infección por VIH",
+   "editor": "SEFH (proyecto MAPEX)",
+   "anio": "2023",
+   "url": "https://www.sefh.es/mapex/images/adaptacion-cmo-paciente-vih-octubre-2023.pdf",
+   "capitulo": "4. Motivación (entrevista motivacional)",
+   "paginas": "24-34",
+   "huella_pdf": "e23547c0aed60cb2"
+  },
+  "estructura": {
+   "nombre": "Dos fases: generar discrepancias internas, y afrontar las resistencias y mantener las fortalezas",
+   "pagina": "26",
+   "ancla": "generar dis- crepancias internas",
+   "pasos": [
+    {
+     "fase": "Fase 1",
+     "titulo": "Establecer la relación",
+     "hacer": [
+      "Crear un clima de confianza que permita llegar a un acuerdo sobre las metas."
+     ],
+     "pagina": "27",
+     "ancla": "Establecer la relación farmacéutico-paciente"
+    },
+    {
+     "fase": "Fase 1",
+     "titulo": "Obtener datos",
+     "hacer": [
+      "Explorar creencias y expectativas del paciente y sus emociones (miedo, ansiedad), atendiendo a la comunicación no verbal.",
+      "No mezclar la exploración con recomendaciones: estas van al final."
+     ],
+     "pagina": "27",
+     "ancla": "no mezclar la exploración de los problemas con recomendaciones"
+    },
+    {
+     "fase": "Fase 1",
+     "titulo": "Sintetizar y priorizar",
+     "hacer": [
+      "Priorizar los problemas: abordar hoy lo más urgente y dejar el resto para las siguientes consultas."
+     ],
+     "pagina": "27",
+     "ancla": "priorizar y abordar lo más urgente"
+    },
+    {
+     "fase": "Fase 1",
+     "titulo": "Promover la autoeficacia",
+     "hacer": [
+      "Poner de relieve las situaciones de autocontrol del paciente.",
+      "No terminar sin que el paciente formule alguna afirmación automotivadora."
+     ],
+     "pagina": "27-28",
+     "ancla": "sin que el paciente plantee ninguna afirmación auto motivadora"
+    },
+    {
+     "fase": "Fase 2",
+     "titulo": "Enunciar los problemas e informar del plan",
+     "hacer": [
+      "Seleccionar y ordenar antes la información clave; darla con el menor impacto emocional posible."
+     ],
+     "pagina": "28-29",
+     "ancla": "la información debe ser previamente seleccionada y ordenada"
+    },
+    {
+     "fase": "Fase 2",
+     "titulo": "Negociar",
+     "hacer": [
+      "Negociar desde el respeto a sus creencias y valores, teniendo en cuenta su entorno y necesidades."
+     ],
+     "pagina": "28-29",
+     "ancla": "negociar con el paciente desde el respeto por sus creencias"
+    },
+    {
+     "fase": "Fase 2",
+     "titulo": "Mantener los cambios",
+     "hacer": [
+      "Persuadir, convencer y motivar respetando que la decisión es del paciente."
+     ],
+     "pagina": "28-29",
+     "ancla": "Lograr mantener los cambios"
+    }
+   ]
+  },
+  "tecnicas": [
+   {
+    "texto": "Cuidar la comunicación verbal y no verbal; saber empezar y terminar; planificar; actitud asertiva; controlar el tiempo; escucha activa; empatía (Tabla 4).",
+    "pagina": "26",
+    "ancla": "Tener una actitud asertiva"
+   }
+  ],
+  "preguntas": [
+   {
+    "tema": "Problemas derivados de la farmacoterapia",
+    "ejemplos": [
+     "¿A qué lo atribuye?",
+     "¿A qué cree usted que puede deberse?"
+    ],
+    "pagina": "28",
+    "ancla": "¿A qué cree usted que puede deberse?",
+    "para": [
+     "adherencia",
+     "efectos_adversos",
+     "control"
+    ]
+   },
+   {
+    "tema": "Emociones",
+    "ejemplos": [
+     "Lo veo preocupado.",
+     "¿Qué es lo que más le preocupa de todo este problema?"
+    ],
+    "pagina": "28",
+    "ancla": "¿Qué es lo que más le preocupa de todo este problema?",
+    "para": [
+     "efectos_adversos",
+     "control",
+     "adherencia"
+    ]
+   },
+   {
+    "tema": "Situación actual y objetivos",
+    "ejemplos": [
+     "¿Qué cree que ocurriría si el objetivo X no se consiguiera en el período de tiempo hasta nuestra próxima consulta?",
+     "¿Qué tal si nos planteamos juntos objetivos a corto plazo con respecto a su medicación?"
+    ],
+    "pagina": "28",
+    "ancla": "¿Qué tal si nos planteamos juntos objetivos a corto plazo",
+    "para": [
+     "adherencia",
+     "control",
+     "reestratificacion",
+     "mantenimiento"
+    ]
+   }
+  ],
+  "resistencias": [
+   {
+    "texto": "Devolución simple: reconocer el desacuerdo.",
+    "pagina": "28",
+    "ancla": "reconocer el desacuerdo"
+   },
+   {
+    "texto": "Devolución amplificada: devolver lo que plantea el paciente, sin sarcasmos ni condicionantes.",
+    "pagina": "28",
+    "ancla": "sin sarcas- mos ni condicionantes"
+   },
+   {
+    "texto": "Reorientar el problema.",
+    "pagina": "28",
+    "ancla": "la reorientación propia del problema"
+   }
+  ],
+  "objetivos": {
+   "texto": "Los objetivos deben ser claros, realistas y alcanzables, y alinear el corto plazo con el medio y largo plazo.",
+   "pagina": "26",
+   "ancla": "claros, realistas y alcanzables"
+  },
+  "escalas": [
+   {
+    "nombre": "PAM / PAM-13",
+    "uso": "Activación del paciente (conocimientos, habilidades y confianza para su autocuidado); existe adaptación al español para crónicos.",
+    "pagina": "25",
+    "ancla": "Patient Activation Measure (PAM)"
+   }
+  ],
+  "por_problema": {}
  }
 };

@@ -131,7 +131,7 @@ export function calculadora(e, REGLAS, BIBLIOTECA) {
     let dentro = 0, total = 0;
     for (let t = inicioReal; t <= finVentana; t += DIA) { total++; if (cubiertos.has(t)) dentro++; }
     const pdc = total ? Math.round((dentro / total) * 1000) / 1000 : null;
-    return { grupo: g, medicamentos: [...new Set(ds.map((d) => d.medicamento).filter(Boolean))], ventana: { inicio: iso(inicioReal), fin: iso(finVentana) }, dias_cubiertos: dentro, dias_ventana: total, pdc, pdc_porcentaje: pdc === null ? null : pct(pdc), por_debajo_del_umbral: pdc !== null && pdc < umbral };
+    return { grupo: g, medicamentos: [...new Set(ds.map((d) => d.medicamento).filter(Boolean))], ventana: { inicio: iso(inicioReal), fin: iso(finVentana) }, dias_cubiertos: dentro, dias_ventana: total, pdc, pdc_porcentaje: pdc === null ? null : pct(pdc), por_debajo_del_umbral: pdc !== null && pdc < umbral, ultimo_dia_cubierto: iso(siguienteLibre - DIA) };
   });
 
   const nivel = String(e.nivel);
@@ -159,11 +159,13 @@ export function calculadora(e, REGLAS, BIBLIOTECA) {
     reestratificacion: {
       herramienta: bib.herramienta, url: bib.url, ultima_fecha: fEstr, nivel,
       dias_desde_ultima: Math.round((tConsulta - fechaUTC(fEstr)) / DIA),
-      periodicidad_texto: bib.niveles[nivel].periodicidad, reestratificar_ademas: bib.reestratificar_ademas,
+      periodicidad_texto: bib.niveles[nivel].periodicidad || (bib.periodicidad_complementaria || {})[nivel] || null, reestratificar_ademas: bib.reestratificar_ademas,
       interpretacion: regla, fecha_inicio_intervalo: fechaInicioIntervalo ? iso(fechaInicioIntervalo) : null,
       fecha_limite: fechaLimite ? iso(fechaLimite) : null, estado,
     },
     cambios: { desde: fEstr, lista: cambios, modelo_pide_reestratificar: regla ? !!regla.reestratificar_si_cambio : false },
+    suministro: [...(e.dispensaciones || []), ...(e.prescripcion || [])].filter((x) => x.cima && x.cima.psum).map((x) => ({ medicamento: x.cima.nombre, consultado: x.cima.consultado }))
+      .filter((x, i, a) => a.findIndex((y) => y.medicamento === x.medicamento) === i),
   };
 }
 
@@ -180,6 +182,7 @@ export function detector(calc, lec) {
   const cambios = calc.cambios.lista;
   if (cambios.length && calc.cambios.modelo_pide_reestratificar && r.estado !== 'vencida') add({ tipo: 'accion', regla: 'reestratificacion', clase: 'reestratificacion', titulo: 'Reestratificar por cambio de tratamiento', detalle: `El modelo ${r.herramienta} recomienda reestratificar ante cambios de tratamiento.` });
   if (cambios.length) add({ tipo: 'informativa', regla: 'cambio_tratamiento', clase: 'cambio', titulo: 'Cambios de tratamiento desde la última estratificación', detalle: cambios.map((c) => `${c.tipo === 'inicio' ? 'Inicio' : 'Fin'} de ${c.medicamento} el ${c.fecha}${c.ambito ? ` (${c.ambito})` : ''}`).join('; ') + '.' });
+  for (const p of calc.suministro || []) add({ tipo: 'accion', regla: 'problema_suministro', clase: 'suministro', titulo: `Problema de suministro en CIMA: ${p.medicamento}`, detalle: `CIMA indica problemas de suministro para ${p.medicamento} (consultado el ${p.consultado}). Compruebe la disponibilidad antes de la dispensación.` });
   if (!calc.adherencia.grupos.length) add({ tipo: 'informativa', regla: 'sin_dispensaciones', clase: 'sin_datos', titulo: 'Adherencia no calculada', detalle: 'No se han introducido dispensaciones.' });
   const tE = fechaUTC(r.ultima_fecha);
   for (const s of lec.senales) {
@@ -275,4 +278,95 @@ export function entradaDesdeEjemplo(ej) {
     prescripcion: leerCSV(ej.prescripcion).map((r) => ({ medicamento: r.medicamento, pauta: r.pauta, fecha_inicio: r.fecha_inicio, fecha_fin: r.fecha_fin, ambito: r.ambito })),
     notas: ej.notas,
   };
+}
+
+
+// ---------- Durante la consulta: guion de entrevista motivacional ----------
+/** Construye el guion a partir de la guía de la adaptación CMO publicada del modelo y de las alertas de acción. */
+export function guion(alertas, modelo, GUIAS) {
+  const g = GUIAS[modelo];
+  if (!g) return { disponible: false };
+  const clases = [...new Set(alertas.filter((a) => a.tipo === 'accion').map((a) => a.clase))];
+  if (!clases.length) clases.push('mantenimiento');
+  const NOMBRES = { adherencia: 'Adherencia', efectos_adversos: 'Efectos adversos o miedo al tratamiento', control: 'Control de la enfermedad', reestratificacion: 'Reestratificación', suministro: 'Suministro', mantenimiento: 'Paciente sin alertas: mantener lo conseguido' };
+  const usadas = new Set(); // cada bloque de preguntas aparece una sola vez, en el primer foco que lo usa
+  const focos = clases.map((c) => {
+    const preguntas = (g.preguntas || []).filter((q) => (q.para || []).includes(c) && !usadas.has(q.ancla));
+    preguntas.forEach((q) => usadas.add(q.ancla));
+    return { clase: c, nombre: NOMBRES[c] || c, preguntas, estrategias: ((g.por_problema || {})[c]) || [] };
+  }).filter((f) => f.preguntas.length || f.estrategias.length);
+  return {
+    disponible: true, documento: g.documento, estructura: g.estructura, tecnicas: g.tecnicas || [], errores: g.errores || [],
+    resistencias: g.resistencias || [], objetivos: g.objetivos || null, escalas: g.escalas || [], estadios: g.estadios || [], focos,
+  };
+}
+
+// ---------- Después de la consulta: plan hasta la próxima ----------
+const SEGUIMIENTO_ENTRE_VISITAS = /telefarmacia|teleasistencia|entre visitas|telem[áa]tic|contacto adicional|contactos intermedios/i;
+/**
+ * registro: { reestratificado: bool, nuevo_nivel, estados: [{texto, estado, comentario}], objetivos: [{objetivo, plan, plazo}], barreras, estadio }
+ */
+export function planPosterior(entrada, res, registro, { BIBLIOTECA, REGLAS }) {
+  const nivelFinal = registro.reestratificado && ['1', '2', '3'].includes(String(registro.nuevo_nivel)) ? String(registro.nuevo_nivel) : String(entrada.nivel);
+  const base = registro.reestratificado ? entrada.fecha_consulta : entrada.fecha_estratificacion;
+  const regla = ((REGLAS.periodicidad[entrada.modelo] || {})[nivelFinal]) || null;
+  const bib = BIBLIOTECA[entrada.modelo];
+  const proxima = regla && regla.plazo_max_meses ? iso(sumarMeses(base, regla.plazo_max_meses)) : null;
+  const periodicidad = bib.niveles[nivelFinal].periodicidad || (bib.periodicidad_complementaria || {})[nivelFinal] || null;
+  const cobertura = res.calculo.adherencia.grupos.map((g) => ({ grupo: g.grupo, ultimo_dia_cubierto: g.ultimo_dia_cubierto }));
+  const entreVisitas = bib.niveles[nivelFinal].intervenciones.filter((i) => SEGUIMIENTO_ENTRE_VISITAS.test(i.texto));
+  const estados = registro.estados || [];
+  return {
+    nivel_final: nivelFinal, cambio_de_nivel: nivelFinal !== String(entrada.nivel),
+    proxima_reestratificacion: proxima, base_calculo: base, periodicidad_texto: periodicidad,
+    cobertura,
+    seguimiento_entre_visitas: entreVisitas,
+    pendientes: estados.filter((x) => x.estado === 'no_realizado' || !x.estado),
+    realizados: estados.filter((x) => x.estado === 'realizado'),
+    objetivos: (registro.objetivos || []).filter((o) => o.objetivo && o.objetivo.trim()),
+  };
+}
+
+// ---------- Archivo de seguimiento (sin servidor) ----------
+export const FORMATO_SEGUIMIENTO = 'preparador-consulta-cmo/seguimiento@1';
+export function crearSeguimiento(entrada, plan, registro) {
+  return {
+    formato: FORMATO_SEGUIMIENTO, version_herramienta: VERSION, guardado: entrada.fecha_consulta,
+    aviso: 'Archivo de trabajo sin datos identificativos. Guárdelo según la política de su centro.',
+    entrada: { ...entrada, notas: entrada.notas || '' },
+    nivel_final: plan.nivel_final, fecha_estratificacion_final: plan.cambio_de_nivel || registro.reestratificado ? entrada.fecha_consulta : entrada.fecha_estratificacion,
+    registro: { estadio: registro.estadio || '', barreras: registro.barreras || '', estados: registro.estados || [], objetivos: plan.objetivos },
+    proxima_reestratificacion: plan.proxima_reestratificacion,
+  };
+}
+export function leerSeguimiento(texto) {
+  let o;
+  try { o = JSON.parse(texto); } catch { return { error: 'El archivo no es un seguimiento válido.' }; }
+  if (!o || o.formato !== FORMATO_SEGUIMIENTO) return { error: 'El archivo no es un seguimiento del Preparador de consulta CMO.' };
+  return { seguimiento: o };
+}
+/** Prepara la entrada de la nueva consulta a partir del seguimiento anterior. */
+export function entradaDesdeSeguimiento(seg, fechaConsultaNueva) {
+  const e = seg.entrada;
+  return {
+    ...e, nivel: String(seg.nivel_final), fecha_estratificacion: seg.fecha_estratificacion_final, fecha_consulta: fechaConsultaNueva,
+    notas: e.notas || '',
+  };
+}
+
+// ---------- CIMA: unidades por envase a partir del nombre de la presentación ----------
+/** «BIKTARVY …, 30 comprimidos» → 30. Devuelve null si no se puede leer con seguridad. */
+export function unidadesPresentacion(nombre) {
+  const t = String(nombre || '');
+  const i = t.lastIndexOf(',');
+  if (i < 0) return null;
+  const m = /^\s*(\d+)\s+([a-záéíóúñ]+(?:\s+[a-záéíóúñ]+)?)/i.exec(t.slice(i + 1));
+  if (!m) return null;
+  const n = Number(m[1]);
+  return n > 0 ? { unidades: n, forma: m[2].trim() } : null;
+}
+export function diasSuministro(envases, unidadesEnvase, unidadesDia) {
+  const e = Number(envases), u = Number(unidadesEnvase), d = Number(String(unidadesDia).replace(',', '.'));
+  if (!(e > 0) || !(u > 0) || !(d > 0)) return null;
+  return Math.floor((e * u) / d);
 }

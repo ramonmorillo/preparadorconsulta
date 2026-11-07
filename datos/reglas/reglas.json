@@ -1,56 +1,189 @@
 {
   "_aviso": "Reglas del preparador de consulta. Los textos de periodicidad son literales de cada herramienta CMO del hub (ver datos/biblioteca). Los campos 'plazo_*_meses' y 'reestratificar_si_cambio' son una INTERPRETACIÓN de esos textos para poder calcular fechas: PENDIENTE DE VALIDAR por Ramón Morillo Verdugo.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "adherencia": {
     "indicador": "PDC (proporción de días cubiertos)",
-    "umbral": 0.90,
+    "umbral": 0.9,
     "regla": "Alerta si el PDC de algún grupo terapéutico es inferior al umbral",
     "ventana_dias": 180,
     "_pendiente": "Ventana de 180 días antes de la fecha de consulta: PENDIENTE DE VALIDAR"
   },
   "periodicidad": {
     "respiratorio": {
-      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+      "1": {
+        "plazo_min_meses": 3,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      }
     },
     "pediatria": {
-      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+      "1": {
+        "plazo_min_meses": 3,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": false
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      }
     },
     "riesgo-cardiovascular": {
-      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+      "1": {
+        "plazo_min_meses": 3,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      }
     },
     "vih": {
-      "1": { "plazo_min_meses": null, "plazo_max_meses": 3, "reestratificar_si_cambio": false },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 3,
+        "reestratificar_si_cambio": false
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": false
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": false
+      },
+      "_fuente": "Adaptación CMO VIH, p. 16: P1 cada 3 meses, P2 cada 6 meses, P3 cada 12 meses."
     },
     "vhb-vhd": {
-      "1": { "plazo_min_meses": null, "plazo_max_meses": 3, "reestratificar_si_cambio": false },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 3,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": false
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": false
+      },
+      "_fuente": "Adaptación CMO VHB/VHD, Tabla 3, p. 17: N1 cada 3 meses o antes si cambio clínico, evento adverso grave o modificación del régimen; N2 cada 6 meses y después anual; N3 anual."
     },
     "migrana": {
-      "1": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true }
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      }
     },
     "coagulopatias": {
-      "1": { "plazo_min_meses": null, "plazo_max_meses": 1, "reestratificar_si_cambio": false },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 1,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 6,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "_fuente": "Adaptación CMO Coagulopatías congénitas, pp. 18-19: al inicio, ante cambio de tratamiento, cambio clínico o acontecimientos adversos; P1 mensual, P2 cada 6 meses, P3 cada 12 meses."
     },
     "oncohematologia": {
       "_nota": "Periodicidad por ciclos de tratamiento: no calculable con fechas. Se muestra el texto literal.",
-      "1": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true },
-      "2": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true },
-      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": null,
+        "reestratificar_si_cambio": true
+      }
     },
-    "esclerosis-multiple": { "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)." },
-    "inmunomediadas": { "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)." }
+    "esclerosis-multiple": {
+      "_fuente": "Adaptación CMO Esclerosis Múltiple, p. 18: al inicio, ante un cambio de tratamiento y cada 12 meses.",
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": true
+      }
+    },
+    "inmunomediadas": {
+      "_fuente": "Indicación del autor (07/11/2026): nivel 1 cada 3 meses, nivel 2 cada 12 meses, nivel 3 cada 18 meses. Sin adaptación CMO publicada para comprobarlo.",
+      "1": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 3,
+        "reestratificar_si_cambio": false
+      },
+      "2": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 12,
+        "reestratificar_si_cambio": false
+      },
+      "3": {
+        "plazo_min_meses": null,
+        "plazo_max_meses": 18,
+        "reestratificar_si_cambio": false
+      }
+    }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "modelo": "esclerosis-multiple",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con Esclerosis Múltiple", "editor": "SEFH (proyecto MAPEX)", "anio": "2025", "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-esclerosis-multiple.pdf", "capitulo": "Motivación", "paginas": "23-33", "huella_pdf": "ae29d3499b9aa968", "desfase_pdf": 1 },
+  "estructura": {
+    "nombre": "Siete pasos para aplicar la entrevista motivacional en la práctica diaria",
+    "pagina": "24", "ancla": "un esquema de los pasos a seguir para aplicar esta herramienta",
+    "pasos": [
+      { "fase": "Paso 1", "titulo": "Preparar la consulta", "hacer": ["Revisar historial, tratamiento, adherencia, efectos secundarios y calidad de vida percibida.", "Espacio privado, cómodo y sin distracciones."], "pagina": "24", "ancla": "Preparación de la consulta" },
+      { "fase": "Paso 2", "titulo": "Iniciar explicando el propósito", "hacer": ["Explicar que el objetivo es apoyarle en el manejo de su enfermedad y mejorar su calidad de vida."], "pagina": "24", "ancla": "establezca claramente el propósito de la entrevista" },
+      { "fase": "Paso 3", "titulo": "Explorar objetivos y valores", "hacer": ["Preguntas abiertas, escucha activa, afirmaciones y resúmenes.", "Metas a corto y largo plazo, específicas, medibles y alcanzables; celebrar pequeños logros."], "pagina": "24", "ancla": "Exploración de objetivos y valores del paciente" },
+      { "fase": "Paso 4", "titulo": "Identificar barreras y estrategias", "hacer": ["Explorar barreras (miedo a efectos secundarios, falta de tiempo) y diseñar estrategias junto al paciente."], "pagina": "25", "ancla": "Identificación de barreras y estrategias de superación" },
+      { "fase": "Paso 5", "titulo": "Promover autocuidado y adherencia", "hacer": ["Educar en adherencia y hábitos (dieta, tabaco, ejercicio, estrés); ofrecer recursos prácticos (folletos, aplicaciones de seguimiento)."], "pagina": "25", "ancla": "Promoción del autocuidado y adherencia al tratamiento" },
+      { "fase": "Paso 6", "titulo": "Reforzar y empoderar", "hacer": ["Reconocer y elogiar los logros (por ejemplo, haber mantenido la adherencia el último mes) para promover la autoeficacia."], "pagina": "25", "ancla": "Fortalecimiento positivo y empoderamiento" },
+      { "fase": "Paso 7", "titulo": "Resumir y cerrar", "hacer": ["Resumir puntos clave y metas acordadas; programar la cita de seguimiento; agradecer."], "pagina": "25", "ancla": "es esencial resumir los puntos clave discutidos y las metas acordadas" }
+    ]
+  },
+  "tecnicas": [],
+  "preguntas": [
+    { "tema": "Objetivos y valores", "ejemplos": ["¿Qué es lo más importante para usted en este momento?", "¿Cuáles son sus principales preocupaciones en relación con su enfermedad?"], "pagina": "24", "ancla": "¿Qué es lo más importante para usted en este momento?", "para": ["control", "reestratificacion", "mantenimiento", "adherencia"] },
+    { "tema": "Barreras", "ejemplos": ["¿Qué dificultades ha encontrado al manejar su enfermedad?"], "pagina": "25", "ancla": "¿Qué dificultades ha encontrado al manejar su enfermedad?", "para": ["adherencia", "efectos_adversos", "control"] }
+  ],
+  "resistencias": [],
+  "objetivos": { "texto": "Listado de objetivos farmacoterapéuticos, de hábitos y de competencias, dinámico y priorizado (activos o inactivos), alineado con el equipo y registrado en la historia clínica.", "pagina": "27", "ancla": "objetivos se prioricen y clasifiquen como activos o inactivos" },
+  "escalas": [],
+  "por_problema": {}
+}

@@ -1,0 +1,43 @@
+{
+  "modelo": "coagulopatias",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con coagulopatías congénitas", "editor": "SEFH (proyecto MAPEX)", "anio": "2026", "url": "https://www.sefh.es/mapex/images/Adaptacion-Modelo-CMO-Coagulopatias-Congenitas.pdf", "capitulo": "Motivación", "paginas": "27-42", "huella_pdf": "78440b8f8046f322", "desfase_pdf": 1 },
+  "estructura": {
+    "nombre": "Cuatro procesos superpuestos: vincular, enfocar, evocar y planificar (Tabla 10)",
+    "pagina": "34-36", "ancla": "cuatro procesos básicos superpuestos",
+    "pasos": [
+      { "fase": "Proceso 1", "titulo": "Vincular", "hacer": ["Escucha activa, empatía, afirmaciones y preguntas abiertas; espacio seguro para expresar miedos sobre sangrados o fatiga del tratamiento."], "pagina": "36", "ancla": "Escucha activa, actitud" },
+      { "fase": "Proceso 2", "titulo": "Enfocar", "hacer": ["Definir qué le preocupa más: adherencia a la profilaxis, miedo a la administración o integración del tratamiento en su vida diaria y social."], "pagina": "35-36", "ancla": "identificando el área prioritaria que el paciente desee abordar" },
+      { "fase": "Proceso 3", "titulo": "Evocar", "hacer": ["Que el paciente explicite sus propias razones con preguntas abiertas, escucha reflexiva y afirmaciones."], "pagina": "35", "ancla": "explicitar sus propias motivaciones intrínsecas" },
+      { "fase": "Proceso 4", "titulo": "Planificar", "hacer": ["Plan de acción concreto y negociado con objetivos SMART y estrategias de autocontrol (plan de infusión realista, cómo recordar dosis, actividad física segura)."], "pagina": "35-36", "ancla": "plan de acción concreto y negociado" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Principios: expresar empatía, desarrollar la discrepancia, evitar discusiones, dar un giro a la resistencia y reforzar la autoeficacia.", "pagina": "33-34", "ancla": "Dar un giro a la resistencia" }
+  ],
+  "estadios": [
+    { "estadio": "Precontemplación", "abordaje": "Informar sobre riesgos y beneficios.", "pagina": "36", "ancla": "proporcionar información sobre los riesgos y beneficios" },
+    { "estadio": "Contemplación", "abordaje": "Facilitar la reflexión y que verbalice dudas y motivaciones.", "pagina": "37", "ancla": "favorecer la verbalización de sus dudas y motivaciones" },
+    { "estadio": "Preparación", "abordaje": "Desarrollar planes de autocontrol.", "pagina": "37", "ancla": "desarrollar planes de autocontrol" },
+    { "estadio": "Acción", "abordaje": "Acompañar el inicio del cambio.", "pagina": "37", "ancla": "acompañar el inicio del cambio" }
+  ],
+  "preguntas": [],
+  "resistencias": [
+    { "texto": "La resistencia es señal de ambivalencia: explorarla y reformularla sin confrontación ni imposición, orientando hacia soluciones.", "pagina": "34", "ancla": "una señal de ambivalencia" }
+  ],
+  "objetivos": { "texto": "Objetivos SMART (específicos, medibles, alcanzables, relevantes y temporalizados) dentro de un plan negociado.", "pagina": "35", "ancla": "Alcanzables, Relevantes, Temporalizados" },
+  "escalas": [],
+  "por_problema": {
+    "adherencia": [
+      { "texto": "Olvidos: recordatorios digitales (aplicaciones, alarmas), simplificar el régimen y organizar la medicación por administraciones (Tabla 9).", "pagina": "32", "ancla": "Implementación de" },
+      { "texto": "Fatiga del tratamiento: asesoramiento psicológico, conservación de energía, hábitos saludables y simplificar el régimen cuando sea posible.", "pagina": "32", "ancla": "técnicas de conservación de" },
+      { "texto": "Interferencia con el estilo de vida (adolescencia y adulto joven): fomentar la autonomía, personalizar el tratamiento e implicarle en las decisiones.", "pagina": "33", "ancla": "Fomento de la autonomía" }
+    ],
+    "efectos_adversos": [
+      { "texto": "Miedo a sangrados o trombosis: apoyo psicosocial, terapia cognitivo-conductual, exposición gradual, educar a cuidadores sobre autonomía y grupos de apoyo.", "pagina": "32", "ancla": "técnicas de exposición" }
+    ],
+    "control": [
+      { "texto": "Negación de la enfermedad: entrevista motivacional para desarrollar discrepancias y educación personalizada sobre riesgos y beneficios.", "pagina": "32", "ancla": "Entrevista motivacional para" },
+      { "texto": "Impacto psicosocial (ansiedad, depresión, baja autoestima): derivar a psicología o trabajo social y fomentar grupos de apoyo.", "pagina": "33", "ancla": "Derivación a profesionales de" }
+    ]
+  }
+}

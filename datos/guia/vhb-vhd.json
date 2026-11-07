@@ -1,0 +1,156 @@
+{
+  "modelo": "vhb-vhd",
+  "documento": {
+    "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al paciente con hepatitis B crónica y/o hepatitis delta",
+    "editor": "SEFH (proyecto MAPEX)",
+    "anio": "2026",
+    "url": "https://www.sefh.es/mapex/images/CMO-VHB-VHD.pdf",
+    "capitulo": "Motivación",
+    "paginas": "23-33",
+    "huella_pdf": "6891f1029bee0592",
+    "desfase_pdf": 0
+  },
+  "estructura": {
+    "nombre": "Cuatro fases de la entrevista motivacional: vincular, enfocar, evocar y planificar (Tabla 11)",
+    "pagina": "28",
+    "ancla": "Fases de la entrevista motivacional y estrategias clave en VHB/VHD",
+    "pasos": [
+      {
+        "fase": "Fase 1",
+        "titulo": "Vincular",
+        "hacer": [
+          "Escucha activa, empatía y preguntas abiertas; espacio seguro para expresar miedos sobre la progresión, el estigma o la carga de la inyección."
+        ],
+        "pagina": "28",
+        "ancla": "Crear un espacio seguro"
+      },
+      {
+        "fase": "Fase 2",
+        "titulo": "Enfocar",
+        "hacer": [
+          "Identificar el área de cambio prioritaria: adherencia al análogo, autoadministración o estigma percibido."
+        ],
+        "pagina": "28",
+        "ancla": "2. Enfocar"
+      },
+      {
+        "fase": "Fase 3",
+        "titulo": "Evocar",
+        "hacer": [
+          "Desarrollar la discrepancia y explorar sus razones para el cambio con escucha reflexiva."
+        ],
+        "pagina": "28",
+        "ancla": "3. Evocar"
+      },
+      {
+        "fase": "Fase 4",
+        "titulo": "Planificar",
+        "hacer": [
+          "Objetivos SMART, estrategias de autocontrol y refuerzo positivo; plan realista de adherencia."
+        ],
+        "pagina": "28",
+        "ancla": "4. Planificar"
+      }
+    ]
+  },
+  "tecnicas": [
+    {
+      "texto": "Principios: expresar empatía, desarrollar la discrepancia, evitar discusiones, dar un giro a la resistencia y reforzar la autoeficacia.",
+      "pagina": "27",
+      "ancla": "Dar un giro a la resistencia"
+    }
+  ],
+  "estadios": [
+    {
+      "estadio": "Precontemplación",
+      "abordaje": "Informar de los riesgos sin confrontación.",
+      "pagina": "29",
+      "ancla": "Precontemplación"
+    },
+    {
+      "estadio": "Contemplación",
+      "abordaje": "Explorar la ambivalencia, desarrollar la discrepancia, validar sentimientos.",
+      "pagina": "29",
+      "ancla": "Contemplación"
+    },
+    {
+      "estadio": "Preparación",
+      "abordaje": "Ayudar a fijar objetivos SMART y un plan concreto.",
+      "pagina": "29",
+      "ancla": "Ayudar a establecer"
+    },
+    {
+      "estadio": "Acción",
+      "abordaje": "Reforzar el progreso, apoyar la resolución de problemas y celebrar logros.",
+      "pagina": "29",
+      "ancla": "Reforzar el progreso"
+    }
+  ],
+  "preguntas": [],
+  "resistencias": [
+    {
+      "texto": "La resistencia al tratamiento indefinido o a la autoadministración es ambivalencia: explorarla sin confrontación y orientar hacia soluciones.",
+      "pagina": "27",
+      "ancla": "no es oposición sino ambivalencia"
+    }
+  ],
+  "objetivos": {
+    "texto": "Objetivos SMART: específicos, medibles, alcanzables, relevantes y temporalizados.",
+    "pagina": "28",
+    "ancla": "Objetivos SMART: Específicos, Medibles, Alcanzables, Relevantes, Temporalizados"
+  },
+  "escalas": [
+    {
+      "nombre": "BMQ",
+      "uso": "Creencias sobre necesidad y preocupaciones del tratamiento; detecta ambivalencia.",
+      "pagina": "32",
+      "ancla": "detecta ambivalencia"
+    },
+    {
+      "nombre": "HADS / PHQ-9",
+      "uso": "Cribado de ansiedad y depresión (antes y durante Peg-IFN).",
+      "pagina": "32",
+      "ancla": "Primera línea de cribado"
+    },
+    {
+      "nombre": "PAM-13",
+      "uso": "Activación del paciente; determina la intensidad de la intervención motivacional.",
+      "pagina": "32",
+      "ancla": "determina la intensidad"
+    },
+    {
+      "nombre": "SECD-6, MMAS-8, IEXPAC",
+      "uso": "Autoeficacia, adherencia y experiencia del paciente crónico.",
+      "pagina": "32",
+      "ancla": "Autoeficacia en"
+    }
+  ],
+  "por_problema": {
+    "adherencia": [
+      {
+        "texto": "Olvidos: recordatorios digitales, simplificar el régimen y organizar la medicación por administraciones.",
+        "pagina": "26",
+        "ancla": "Recordatorios digitales"
+      },
+      {
+        "texto": "Fatiga del tratamiento: asesoramiento psicológico, técnicas de afrontamiento, revisar el objetivo terapéutico.",
+        "pagina": "26",
+        "ancla": "Asesoramiento"
+      }
+    ],
+    "efectos_adversos": [
+      {
+        "texto": "Miedo a efectos adversos o a la inyección: entrevista motivacional para resolver la ambivalencia, información sobre el perfil real de efectos adversos y refuerzo de la técnica.",
+        "pagina": "26",
+        "ancla": "EM para resolver"
+      }
+    ],
+    "control": [
+      {
+        "texto": "Negación o no percibir el beneficio («me siento bien»): desarrollar discrepancias y educar sobre la historia natural y el riesgo silente.",
+        "pagina": "26",
+        "ancla": "EM para desarrollar"
+      }
+    ]
+  }
+}

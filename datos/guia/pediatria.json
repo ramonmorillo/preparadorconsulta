@@ -1,0 +1,26 @@
+{
+  "modelo": "pediatria",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente Pediátrico", "editor": "SEFH (proyecto MAPEX)", "anio": "2025", "url": "https://www.sefh.es/mapex/documentos/adaptacion-cmo-pacientes-pediatricos.pdf", "capitulo": "Motivación", "paginas": "22-37", "huella_pdf": "c0c829fca1bf3408", "desfase_pdf": 1 },
+  "estructura": {
+    "nombre": "Dos fases adaptadas al niño, al adolescente y a su cuidador",
+    "pagina": "29", "ancla": "La entrevista motivacional se divide en dos fases clave",
+    "pasos": [
+      { "fase": "Fase I", "titulo": "Establecer la relación", "hacer": ["Empezar por un tema de interés para el menor (aficiones, curso escolar) y dirigirse primero a él.", "Presentarse por el nombre y explicar la propia función; cuidar el tono, sin habla infantilizada; sillas a la misma altura."], "pagina": "29-30", "ancla": "iniciar la conversación con un tema diferente del motivo de la consulta" },
+      { "fase": "Fase I", "titulo": "Obtener datos", "hacer": ["Pedir permiso al menor para preguntar; lenguaje sin términos médicos, despacio y con pausas; no aumentar su ansiedad («no es un examen»).", "Explorar creencias y expectativas, sin dar todavía recomendaciones."], "pagina": "31", "ancla": "Dirigirse primero al niño y pedirle permiso" },
+      { "fase": "Fase I", "titulo": "Dirigir la entrevista", "hacer": ["Devolver la palabra al menor cuando responde el cuidador («¿tú qué opinas?»).", "Ir de preguntas abiertas a cerradas a medida que avanza la entrevista.", "Equilibrar paciente y cuidador: invitar al cuidador a exponer sus dudas al inicio."], "pagina": "32-33", "ancla": "devolvamos la palabra" },
+      { "fase": "Fase II", "titulo": "Afrontar resistencias y mantener fortalezas", "hacer": ["Acordar un plan conjunto con el niño y su cuidador y supervisar el compromiso."], "pagina": "29", "ancla": "Fase II: Se enfoca en afrontar las resistencias del paciente" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Preguntas abiertas al inicio para ganar confianza (ejemplo del documento: «¿Juegas con tus compañeros en el recreo?») y cerradas al final para datos de adherencia.", "pagina": "32", "ancla": "¿Juegas con tus compañeros en el recreo?" },
+    { "texto": "Escala de caritas o de 1 a 5 para que el niño exprese si ha entendido, si ha podido contar lo que le preocupa o si traga bien los comprimidos (Tabla 13).", "pagina": "33", "ancla": "¿Has entendido lo que te han" }
+  ],
+  "preguntas": [
+    { "tema": "Entrar en el tema con permiso", "ejemplos": ["Bueno, Javier, hoy vamos a hablar de tus medicinas, ¿qué te parece?", "¿Te puedo preguntar sobre cómo estás tomando tus medicinas?"], "pagina": "31", "ancla": "hoy vamos a hablar de tus medicinas", "para": ["adherencia", "mantenimiento", "control", "efectos_adversos", "reestratificacion"] },
+    { "tema": "Adherencia (pregunta cerrada, al final)", "ejemplos": ["Entonces, ¿dices que te tomas las medicinas tú solo todos los días? ¿Cómo haces para acordarte de cuál tienes que tomar?"], "pagina": "32", "ancla": "cómo haces para acordarte de cual tienes que tomar", "para": ["adherencia"] }
+  ],
+  "resistencias": [],
+  "objetivos": { "texto": "Los objetivos farmacoterapéuticos se acuerdan en consenso con el paciente y su cuidador en la Fase II, y se supervisa el compromiso.", "pagina": "29", "ancla": "Fase II: Se enfoca en afrontar las resistencias del paciente" },
+  "escalas": [],
+  "por_problema": {}
+}

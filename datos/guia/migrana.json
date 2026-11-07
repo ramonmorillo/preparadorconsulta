@@ -1,0 +1,26 @@
+{
+  "modelo": "migrana",
+  "documento": { "titulo": "Adaptación del Modelo de Atención Farmacéutica CMO al Paciente con Migraña", "editor": "SEFH (proyecto MAPEX)", "anio": "pendiente de publicación", "url": null, "capitulo": "Motivación", "paginas": "24-42", "huella_pdf": "versión final aportada por el coordinador (Markdown)", "desfase_pdf": 0 },
+  "estructura": {
+    "nombre": "Estados de situación motivacional (Tabla 9): no son una secuencia rígida y pueden cambiar con el momento clínico",
+    "pagina": "29-30", "ancla": "conviene hablar de estados de situación motivacional",
+    "pasos": [
+      { "fase": "Estado 1", "titulo": "Baja percepción de necesidad del preventivo", "hacer": ["Validar su experiencia sin reforzar la minimización; explorar el impacto real de las crisis en su vida.", "Pregunta sugerida: «¿Cómo le está afectando realmente la migraña en su día a día, más allá del propio dolor?»", "Evitar: insistir en el preventivo sin haber explorado antes su percepción de carga."], "pagina": "30", "ancla": "Baja" },
+      { "fase": "Estado 2", "titulo": "Ambivalencia ante iniciar o mantener el preventivo", "hacer": ["Explorar la ambivalencia sin resolverla por el paciente; identificar beneficios esperados y temores concretos.", "Pregunta sugerida: «¿Qué parte de empezar este tratamiento le genera más esperanza y qué parte le genera más dudas?»", "Evitar: responder a la ambivalencia solo con argumentos técnicos de eficacia."], "pagina": "30", "ancla": "Ambivalencia" },
+      { "fase": "Estado 3", "titulo": "Preparación compartida del plan", "hacer": ["Objetivos concretos, progresivos y medibles; priorizar pocos cambios.", "Pregunta sugerida: «De todo lo que hemos hablado, ¿qué cambio le parece más realista empezar a trabajar desde hoy?»", "Evitar: plantear demasiados objetivos a la vez en una sola consulta."], "pagina": "30", "ancla": "Preparación" },
+      { "fase": "Estado 4", "titulo": "Implementación acompañada", "hacer": ["Revisar cómo funciona el plan, reforzar logros y detectar dificultades antes de que generen abandono.", "Pregunta sugerida: «¿Qué ha sido lo más fácil y qué lo más difícil desde que empezamos con este plan?»", "Evitar: asumir que iniciar el tratamiento equivale a haberlo consolidado."], "pagina": "30", "ancla": "Implementación" },
+      { "fase": "Estado 5", "titulo": "Consolidación con riesgo de fatiga terapéutica", "hacer": ["Revisar periódicamente los objetivos, detectar señales de fatiga y reforzar el valor de lo conseguido.", "Pregunta sugerida: «¿Qué le está ayudando a seguir con el tratamiento y qué empieza a resultarle más pesado?»", "Evitar: confundir adherencia sostenida con ausencia de necesidades."], "pagina": "30", "ancla": "Consolidación" },
+      { "fase": "Estado 6", "titulo": "Retroceso, abandono o abuso de medicación aguda", "hacer": ["Reabrir la conversación sin juicio, identificar qué ocurrió y replantear objetivos si es necesario.", "Pregunta sugerida: «He visto que hubo un periodo en el que el tratamiento no se mantuvo como estaba previsto. ¿Qué cree que influyó más?»", "Evitar: culpabilizar al paciente o reiniciar el plan como si no hubiera historia previa."], "pagina": "31", "ancla": "Culpabilizar al" }
+    ]
+  },
+  "tecnicas": [
+    { "texto": "Explorar creencias como conversación guiada, no como cuestionario cerrado: qué entiende por migraña, qué desencadena sus crisis, qué espera del preventivo y en qué plazo, qué teme de la medicación.", "pagina": "31", "ancla": "no debe plantearse como un cuestionario cerrado" }
+  ],
+  "preguntas": [
+    { "tema": "Creencias sobre la enfermedad", "ejemplos": ["¿Qué cree usted que le provoca las crisis? ¿Ha identificado algún patrón?"], "pagina": "31", "ancla": "¿Qué cree usted que le provoca las crisis?", "para": ["control", "mantenimiento"] }
+  ],
+  "resistencias": [],
+  "objetivos": { "texto": "Documentar el estado motivacional en la historia junto con los objetivos acordados y revisarlo en cada punto crítico: nuevo preventivo, cambio de línea, efectos adversos, falta de respuesta o transiciones vitales.", "pagina": "31", "ancla": "Esta valoración debe documentarse en la historia farmacoterapéutica" },
+  "escalas": [],
+  "por_problema": {}
+}

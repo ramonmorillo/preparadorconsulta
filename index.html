@@ -4,24 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Preparador de consulta CMO</title>
-<meta name="description" content="Prepara la consulta de atención farmacéutica con el modelo CMO: adherencia (PDC), reestratificación, alertas y puntos clave con intervenciones literales del modelo. Gratuito; todo se calcula en tu navegador.">
+<meta name="description" content="Acompaña la consulta de atención farmacéutica con el modelo CMO: antes (adherencia, reestratificación, alertas y puntos clave), durante (guion de entrevista motivacional de cada adaptación CMO) y después (plan hasta la próxima consulta). Gratuito; todo se calcula en tu navegador.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230f5c6e%27/%3E%3Cpath d=%27M9 17l5 5 9-12%27 stroke=%27white%27 stroke-width=%273.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="app/estilos.css?v=1.0.0">
+<link rel="stylesheet" href="app/estilos.css?v=2.0.0">
 </head>
 <body>
 <main>
   <header class="cab">
     <span class="etiqueta">Regalo del taller · Santiago, 16 de noviembre de 2026</span>
     <h1>Preparador de consulta CMO</h1>
-    <p class="entrada">Introduce los datos del paciente y la herramienta prepara la consulta: adherencia calculada, si toca reestratificar, alertas y puntos clave con intervenciones literales de su modelo CMO. Al final marcas lo realizado y copias el texto para la historia clínica.</p>
-    <p class="privacidad"><strong>Gratuito y local.</strong> Todo se calcula en tu navegador: no se envía ni se guarda nada. No introduzcas nombre, NHC ni otros datos que identifiquen al paciente.</p>
+    <p class="entrada">Te acompaña en toda la consulta: <strong>antes</strong> (adherencia, reestratificación, alertas y puntos clave), <strong>durante</strong> (guion de entrevista motivacional de la adaptación CMO de su patología) y <strong>después</strong> (plan hasta la próxima consulta, texto para la historia y hoja de acuerdos para el paciente).</p>
+    <p class="privacidad"><strong>Gratuito y local.</strong> Todo se calcula en tu navegador: no se envía ni se guarda nada. Solo la búsqueda de medicamentos consulta CIMA, y únicamente con el nombre buscado. No introduzcas nombre, NHC ni otros datos que identifiquen al paciente.</p>
     <div class="ejemplos" role="group" aria-label="Pacientes ficticios de ejemplo">
       <span>Probar con un paciente ficticio:</span>
       <button type="button" class="chip" data-ejemplo="VIH-01">VIH-01</button>
       <button type="button" class="chip" data-ejemplo="VIH-02">VIH-02</button>
       <button type="button" class="chip" data-ejemplo="RESP-01">RESP-01</button>
       <button type="button" class="chip" data-ejemplo="RESP-02">RESP-02</button>
+      <label class="chip archivo">Cargar seguimiento anterior<input type="file" id="archivoSeguimiento" accept=".json,application/json"></label>
     </div>
+    <div id="avisoSeguimiento" class="aviso-seguimiento" hidden></div>
   </header>
 
   <form id="formulario" novalidate>
@@ -55,12 +57,12 @@
           </label>
         </div>
       </div>
-      <p class="ayuda">El nivel lo asigna la herramienta CMO del hub. Esta herramienta no lo calcula ni lo cambia. <a id="enlaceHerramienta" href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Abrir la herramienta de estratificación ↗</a></p>
+      <p class="ayuda">El nivel lo asigna la herramienta CMO del hub; esta herramienta no lo calcula ni lo cambia. <a id="enlaceHerramienta" href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Abrir la herramienta de estratificación ↗</a></p>
     </section>
 
     <section class="bloque">
       <h2><span class="num">2</span> Dispensaciones del hospital</h2>
-      <p class="ayuda">Una fila por dispensación. El grupo agrupa los medicamentos de un mismo tratamiento (p. ej. «TAR»), para que un cambio de fármaco no cuente como hueco. Se usan los últimos 180 días antes de la consulta.</p>
+      <p class="ayuda">Busca cada medicamento en <strong>CIMA</strong>: con la presentación, los días de suministro se calculan solos (envases × unidades por envase ÷ unidades al día). El grupo agrupa los medicamentos de un mismo tratamiento, para que un cambio de fármaco no cuente como hueco. Se usan los últimos 180 días antes de la consulta.</p>
       <div class="tabla-edit" id="tablaDisp"></div>
       <div class="acciones-fila">
         <button type="button" class="sec" id="addDisp">+ Añadir dispensación</button>
@@ -74,7 +76,7 @@
 
     <section class="bloque">
       <h2><span class="num">3</span> Tratamiento y cambios</h2>
-      <p class="ayuda">Tratamientos activos y los que se han iniciado o suspendido. Se usan para detectar cambios desde la última estratificación.</p>
+      <p class="ayuda">Tratamientos activos y los iniciados o suspendidos. Sirven para detectar cambios desde la última estratificación.</p>
       <div class="tabla-edit" id="tablaPresc"></div>
       <button type="button" class="sec" id="addPresc">+ Añadir tratamiento</button>
     </section>
@@ -90,18 +92,29 @@
   </form>
 
   <section id="cadena" class="cadena" hidden aria-live="polite"></section>
-  <section id="resultado" hidden></section>
+
+  <section id="resultado" hidden>
+    <div class="fases" role="tablist" aria-label="Fases de la consulta">
+      <button type="button" role="tab" id="tab-antes" aria-controls="panel-antes" aria-selected="true">1 · Antes</button>
+      <button type="button" role="tab" id="tab-durante" aria-controls="panel-durante" aria-selected="false">2 · Durante</button>
+      <button type="button" role="tab" id="tab-despues" aria-controls="panel-despues" aria-selected="false">3 · Después</button>
+    </div>
+    <div id="panel-antes" class="panel hoja" role="tabpanel" aria-labelledby="tab-antes"></div>
+    <div id="panel-durante" class="panel hoja" role="tabpanel" aria-labelledby="tab-durante" hidden></div>
+    <div id="panel-despues" class="panel hoja" role="tabpanel" aria-labelledby="tab-despues" hidden></div>
+  </section>
 
   <footer>
     <details>
       <summary>Cómo funciona y qué no hace</summary>
-      <p>Cinco módulos de reglas, deterministas y auditables, sin IA generativa: <strong>lector</strong> (resume el tratamiento y busca en la nota expresiones de olvidos, efectos adversos o mal control, con su cita literal y teniendo en cuenta las negaciones), <strong>calculadora</strong> (PDC por grupo terapéutico, plazo de reestratificación según la periodicidad de cada adaptación CMO, cambios de tratamiento), <strong>detector</strong> (alertas según reglas escritas), <strong>planificador</strong> (elige intervenciones de la lista literal del nivel del paciente) y <strong>auditor</strong> (comprueba que todo es literal y trazable).</p>
-      <p>No estratifica, no propone dosis ni interacciones y no sustituye el juicio del farmacéutico. El lector de notas busca expresiones: puede pasar por alto lo que esté escrito de otra forma. Las intervenciones y periodicidades proceden literalmente de las herramientas del <a href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Hub de Estratificación CMO</a>. Versión 1.0 · material docente: algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.</p>
+      <p>Cinco módulos de reglas, deterministas y auditables, sin IA generativa: <strong>lector</strong> (tratamiento y expresiones de la nota sobre olvidos, efectos adversos o mal control, con su cita literal y teniendo en cuenta las negaciones), <strong>calculadora</strong> (PDC por grupo terapéutico, plazo de reestratificación según cada adaptación CMO, cambios de tratamiento), <strong>detector</strong> (alertas según reglas escritas), <strong>planificador</strong> (intervenciones de la lista literal del nivel del paciente) y <strong>auditor</strong> (comprueba que todo es literal y trazable).</p>
+      <p>El guion de la consulta resume con indicación de página el capítulo de Motivación de cada adaptación CMO publicada por la SEFH (proyecto MAPEX); las preguntas de ejemplo son las del propio documento. Cada punto se ha comprobado contra el texto original.</p>
+      <p>No estratifica, no propone dosis ni interacciones y no sustituye el juicio del farmacéutico. El lector de notas busca expresiones: puede pasar por alto lo que esté escrito de otra forma. Material docente, versión 2.0: algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.</p>
       <p>Versión avanzada con agentes de IA para Claude Code: <a href="https://github.com/ramonmorillo/preparadorconsulta/archive/refs/heads/main.zip">descargar (.zip)</a>.</p>
     </details>
-    <p>Dr. Ramón Morillo Verdugo · <a href="https://ramonmorillo.es">ramonmorillo.es</a>. Basado en el modelo CMO: Capacidad, Motivación y Oportunidad. Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH).</p>
+    <p>Dr. Ramón Morillo Verdugo · <a href="https://ramonmorillo.es">ramonmorillo.es</a>. Basado en el modelo CMO: Capacidad, Motivación y Oportunidad. Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH). Datos de medicamentos: CIMA, AEMPS.</p>
   </footer>
 </main>
-<script type="module" src="app/app.js?v=1.0.0"></script>
+<script type="module" src="app/app.js?v=2.0.0"></script>
 </body>
 </html>

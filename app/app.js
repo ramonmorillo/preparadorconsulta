@@ -1,7 +1,7 @@
 // Interfaz del Preparador de consulta CMO, versión web. La lógica clínica está en nucleo.js.
-import { BIBLIOTECA, REGLAS, EJEMPLOS, GUIAS } from './datos.js?v=2.0.0';
-import { preparar, entradaDesdeEjemplo, leerCSV, VERSION, guion, planPosterior, crearSeguimiento, leerSeguimiento, entradaDesdeSeguimiento, unidadesPresentacion, diasSuministro } from './nucleo.js?v=2.0.0';
-import * as CIMA from './cima.js?v=2.0.0';
+import { BIBLIOTECA, REGLAS, EJEMPLOS, GUIAS } from './datos.js?v=2.1.0';
+import { preparar, entradaDesdeEjemplo, leerCSV, VERSION, guion, planPosterior, crearSeguimiento, leerSeguimiento, entradaDesdeSeguimiento, unidadesPresentacion, diasSuministro } from './nucleo.js?v=2.1.0';
+import * as CIMA from './cima.js?v=2.1.0';
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -13,7 +13,27 @@ let presc = [];
 let ultimo = null;      // { entrada, r, ficticio }
 let manuales = [];      // intervenciones añadidas por el farmacéutico
 let anterior = null;    // seguimiento cargado de la visita previa
-const registro = { estados: [], estadio: '', barreras: '', objetivos: [{ objetivo: '', plan: '', plazo: '' }], reestratificado: false, nuevo_nivel: '' };
+const registro = {};
+let guardado = false;   // ¿se ha descargado el seguimiento de esta consulta?
+function registroVacio() { Object.assign(registro, { estados: [], estadio: '', barreras: '', objetivos: [{ objetivo: '', plan: '', plazo: '' }], reestratificado: false, nuevo_nivel: '', proxima_cita: '', mensaje: '' }); }
+registroVacio();
+
+// ----- Hospital y farmacéutico (solo en este navegador) -----
+const CFG = ['hospital', 'servicio', 'farmaceutico', 'contacto'];
+const CLAVE_CFG = 'preparadorConsultaCMO.cfg';
+function leerCfg() { return Object.fromEntries(CFG.map((k) => [k, $(`cfg_${k}`).value.trim()])); }
+try {
+  const c = JSON.parse(localStorage.getItem(CLAVE_CFG) || 'null');
+  if (c) { CFG.forEach((k) => { $(`cfg_${k}`).value = c[k] || ''; }); if (CFG.some((k) => c[k])) $('cfgBloque').open = false; }
+} catch { /* almacenamiento no disponible: se usa sin recordar */ }
+function guardarCfg() {
+  try {
+    if ($('cfg_recordar').checked) localStorage.setItem(CLAVE_CFG, JSON.stringify(leerCfg()));
+    else localStorage.removeItem(CLAVE_CFG);
+  } catch { /* sin almacenamiento */ }
+}
+CFG.forEach((k) => $(`cfg_${k}`).addEventListener('input', guardarCfg));
+$('cfg_recordar').addEventListener('change', guardarCfg);
 
 // ======================= FORMULARIO =======================
 const selModelo = $('modelo');
@@ -202,7 +222,7 @@ $('formulario').addEventListener('submit', async (ev) => {
   mostrarErrores([]);
   ultimo = { entrada, r, ficticio: $('formulario').dataset.ficticio || null };
   manuales = [];
-  registro.estados = []; registro.estadio = ''; registro.barreras = ''; registro.objetivos = [{ objetivo: '', plan: '', plazo: '' }]; registro.reestratificado = false; registro.nuevo_nivel = '';
+  registroVacio(); guardado = false;
   await pintarCadena(r);
   pintarAntes(); pintarDurante(); pintarDespues();
   $('resultado').hidden = false;
@@ -319,6 +339,7 @@ function pintarDurante() {
   h.push(`<section><h3>Objetivos acordados con el paciente</h3><p class="nota">${gi.disponible && gi.objetivos ? esc(gi.objetivos.texto) : 'Objetivos claros, realistas y alcanzables, con un plan y un plazo.'}</p><div id="objetivos">${registro.objetivos.map((o, i) => `<div class="objetivo"><label class="ancha">Objetivo<input type="text" data-obj="${i}" data-k="objetivo" value="${esc(o.objetivo)}" placeholder="p. ej. no olvidar la dosis de la noche"></label><label class="ancha">Plan de acción<input type="text" data-obj="${i}" data-k="plan" value="${esc(o.plan)}" placeholder="p. ej. alarma en el móvil a las 22:00"></label><label>Plazo<input type="date" data-obj="${i}" data-k="plazo" value="${esc(o.plazo)}"></label></div>`).join('')}</div><button type="button" class="sec" id="addObjetivo">+ Añadir objetivo</button></section>`);
   h.push(`<section><h3>Reestratificación</h3><label class="fila-check"><input type="checkbox" id="regReestr"${registro.reestratificado ? ' checked' : ''}> He reestratificado hoy con <a href="${esc(r.calculo.reestratificacion.url)}" target="_blank" rel="noopener">${esc(r.calculo.reestratificacion.herramienta)} ↗</a></label>
     <fieldset class="nivel" id="regNivel" ${registro.reestratificado ? '' : 'disabled'}><legend>Nivel resultante</legend>${['1', '2', '3'].map((n) => `<label><input type="radio" name="nuevoNivel" value="${n}"${registro.nuevo_nivel === n ? ' checked' : ''}> ${n}</label>`).join('')}</fieldset></section>`);
+  h.push(`<section><h3>Para la hoja del paciente</h3><div class="rejilla"><label>Próxima cita en Farmacia (opcional)<input type="date" id="regCita" value="${esc(registro.proxima_cita)}"></label></div><label>Mensaje para el paciente (opcional)<textarea id="regMensaje" rows="3" placeholder="Escriba con sus palabras lo que quiere que el paciente recuerde">${esc(registro.mensaje)}</textarea></label></section>`);
   h.push('<div class="botones no-imprimir"><button type="button" class="principal" data-ir="despues">Continuar: después de la consulta →</button></div>');
   $('panel-durante').innerHTML = h.join('');
   $('addObjetivo').addEventListener('click', () => { guardarRegistro(); registro.objetivos.push({ objetivo: '', plan: '', plazo: '' }); pintarDurante(); });
@@ -342,6 +363,8 @@ function guardarRegistro() {
   const re = pd.querySelector('#regReestr');
   if (re) { registro.reestratificado = re.checked; pd.querySelector('#regNivel').disabled = !re.checked; }
   registro.nuevo_nivel = pd.querySelector('input[name=nuevoNivel]:checked')?.value || '';
+  const cita = pd.querySelector('#regCita'); if (cita) registro.proxima_cita = cita.value;
+  const men = pd.querySelector('#regMensaje'); if (men) registro.mensaje = men.value;
 }
 
 // ======================= 3 · DESPUÉS =======================
@@ -357,12 +380,14 @@ function pintarDespues() {
   if (plan.seguimiento_entre_visitas.length) h.push(`<section><h3>Seguimiento entre visitas que contempla su nivel</h3><ul>${plan.seguimiento_entre_visitas.map((i) => `<li>${esc(i.texto)}</li>`).join('')}</ul><p class="nota">Texto literal de ${esc(BIBLIOTECA[entrada.modelo].herramienta)}, nivel ${esc(plan.nivel_final)}.</p></section>`);
   h.push(`<section><h3>Para revisar en la próxima consulta</h3>${plan.objetivos.length ? `<p class="sub">Objetivos acordados</p><ul>${plan.objetivos.map((o) => `<li><strong>${esc(o.objetivo)}</strong>${o.plan ? ` — ${esc(o.plan)}` : ''}${o.plazo ? ` <span class="sub">(plazo ${esc(o.plazo)})</span>` : ''}</li>`).join('')}</ul>` : '<p class="sub">No se han registrado objetivos.</p>'}${plan.pendientes.length ? `<p class="sub">Actuaciones pendientes o sin valorar</p><ul>${plan.pendientes.map((x) => `<li>${esc(x.texto)}${x.comentario ? ` <span class="sub">(${esc(x.comentario)})</span>` : ''}</li>`).join('')}</ul>` : ''}</section>`);
   h.push(`<section><h3>Texto para la historia clínica</h3><textarea id="textoHC" aria-label="Texto para la historia clínica">${esc(textoHC(plan))}</textarea><div class="botones no-imprimir"><button type="button" class="principal" id="btnCopiar">Copiar</button></div><div id="avisoCopia" aria-live="polite"></div></section>`);
-  h.push(`<section id="hojaPaciente" class="hoja-paciente"><h3>Hoja de acuerdos para el paciente</h3>${hojaPaciente(plan)}<div class="botones no-imprimir"><button type="button" class="sec" id="btnImprimirPaciente">Imprimir hoja del paciente</button></div></section>`);
-  h.push(`<section class="no-imprimir"><h3>Guardar el seguimiento</h3><p class="ayuda">Descarga un archivo (sin datos identificativos) para cargarlo en la próxima consulta con «Cargar seguimiento anterior». Guárdelo según la política de su centro.</p><button type="button" class="principal" id="btnGuardar">Guardar seguimiento (.json)</button></section>`);
+  h.push(`<section class="no-imprimir"><h3>Hoja para el paciente</h3><p class="ayuda">Vista previa. Al imprimir puede elegir «Guardar como PDF». ${leerCfg().hospital || leerCfg().farmaceutico ? '' : 'Puede añadir el hospital y su nombre en «Hospital y farmacéutico/a», al principio del formulario.'}</p><div class="botones"><button type="button" class="principal" id="btnImprimirPaciente">Imprimir o guardar en PDF</button></div></section>`);
+  h.push(`<section id="hojaPaciente" class="hoja-paciente">${hojaPaciente(plan)}</section>`);
+  h.push(`<section class="no-imprimir"><h3>Guardar el seguimiento</h3><p class="ayuda">Descarga un archivo (sin datos identificativos) para cargarlo en la próxima consulta con «Cargar seguimiento anterior». Guárdelo según la política de su centro.</p><button type="button" class="principal" id="btnGuardar">Guardar seguimiento (.json)</button><span id="avisoGuardado" class="sub"></span></section>`);
+  h.push(`<section class="no-imprimir fin"><h3>¿Ha terminado?</h3><p class="ayuda">Empiece una consulta nueva con el formulario en blanco. Los datos del hospital y del farmacéutico/a se mantienen.</p><button type="button" class="principal grande" data-reiniciar>Nueva consulta</button></section>`);
   $('panel-despues').innerHTML = h.join('');
   $('btnCopiar').addEventListener('click', copiar);
   $('btnImprimirPaciente').addEventListener('click', () => { document.body.classList.add('imprimir-paciente'); window.print(); document.body.classList.remove('imprimir-paciente'); });
-  $('btnGuardar').addEventListener('click', () => guardarSeguimiento(plan));
+  $('btnGuardar').addEventListener('click', () => { guardarSeguimiento(plan); guardado = true; $('avisoGuardado').textContent = ' Seguimiento descargado.'; });
 }
 function textoHC(plan) {
   const { entrada, r } = ultimo;
@@ -385,14 +410,29 @@ function textoHC(plan) {
   if (plan.objetivos.length) L.push('Objetivos acordados:\n' + plan.objetivos.map((o) => `- ${o.objetivo}${o.plan ? `. Plan: ${o.plan}` : ''}${o.plazo ? `. Plazo: ${o.plazo}` : ''}`).join('\n'));
   if (plan.proxima_reestratificacion) L.push(`Próxima reestratificación: ${plan.proxima_reestratificacion} (nivel ${plan.nivel_final}).`);
   if (plan.cobertura.length) L.push(`Medicación cubierta hasta: ${plan.cobertura.map((c) => `${c.grupo} ${c.ultimo_dia_cubierto}`).join('; ')}.`);
+  if (registro.proxima_cita) L.push(`Próxima cita en Farmacia: ${registro.proxima_cita}.`);
+  const cfg = leerCfg();
+  if (cfg.farmaceutico) L.push(`Farmacéutico/a: ${cfg.farmaceutico}.`);
   return L.join('\n');
 }
+const fechaPaciente = (iso) => { if (!iso) return ''; const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; };
 function hojaPaciente(plan) {
+  const { entrada } = ultimo;
+  const cfg = leerCfg();
+  const tC = entrada.fecha_consulta;
+  const activos = (entrada.prescripcion || []).filter((p) => p.medicamento && (!p.fecha_fin || p.fecha_fin >= tC));
   const ob = plan.objetivos;
-  return `<p>Hoy hemos revisado su tratamiento juntos. Esto es lo que hemos acordado:</p>
-    ${ob.length ? `<ol class="acuerdos">${ob.map((o) => `<li><strong>${esc(o.objetivo)}</strong>${o.plan ? `<div>Cómo lo haremos: ${esc(o.plan)}</div>` : ''}${o.plazo ? `<div>Lo revisaremos antes del ${esc(o.plazo)}</div>` : ''}</li>`).join('')}</ol>` : '<p class="sub">(Escriba en «2 · Durante» los objetivos acordados para que aparezcan aquí.)</p>'}
-    ${plan.cobertura.length ? `<p>Su medicación está cubierta hasta el <strong>${esc(plan.cobertura.map((c) => c.ultimo_dia_cubierto).sort()[0])}</strong>. Recuerde recogerla antes de esa fecha.</p>` : ''}
-    <p>Si tiene dudas o algún problema con su tratamiento antes de la próxima visita, contacte con la consulta de Farmacia.</p>`;
+  const recogida = plan.cobertura.map((c) => c.ultimo_dia_cubierto).sort()[0];
+  const b = [];
+  b.push(`<header class="hp-cab"><div><div class="hp-hosp">${esc(cfg.hospital || '')}</div><div class="hp-serv">${esc(cfg.servicio || 'Servicio de Farmacia')} · Consulta de Atención Farmacéutica</div></div><div class="hp-fecha">${esc(fechaPaciente(tC))}</div></header>`);
+  b.push('<h4 class="hp-tit">Su plan de tratamiento</h4><p class="hp-intro">Hoy hemos revisado juntos su tratamiento. En esta hoja tiene lo que hemos acordado para cuidar de su salud hasta la próxima visita.</p>');
+  if (activos.length) b.push(`<div class="hp-bloque"><h5>Su medicación</h5><ul>${activos.map((p) => `<li><strong>${esc(p.medicamento)}</strong>${p.pauta ? `<div>${esc(p.pauta)}</div>` : ''}</li>`).join('')}</ul></div>`);
+  b.push(`<div class="hp-bloque"><h5>Lo que hemos acordado</h5>${ob.length ? `<ol class="hp-acuerdos">${ob.map((o) => `<li><div class="hp-obj">${esc(o.objetivo)}</div>${o.plan ? `<div><span class="hp-et">Cómo lo vamos a conseguir:</span> ${esc(o.plan)}</div>` : ''}${o.plazo ? `<div><span class="hp-et">Lo revisaremos:</span> ${esc(fechaPaciente(o.plazo))}</div>` : ''}</li>`).join('')}</ol>` : '<p class="no-imprimir sub">Escriba en «2 · Durante» los objetivos acordados para que aparezcan aquí.</p>'}</div>`);
+  if (recogida || registro.proxima_cita) b.push(`<div class="hp-bloque hp-fechas">${recogida ? `<div><h5>Recogida de su medicación</h5><p>Tiene medicación hasta el <strong>${esc(fechaPaciente(recogida))}</strong>. Recuerde recogerla antes de esa fecha.</p></div>` : ''}${registro.proxima_cita ? `<div><h5>Su próxima cita en Farmacia</h5><p><strong>${esc(fechaPaciente(registro.proxima_cita))}</strong></p></div>` : ''}</div>`);
+  if (registro.mensaje && registro.mensaje.trim()) b.push(`<div class="hp-bloque hp-mensaje"><h5>Mensaje de su farmacéutico/a</h5><p>${esc(registro.mensaje.trim()).replace(/\n/g, '<br>')}</p></div>`);
+  b.push(`<div class="hp-bloque"><h5>Si tiene dudas</h5><p>Si tiene dudas o algún problema con su tratamiento antes de la próxima visita, contacte con la consulta de Farmacia${cfg.contacto ? `: <strong>${esc(cfg.contacto)}</strong>` : '.'}</p></div>`);
+  b.push(`<div class="hp-pie">${cfg.farmaceutico ? `Le ha atendido: ${esc(cfg.farmaceutico)}` : ''}</div>`);
+  return b.join('');
 }
 function copiar() {
   const ta = $('textoHC');
@@ -409,7 +449,23 @@ function guardarSeguimiento(plan) {
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
+function reiniciar() {
+  if (ultimo && !guardado && !window.confirm('¿Empezar una consulta nueva? Se borrarán los datos de esta consulta. Si quiere continuarla en la próxima visita, guarde antes el seguimiento.')) return;
+  ultimo = null; anterior = null; manuales = []; registroVacio(); guardado = false; fichasCima.clear();
+  disp = []; presc = [];
+  selModelo.value = ''; selModelo.dispatchEvent(new Event('change'));
+  document.querySelectorAll('input[name=nivel]').forEach((r) => { r.checked = false; });
+  for (const k of ['fecha_estratificacion', 'patologia', 'edad', 'sexo', 'notas', 'csvDisp']) $(k).value = '';
+  $('fecha_consulta').value = hoyLocal();
+  pintarTablas(); mostrarErrores([]);
+  for (const x of FASES) $(`panel-${x}`).innerHTML = '';
+  $('resultado').hidden = true; $('cadena').hidden = true; $('avisoSeguimiento').hidden = true;
+  delete $('formulario').dataset.ficticio;
+  document.querySelectorAll('[data-ejemplo]').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 document.addEventListener('click', (ev) => {
+  if (ev.target.closest('[data-reiniciar]')) { reiniciar(); return; }
   const ir = ev.target.closest('[data-ir]');
   if (ir) { mostrarFase(ir.dataset.ir); $('resultado').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   if (ev.target.closest('[data-imprimir]')) window.print();

@@ -4,7 +4,7 @@
 // Nada se envía ni se guarda: todo se calcula en el navegador.
 // El mismo archivo se usa en el navegador y en las pruebas con Node.
 
-export const VERSION = '1.0.0';
+export const VERSION = '2.1.0';
 const DIA = 86400000;
 
 // ---------- Utilidades ----------
@@ -335,7 +335,7 @@ export function crearSeguimiento(entrada, plan, registro) {
     aviso: 'Archivo de trabajo sin datos identificativos. Guárdelo según la política de su centro.',
     entrada: { ...entrada, notas: entrada.notas || '' },
     nivel_final: plan.nivel_final, fecha_estratificacion_final: plan.cambio_de_nivel || registro.reestratificado ? entrada.fecha_consulta : entrada.fecha_estratificacion,
-    registro: { estadio: registro.estadio || '', barreras: registro.barreras || '', estados: registro.estados || [], objetivos: plan.objetivos },
+    registro: { estadio: registro.estadio || '', barreras: registro.barreras || '', estados: registro.estados || [], objetivos: plan.objetivos, proxima_cita: registro.proxima_cita || '', mensaje: registro.mensaje || '' },
     proxima_reestratificacion: plan.proxima_reestratificacion,
   };
 }

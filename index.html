@@ -6,7 +6,7 @@
 <title>Preparador de consulta CMO</title>
 <meta name="description" content="Acompaña la consulta de atención farmacéutica con el modelo CMO: antes (adherencia, reestratificación, alertas y puntos clave), durante (guion de entrevista motivacional de cada adaptación CMO) y después (plan hasta la próxima consulta). Gratuito; todo se calcula en tu navegador.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230f5c6e%27/%3E%3Cpath d=%27M9 17l5 5 9-12%27 stroke=%27white%27 stroke-width=%273.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="app/estilos.css?v=2.0.0">
+<link rel="stylesheet" href="app/estilos.css?v=2.1.0">
 </head>
 <body>
 <main>
@@ -27,6 +27,18 @@
   </header>
 
   <form id="formulario" novalidate>
+    <section class="bloque">
+      <details id="cfgBloque">
+        <summary>Hospital y farmacéutico/a <span class="sub">(opcional; aparece en la hoja del paciente)</span></summary>
+        <div class="rejilla cfg">
+          <label>Hospital<input type="text" id="cfg_hospital" autocomplete="organization" placeholder="p. ej. Hospital Universitario …"></label>
+          <label>Servicio o unidad<input type="text" id="cfg_servicio" placeholder="Servicio de Farmacia"></label>
+          <label>Farmacéutico/a<input type="text" id="cfg_farmaceutico" autocomplete="name" placeholder="Nombre y apellidos"></label>
+          <label>Contacto de la consulta<input type="text" id="cfg_contacto" placeholder="Teléfono o correo electrónico"></label>
+        </div>
+        <label class="fila-check"><input type="checkbox" id="cfg_recordar" checked> Recordar estos datos en este navegador (no se envían a ningún sitio)</label>
+      </details>
+    </section>
     <section class="bloque">
       <h2><span class="num">1</span> Paciente y estratificación</h2>
       <div class="rejilla">
@@ -98,6 +110,7 @@
       <button type="button" role="tab" id="tab-antes" aria-controls="panel-antes" aria-selected="true">1 · Antes</button>
       <button type="button" role="tab" id="tab-durante" aria-controls="panel-durante" aria-selected="false">2 · Durante</button>
       <button type="button" role="tab" id="tab-despues" aria-controls="panel-despues" aria-selected="false">3 · Después</button>
+      <button type="button" class="sec peq reinicio" data-reiniciar>Nueva consulta</button>
     </div>
     <div id="panel-antes" class="panel hoja" role="tabpanel" aria-labelledby="tab-antes"></div>
     <div id="panel-durante" class="panel hoja" role="tabpanel" aria-labelledby="tab-durante" hidden></div>
@@ -109,12 +122,12 @@
       <summary>Cómo funciona y qué no hace</summary>
       <p>Cinco módulos de reglas, deterministas y auditables, sin IA generativa: <strong>lector</strong> (tratamiento y expresiones de la nota sobre olvidos, efectos adversos o mal control, con su cita literal y teniendo en cuenta las negaciones), <strong>calculadora</strong> (PDC por grupo terapéutico, plazo de reestratificación según cada adaptación CMO, cambios de tratamiento), <strong>detector</strong> (alertas según reglas escritas), <strong>planificador</strong> (intervenciones de la lista literal del nivel del paciente) y <strong>auditor</strong> (comprueba que todo es literal y trazable).</p>
       <p>El guion de la consulta resume con indicación de página el capítulo de Motivación de cada adaptación CMO publicada por la SEFH (proyecto MAPEX); las preguntas de ejemplo son las del propio documento. Cada punto se ha comprobado contra el texto original.</p>
-      <p>No estratifica, no propone dosis ni interacciones y no sustituye el juicio del farmacéutico. El lector de notas busca expresiones: puede pasar por alto lo que esté escrito de otra forma. Material docente, versión 2.0: algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.</p>
+      <p>No estratifica, no propone dosis ni interacciones y no sustituye el juicio del farmacéutico. El lector de notas busca expresiones: puede pasar por alto lo que esté escrito de otra forma. Material docente, versión 2.1: algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.</p>
       <p>Versión avanzada con agentes de IA para Claude Code: <a href="https://github.com/ramonmorillo/preparadorconsulta/archive/refs/heads/main.zip">descargar (.zip)</a>.</p>
     </details>
     <p>Dr. Ramón Morillo Verdugo · <a href="https://ramonmorillo.es">ramonmorillo.es</a>. Basado en el modelo CMO: Capacidad, Motivación y Oportunidad. Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH). Datos de medicamentos: CIMA, AEMPS.</p>
   </footer>
 </main>
-<script type="module" src="app/app.js?v=2.0.0"></script>
+<script type="module" src="app/app.js?v=2.1.0"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+name: Sonda CIMA (diagnóstico)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/sonda-cima.yml']
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cabeceras CORS de la API de CIMA
+        run: |
+          for u in "https://cima.aemps.es/cima/rest/medicamentos?nombre=mepolizumab" "https://cima.aemps.es/cima/rest/presentaciones?nregistro=1151043001"; do
+            echo "=== GET $u"; curl -sS -D - -o /dev/null -H "Origin: https://ramonmorillo.es" "$u" | grep -iE "^HTTP|access-control|content-type" || true
+            echo "=== OPTIONS $u"; curl -sS -D - -o /dev/null -X OPTIONS -H "Origin: https://ramonmorillo.es" -H "Access-Control-Request-Method: GET" "$u" | grep -iE "^HTTP|access-control" || true
+          done
+      - name: Forma de los datos
+        run: |
+          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=mepolizumab" | python3 -c "import json,sys;d=json.load(sys.stdin);print('totalFilas',d.get('totalFilas'),'tamanioPagina',d.get('tamanioPagina'));r=d['resultados'][0];print(json.dumps(r,ensure_ascii=False)[:1500])"
+          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=biktarvy" | python3 -c "import json,sys;d=json.load(sys.stdin);print([ (x['nregistro'],x['nombre'],x.get('cpresc'),x.get('comerc')) for x in d['resultados']])"
+          N=$(curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=biktarvy" | python3 -c "import json,sys;print(json.load(sys.stdin)['resultados'][0]['nregistro'])")
+          curl -sS "https://cima.aemps.es/cima/rest/medicamento?nregistro=$N" | python3 -c "import json,sys;d=json.load(sys.stdin);print(sorted(d.keys()));print(json.dumps(d.get('presentaciones'),ensure_ascii=False)[:800]);print(json.dumps(d.get('formaFarmaceutica'),ensure_ascii=False));print(json.dumps(d.get('dosis'),ensure_ascii=False))"
+          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?pagina=1&comerc=1" | python3 -c "import json,sys;d=json.load(sys.stdin);print('comercializados totalFilas',d.get('totalFilas'),'tamanioPagina',d.get('tamanioPagina'))"

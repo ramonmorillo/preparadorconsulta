@@ -1,0 +1,34 @@
+name: Extraer texto de las adaptaciones CMO (uso interno)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/extraer-documentos.yml']
+jobs:
+  extraer:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y poppler-utils >/dev/null
+      - name: Descargar y extraer por página
+        run: |
+          mkdir -p txt
+          while read id url; do
+            curl -sSL --retry 3 -o "$id.pdf" "$url" || { echo "FALLO $id"; continue; }
+            n=$(pdfinfo "$id.pdf" | awk '/^Pages:/{print $2}'); echo "$id: $n páginas, sha256 $(sha256sum $id.pdf | cut -c1-16)"
+            : > "txt/$id.txt"
+            for p in $(seq 1 $n); do echo "=== PÁGINA PDF $p ===" >> "txt/$id.txt"; pdftotext -layout -f $p -l $p "$id.pdf" - >> "txt/$id.txt"; done
+            sha256sum "$id.pdf" >> txt/huellas.txt
+          done <<'LISTA'
+          vih https://www.sefh.es/mapex/images/adaptacion-cmo-paciente-vih-octubre-2023.pdf
+          respiratorio https://www.sefh.es/mapex/images/modelo-CMO-al-paciente-con-patologias-respiratorias.pdf
+          esclerosis-multiple https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-esclerosis-multiple.pdf
+          riesgo-cardiovascular https://www.sefh.es/mapex/documentos/adaptacion-cmo-paciente-patologias-cardiovasculares.pdf
+          vhb-vhd https://www.sefh.es/mapex/images/CMO-VHB-VHD.pdf
+          coagulopatias https://www.sefh.es/mapex/images/Adaptacion-Modelo-CMO-Coagulopatias-Congenitas.pdf
+          pediatria https://www.sefh.es/mapex/documentos/adaptacion-cmo-pacientes-pediatricos.pdf
+          oncohematologia https://gruposdetrabajo.sefh.es/gedefo/images/Adaptacin_Modelo_CMO_al_paciente_OH.pdf
+          LISTA
+      - uses: actions/upload-artifact@v4
+        with:
+          name: textos-cmo
+          path: txt/
+          retention-days: 1

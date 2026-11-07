@@ -15,8 +15,10 @@ jobs:
           done
       - name: Forma de los datos
         run: |
-          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=mepolizumab" | python3 -c "import json,sys;d=json.load(sys.stdin);print('totalFilas',d.get('totalFilas'),'tamanioPagina',d.get('tamanioPagina'));r=d['resultados'][0];print(json.dumps(r,ensure_ascii=False)[:1500])"
-          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=biktarvy" | python3 -c "import json,sys;d=json.load(sys.stdin);print([ (x['nregistro'],x['nombre'],x.get('cpresc'),x.get('comerc')) for x in d['resultados']])"
-          N=$(curl -sS "https://cima.aemps.es/cima/rest/medicamentos?nombre=biktarvy" | python3 -c "import json,sys;print(json.load(sys.stdin)['resultados'][0]['nregistro'])")
-          curl -sS "https://cima.aemps.es/cima/rest/medicamento?nregistro=$N" | python3 -c "import json,sys;d=json.load(sys.stdin);print(sorted(d.keys()));print(json.dumps(d.get('presentaciones'),ensure_ascii=False)[:800]);print(json.dumps(d.get('formaFarmaceutica'),ensure_ascii=False));print(json.dumps(d.get('dosis'),ensure_ascii=False))"
-          curl -sS "https://cima.aemps.es/cima/rest/medicamentos?pagina=1&comerc=1" | python3 -c "import json,sys;d=json.load(sys.stdin);print('comercializados totalFilas',d.get('totalFilas'),'tamanioPagina',d.get('tamanioPagina'))"
+          B=https://cima.aemps.es/cima/rest
+          for q in "nombre=nucala" "practiv1=mepolizumab" "nombre=biktarvy" "nombre=dovato" "practiv1=metotrexato"; do
+            curl -sS "$B/medicamentos?$q" | python3 -c "import json,sys;d=json.load(sys.stdin);print('Q',sys.argv[1],'total',d.get('totalFilas'));[print('  ',x['nregistro'],'|',x['nombre'],'|',x.get('pactivos'),'| comerc',x.get('comerc'),'| cpresc',x.get('cpresc')) for x in d['resultados'][:6]]" "$q"
+          done
+          N=$(curl -sS "$B/medicamentos?nombre=biktarvy" | python3 -c "import json,sys;print(json.load(sys.stdin)['resultados'][0]['nregistro'])")
+          curl -sS "$B/medicamento?nregistro=$N" | python3 -c "import json,sys;d=json.load(sys.stdin);print('CLAVES',sorted(d.keys()));print('PRES',json.dumps(d.get('presentaciones'),ensure_ascii=False)[:900]);print('FF',json.dumps(d.get('formaFarmaceutica'),ensure_ascii=False));print('VIAS',json.dumps(d.get('viasAdministracion'),ensure_ascii=False));print('PA',json.dumps(d.get('principiosActivos'),ensure_ascii=False)[:400]);print('ATC',json.dumps(d.get('atcs'),ensure_ascii=False)[:300]);print('cpresc',d.get('cpresc'),'dosis',d.get('dosis'))"
+          curl -sS "$B/presentaciones?nregistro=$N" | python3 -c "import json,sys;d=json.load(sys.stdin);print('PRESENTACIONES',json.dumps(d,ensure_ascii=False)[:900])"

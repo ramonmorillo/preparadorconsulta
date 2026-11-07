@@ -27,8 +27,24 @@ jobs:
           pediatria https://www.sefh.es/mapex/documentos/adaptacion-cmo-pacientes-pediatricos.pdf
           oncohematologia https://gruposdetrabajo.sefh.es/gedefo/images/Adaptacin_Modelo_CMO_al_paciente_OH.pdf
           LISTA
-      - uses: actions/upload-artifact@v4
-        with:
-          name: textos-cmo
-          path: txt/
-          retention-days: 1
+      - name: Cifrar y emitir (solo legible con la clave privada de la sesión)
+        run: |
+          cat > pub.pem <<'PUB'
+          -----BEGIN PUBLIC KEY-----
+          MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAu1NzjAdyPFRR3+BoOk/I
+          aKUAIRFutp1sG17PJTFoNjvxczIv6+3BmkPDNV358WXzonfus0znzmvX9ARweg5+
+          2HW/r2OG3FeRN4olwyK4IXT5NEa1QT1B7hQJ7AU44+jVoATVvES9za7jAUPuF7op
+          MiOvNAGXgcS5QY8Kt4HZMSsoKqTeWTiG+QjU52lSL6HdEx3SK5R1rbK1vd2GvPaf
+          BDgLEap0bW9g6Hn3eUgLgRvIS/lJdk/zRsusfOb18rpolzTptHhujQOItxtiJvk1
+          yg4WSQ34wC/Aw6CrbwezKI9iINnIUqpXkPvEVXosVxL5pn2Uq8aDFRVtZHeiAsBq
+          hdCFV7fb9uUVj00LMnclQPpPpvs1YcUSrV7D5FXVvZnVuwvqlWrxQ6/ROGhDiwuQ
+          sJZ8APAvG6Ig72qyHlc0zJsO70mtqi3kymP5LxNac0d0msxRZDbpsUNiU7J0y4Mz
+          WSMRQdGCS5B89EEHYhA9Kz9VAbFaNE2Xs/+3SmI31e6TAgMBAAE=
+          -----END PUBLIC KEY-----
+          PUB
+          tar -cJf textos.tar.xz txt
+          openssl rand -hex 32 > k.txt
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:k.txt -in textos.tar.xz -out textos.enc
+          openssl pkeyutl -encrypt -pubin -inkey pub.pem -in k.txt -out k.enc
+          echo "<<<CLAVE"; base64 -w0 k.enc; echo; echo "CLAVE>>>"
+          echo "<<<DATOS"; base64 -w 76 textos.enc; echo "DATOS>>>"

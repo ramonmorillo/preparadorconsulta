@@ -4,96 +4,104 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Preparador de consulta CMO</title>
-<meta name="description" content="Prepara la consulta de atención farmacéutica de un paciente externo con el modelo CMO: adherencia calculada, reestratificación, alertas y puntos clave con intervenciones literales del modelo.">
-<style>
-  :root { --tinta:#1d2430; --suave:#5b6574; --linea:#d9dde3; --fondo:#f6f7f9; --tarjeta:#fff; --acento:#0f5c6e; --acento-fondo:#e3f1f4; --aviso:#854d0e; --aviso-fondo:#fdf6e3; }
-  @media (prefers-color-scheme: dark) { :root { --tinta:#e7eaee; --suave:#a7b0bc; --linea:#334050; --fondo:#121821; --tarjeta:#1a222d; --acento:#6cc3d5; --acento-fondo:#16323a; --aviso:#f2c46d; --aviso-fondo:#33290f; } }
-  * { box-sizing:border-box; }
-  body { margin:0; font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--tinta); background:var(--fondo); }
-  main { max-width: 880px; margin:0 auto; padding: 32px 16px 56px; }
-  .etiqueta { display:inline-block; font-size:13px; font-weight:600; color:var(--acento); background:var(--acento-fondo); border-radius:999px; padding:2px 12px; }
-  h1 { font-size: clamp(28px, 5vw, 40px); line-height:1.15; margin: 12px 0 10px; }
-  .entrada { font-size: 18px; color: var(--suave); max-width: 680px; }
-  .acciones { display:flex; gap:10px; flex-wrap:wrap; margin: 22px 0 8px; }
-  .boton { display:inline-block; text-decoration:none; font-weight:600; border-radius:10px; padding:10px 18px; border:1px solid var(--acento); }
-  .boton.principal { background:var(--acento); color:var(--fondo); }
-  .boton.secundario { color:var(--acento); }
-  section { margin-top: 36px; }
-  h2 { font-size: 21px; margin: 0 0 12px; }
-  .rejilla { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px; }
-  .tarjeta { background:var(--tarjeta); border:1px solid var(--linea); border-radius:12px; padding:14px 16px; }
-  .tarjeta h3 { font-size:16px; margin:0 0 4px; }
-  .tarjeta p { margin:0; color:var(--suave); font-size:15px; }
-  ol.pasos { padding-left: 22px; } ol.pasos li { margin-bottom: 8px; }
-  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; background: var(--acento-fondo); padding: 1px 6px; border-radius: 5px; }
-  table { width:100%; border-collapse:collapse; font-size:15px; background:var(--tarjeta); border:1px solid var(--linea); border-radius:12px; overflow:hidden; }
-  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--linea); vertical-align:top; }
-  th { font-size:13px; color:var(--suave); }
-  .tipo { font-size: 12px; font-weight:600; border-radius:999px; padding:1px 8px; white-space:nowrap; }
-  .tipo.ia { background:#efe9fb; color:#4b3a8f; } .tipo.codigo { background:#e1f3ec; color:#0b5a43; }
-  @media (prefers-color-scheme: dark) { .tipo.ia { background:#2c2550; color:#cfc6f6; } .tipo.codigo { background:#123a2f; color:#a6e3cd; } }
-  .aviso { background:var(--aviso-fondo); color:var(--aviso); border-radius:12px; padding:12px 16px; font-size:15px; }
-  .aviso strong { color: inherit; }
-  footer { margin-top: 44px; font-size: 13px; color: var(--suave); border-top:1px solid var(--linea); padding-top: 14px; }
-  a { color: var(--acento); }
-</style>
+<meta name="description" content="Prepara la consulta de atención farmacéutica con el modelo CMO: adherencia (PDC), reestratificación, alertas y puntos clave con intervenciones literales del modelo. Gratuito; todo se calcula en tu navegador.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230f5c6e%27/%3E%3Cpath d=%27M9 17l5 5 9-12%27 stroke=%27white%27 stroke-width=%273.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app/estilos.css?v=1.0.0">
 </head>
 <body>
 <main>
-  <span class="etiqueta">Regalo del taller · Santiago, 16 de noviembre de 2026</span>
-  <h1>Preparador de consulta CMO</h1>
-  <p class="entrada">Antes de que entre el paciente: su perfil, su adherencia calculada, si toca reestratificar y los puntos clave de la consulta, cada uno con una intervención literal de su modelo CMO. Al terminar, marcas lo que has hecho y copias el texto en la historia clínica.</p>
-  <div class="acciones">
-    <a class="boton principal" href="ejemplos/VIH-01/Hoja_consulta_VIH-01.html" target="_blank" rel="noopener">Ver una hoja de ejemplo ↗</a>
-    <a class="boton secundario" href="https://github.com/ramonmorillo/preparadorconsulta/archive/refs/heads/main.zip">Descargar la herramienta (.zip)</a>
-  </div>
-
-  <section>
-    <h2>Qué obtienes</h2>
-    <div class="rejilla">
-      <div class="tarjeta"><h3>Adherencia calculada</h3><p>PDC de los últimos 180 días por grupo terapéutico, calculado por código a partir de las dispensaciones. Alerta por debajo del 90 %.</p></div>
-      <div class="tarjeta"><h3>Reestratificación al día</h3><p>Compara la fecha de la última estratificación con la periodicidad de la adaptación CMO de su patología.</p></div>
-      <div class="tarjeta"><h3>Puntos clave trazables</h3><p>Cada punto nace de una alerta y usa una intervención copiada literalmente del modelo CMO, con enlace a su herramienta del hub.</p></div>
-      <div class="tarjeta"><h3>Texto para la historia</h3><p>Marca cada punto como realizado, no realizado o no procede, añade un comentario y copia el texto. También se imprime o guarda en PDF.</p></div>
+  <header class="cab">
+    <span class="etiqueta">Regalo del taller · Santiago, 16 de noviembre de 2026</span>
+    <h1>Preparador de consulta CMO</h1>
+    <p class="entrada">Introduce los datos del paciente y la herramienta prepara la consulta: adherencia calculada, si toca reestratificar, alertas y puntos clave con intervenciones literales de su modelo CMO. Al final marcas lo realizado y copias el texto para la historia clínica.</p>
+    <p class="privacidad"><strong>Gratuito y local.</strong> Todo se calcula en tu navegador: no se envía ni se guarda nada. No introduzcas nombre, NHC ni otros datos que identifiquen al paciente.</p>
+    <div class="ejemplos" role="group" aria-label="Pacientes ficticios de ejemplo">
+      <span>Probar con un paciente ficticio:</span>
+      <button type="button" class="chip" data-ejemplo="VIH-01">VIH-01</button>
+      <button type="button" class="chip" data-ejemplo="VIH-02">VIH-02</button>
+      <button type="button" class="chip" data-ejemplo="RESP-01">RESP-01</button>
+      <button type="button" class="chip" data-ejemplo="RESP-02">RESP-02</button>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <h2>Cómo funciona por dentro</h2>
-    <table>
-      <thead><tr><th>Paso</th><th>Quién lo hace</th><th>Qué produce</th></tr></thead>
-      <tbody>
-        <tr><td>1 · Lector</td><td><span class="tipo ia">Agente de IA</span></td><td>Perfil del paciente; cada dato con su cita literal</td></tr>
-        <tr><td>2 · Calculadora</td><td><span class="tipo codigo">Código, sin IA</span></td><td>PDC, fechas y plazos de reestratificación, cambios de tratamiento</td></tr>
-        <tr><td>3 · Detector</td><td><span class="tipo ia">Agente de IA</span></td><td>Alertas según reglas escritas, no según su criterio</td></tr>
-        <tr><td>4 · Planificador</td><td><span class="tipo ia">Agente de IA</span></td><td>Puntos clave elegidos de la lista cerrada de intervenciones del nivel</td></tr>
-        <tr><td>5 · Hoja</td><td><span class="tipo codigo">Código, sin IA</span></td><td>Hoja de consulta; se niega a generarla si una intervención no es literal</td></tr>
-        <tr><td>6 · Auditor</td><td><span class="tipo ia">Agente de IA</span></td><td>Revisión independiente de citas, cifras y trazabilidad</td></tr>
-      </tbody>
-    </table>
-    <p>Cuatro reglas lo sostienen: <strong>la IA no calcula</strong>, <strong>la IA no estratifica</strong> (el nivel lo asigna la herramienta CMO del hub), <strong>sin alerta no hay punto clave</strong> y <strong>la última palabra es del farmacéutico</strong>.</p>
-  </section>
+  <form id="formulario" novalidate>
+    <section class="bloque">
+      <h2><span class="num">1</span> Paciente y estratificación</h2>
+      <div class="rejilla">
+        <label>Modelo CMO de la patología
+          <select id="modelo" required></select>
+        </label>
+        <fieldset class="nivel">
+          <legend>Nivel CMO actual</legend>
+          <label><input type="radio" name="nivel" value="1"> 1</label>
+          <label><input type="radio" name="nivel" value="2"> 2</label>
+          <label><input type="radio" name="nivel" value="3"> 3</label>
+        </fieldset>
+        <label>Fecha de la última estratificación
+          <input type="date" id="fecha_estratificacion" required>
+        </label>
+        <label>Fecha de la consulta
+          <input type="date" id="fecha_consulta" required>
+        </label>
+        <label>Patología (opcional)
+          <input type="text" id="patologia" placeholder="p. ej. Asma grave">
+        </label>
+        <div class="dos">
+          <label>Edad (opcional)
+            <input type="number" id="edad" min="0" max="120" inputmode="numeric">
+          </label>
+          <label>Sexo (opcional)
+            <select id="sexo"><option value="">—</option><option>mujer</option><option>varón</option></select>
+          </label>
+        </div>
+      </div>
+      <p class="ayuda">El nivel lo asigna la herramienta CMO del hub. Esta herramienta no lo calcula ni lo cambia. <a id="enlaceHerramienta" href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Abrir la herramienta de estratificación ↗</a></p>
+    </section>
 
-  <section>
-    <h2>Pruébalo en tu ordenador</h2>
-    <ol class="pasos">
-      <li>Descarga la herramienta y descomprime la carpeta.</li>
-      <li>Ábrela con Claude Code (incluido en los planes de pago de Claude, a partir de Pro). Necesitas también Node.js instalado.</li>
-      <li>Escribe <code>/preparar-consulta VIH-01</code>. Hay cuatro pacientes ficticios: <code>VIH-01</code>, <code>VIH-02</code>, <code>RESP-01</code> y <code>RESP-02</code>.</li>
-      <li>Abre en Chrome o Edge la hoja que aparece en la carpeta <code>trabajo</code>.</li>
-    </ol>
-    <p>Incluye las intervenciones y la periodicidad de las diez herramientas del <a href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Hub de Estratificación CMO</a>, extraídas literalmente de su código.</p>
-  </section>
+    <section class="bloque">
+      <h2><span class="num">2</span> Dispensaciones del hospital</h2>
+      <p class="ayuda">Una fila por dispensación. El grupo agrupa los medicamentos de un mismo tratamiento (p. ej. «TAR»), para que un cambio de fármaco no cuente como hueco. Se usan los últimos 180 días antes de la consulta.</p>
+      <div class="tabla-edit" id="tablaDisp"></div>
+      <div class="acciones-fila">
+        <button type="button" class="sec" id="addDisp">+ Añadir dispensación</button>
+        <details class="pegar"><summary>Pegar desde una hoja de cálculo</summary>
+          <p class="ayuda">Columnas separadas por punto y coma, con cabecera: <code>fecha;grupo;medicamento;dias_suministro</code>. Fechas en formato aaaa-mm-dd o dd/mm/aaaa.</p>
+          <textarea id="csvDisp" rows="4" aria-label="Dispensaciones en formato CSV"></textarea>
+          <button type="button" class="sec" id="cargarCsv">Cargar estas filas</button>
+        </details>
+      </div>
+    </section>
 
-  <section>
-    <div class="aviso">
-      <strong>Material docente, versión 0.1.</strong> Los pacientes son ficticios. No introduzcas datos de pacientes reales sin seudonimizar y sin la autorización de tu centro. Herramienta de apoyo: no sustituye el juicio del farmacéutico. Algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.
-    </div>
-  </section>
+    <section class="bloque">
+      <h2><span class="num">3</span> Tratamiento y cambios</h2>
+      <p class="ayuda">Tratamientos activos y los que se han iniciado o suspendido. Se usan para detectar cambios desde la última estratificación.</p>
+      <div class="tabla-edit" id="tablaPresc"></div>
+      <button type="button" class="sec" id="addPresc">+ Añadir tratamiento</button>
+    </section>
+
+    <section class="bloque">
+      <h2><span class="num">4</span> Notas de consulta (opcional)</h2>
+      <p class="ayuda">Pega las notas sin datos identificativos. Si empiezas cada nota con una línea <code>## aaaa-mm-dd</code>, la herramienta sabe de cuándo es cada frase y no trata como nuevo lo que ya se valoró en la última estratificación.</p>
+      <textarea id="notas" rows="7" aria-label="Notas de consulta"></textarea>
+    </section>
+
+    <div id="errores" class="errores" role="alert" hidden></div>
+    <button type="submit" class="principal grande">Preparar consulta</button>
+  </form>
+
+  <section id="cadena" class="cadena" hidden aria-live="polite"></section>
+  <section id="resultado" hidden></section>
 
   <footer>
-    Dr. Ramón Morillo Verdugo · <a href="https://ramonmorillo.es">ramonmorillo.es</a>. Basado en el modelo CMO: Capacidad, Motivación y Oportunidad. Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH).
+    <details>
+      <summary>Cómo funciona y qué no hace</summary>
+      <p>Cinco módulos de reglas, deterministas y auditables, sin IA generativa: <strong>lector</strong> (resume el tratamiento y busca en la nota expresiones de olvidos, efectos adversos o mal control, con su cita literal y teniendo en cuenta las negaciones), <strong>calculadora</strong> (PDC por grupo terapéutico, plazo de reestratificación según la periodicidad de cada adaptación CMO, cambios de tratamiento), <strong>detector</strong> (alertas según reglas escritas), <strong>planificador</strong> (elige intervenciones de la lista literal del nivel del paciente) y <strong>auditor</strong> (comprueba que todo es literal y trazable).</p>
+      <p>No estratifica, no propone dosis ni interacciones y no sustituye el juicio del farmacéutico. El lector de notas busca expresiones: puede pasar por alto lo que esté escrito de otra forma. Las intervenciones y periodicidades proceden literalmente de las herramientas del <a href="https://ramonmorillo.es/hub-estratificacionCMO/" target="_blank" rel="noopener">Hub de Estratificación CMO</a>. Versión 1.0 · material docente: algunas reglas (traducción de las periodicidades a meses, ventana del PDC) están pendientes de validación final.</p>
+      <p>Versión avanzada con agentes de IA para Claude Code: <a href="https://github.com/ramonmorillo/preparadorconsulta/archive/refs/heads/main.zip">descargar (.zip)</a>.</p>
+    </details>
+    <p>Dr. Ramón Morillo Verdugo · <a href="https://ramonmorillo.es">ramonmorillo.es</a>. Basado en el modelo CMO: Capacidad, Motivación y Oportunidad. Las adaptaciones del modelo CMO son propiedad de la Sociedad Española de Farmacia Hospitalaria (SEFH).</p>
   </footer>
 </main>
+<script type="module" src="app/app.js?v=1.0.0"></script>
 </body>
 </html>

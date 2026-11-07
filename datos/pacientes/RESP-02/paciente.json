@@ -1,0 +1,13 @@
+{
+  "id": "RESP-02",
+  "ficticio": true,
+  "edad": 24,
+  "sexo": "varón",
+  "patologia": "Fibrosis quística",
+  "modelo_cmo": "respiratorio",
+  "ultima_estratificacion": {
+    "fecha": "2026-08-01",
+    "nivel": 1
+  },
+  "fecha_consulta": "2026-11-16"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "VIH-02",
+  "ficticio": true,
+  "edad": 38,
+  "sexo": "mujer",
+  "patologia": "Infección por VIH-1",
+  "modelo_cmo": "vih",
+  "ultima_estratificacion": {
+    "fecha": "2026-06-15",
+    "nivel": 3
+  },
+  "fecha_consulta": "2026-11-16"
+}

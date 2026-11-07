@@ -1,0 +1,57 @@
+{
+  "generado_por": "herramientas/calcular.mjs v0.1.0",
+  "paciente": "VIH-01",
+  "fecha_consulta": "2026-11-16",
+  "adherencia": {
+    "indicador": "PDC (proporción de días cubiertos)",
+    "umbral": 0.9,
+    "ventana_dias": 180,
+    "grupos": [
+      {
+        "grupo": "TAR",
+        "medicamentos": [
+          "bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg"
+        ],
+        "ventana": {
+          "inicio": "2026-05-20",
+          "fin": "2026-11-15"
+        },
+        "dias_cubiertos": 147,
+        "dias_ventana": 180,
+        "pdc": 0.817,
+        "pdc_porcentaje": "81,7 %",
+        "por_debajo_del_umbral": true
+      }
+    ]
+  },
+  "reestratificacion": {
+    "herramienta": "CMO-VIH",
+    "url_herramienta": "https://ramonmorillo.github.io/cmo-vih-app/",
+    "ultima_fecha": "2026-03-10",
+    "nivel": "2",
+    "dias_desde_ultima": 251,
+    "periodicidad_texto_literal": "Cada 6 meses / seguimiento de intensidad moderada",
+    "reestratificar_ademas_texto_literal": null,
+    "interpretacion_usada": {
+      "plazo_min_meses": null,
+      "plazo_max_meses": 6,
+      "reestratificar_si_cambio": false
+    },
+    "fecha_inicio_intervalo": null,
+    "fecha_limite": "2026-09-10",
+    "estado": "vencida"
+  },
+  "cambios_tratamiento": {
+    "desde": "2026-03-10",
+    "lista": [
+      {
+        "tipo": "inicio",
+        "medicamento": "atorvastatina 20 mg",
+        "grupo": "hipolipemiante",
+        "fecha": "2026-07-03",
+        "ambito": "atención primaria"
+      }
+    ],
+    "el_modelo_pide_reestratificar_ante_cambios": false
+  }
+}

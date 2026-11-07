@@ -1,0 +1,104 @@
+{
+  "id": "migrana",
+  "herramienta": "CMO-Migraña",
+  "url": "https://ramonmorillo.github.io/estratificacionmigrana/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "Documento de la adaptación CMO a migraña en poder de Ramón Morillo (el código de la herramienta indica que aún no es público)",
+  "reestratificar_ademas": [
+    "Al inicio del tratamiento.",
+    "Cuando exista un cambio en el tratamiento."
+  ],
+  "archivo_fuente": "cmo-migrana-app/src/core.mjs (cumulativeInterventions, PERIODICITY)",
+  "repositorio": "github.com/ramonmorillo/estratificacionmigrana",
+  "commit": "295d36c",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Cada 6 meses.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar el tratamiento preventivo y sintomático registrado y comprobar adecuación, efectividad, seguridad, interacciones, adherencia y persistencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Educar al paciente en objetivos del tratamiento, uso correcto de la medicación y registro de crisis, síntomas y consumo de medicación sintomática."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones farmacéuticas en el registro local del caso y comunicar incidencias clínicas relevantes al equipo asistencial."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar cambios de pauta, combinaciones terapéuticas, vías de administración de mayor complejidad y aparición de incidencias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Reforzar educación individualizada y seguimiento de adherencia, tolerabilidad y expectativas terapéuticas."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar con Neurología y otros profesionales las necesidades de seguimiento derivadas de cambios terapéuticos o situación clínica."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Realizar seguimiento farmacoterapéutico intensivo en pacientes de mayor complejidad, con especial atención a seguridad, efectividad e interacciones."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Establecer educación y seguimiento estrecho del paciente y/o persona cuidadora ante alta complejidad o prioridad automática."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Consensuar con Neurología un plan de seguimiento farmacoterapéutico para los pacientes de mayor complejidad."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Cada 12 meses.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar el tratamiento preventivo y sintomático registrado y comprobar adecuación, efectividad, seguridad, interacciones, adherencia y persistencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Educar al paciente en objetivos del tratamiento, uso correcto de la medicación y registro de crisis, síntomas y consumo de medicación sintomática."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones farmacéuticas en el registro local del caso y comunicar incidencias clínicas relevantes al equipo asistencial."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar cambios de pauta, combinaciones terapéuticas, vías de administración de mayor complejidad y aparición de incidencias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Reforzar educación individualizada y seguimiento de adherencia, tolerabilidad y expectativas terapéuticas."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar con Neurología y otros profesionales las necesidades de seguimiento derivadas de cambios terapéuticos o situación clínica."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Cada 12 meses.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar el tratamiento preventivo y sintomático registrado y comprobar adecuación, efectividad, seguridad, interacciones, adherencia y persistencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento del paciente",
+          "texto": "Educar al paciente en objetivos del tratamiento, uso correcto de la medicación y registro de crisis, síntomas y consumo de medicación sintomática."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones farmacéuticas en el registro local del caso y comunicar incidencias clínicas relevantes al equipo asistencial."
+        }
+      ]
+    }
+  }
+}

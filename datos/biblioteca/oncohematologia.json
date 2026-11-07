@@ -1,0 +1,257 @@
+{
+  "id": "oncohematologia",
+  "herramienta": "CMO-Oncohematología",
+  "url": "https://ramonmorillo.github.io/cmoncologia/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "Modelo CMO SEFH (el código indica que requiere cotejo final con el documento original antes del uso asistencial)",
+  "reestratificar_ademas": [
+    "Al inicio del tratamiento.",
+    "Ante un cambio de esquema de tratamiento.",
+    "Siempre que el farmacéutico lo considere necesario."
+  ],
+  "archivo_fuente": "src/clinical.js (actionsForPriority, PERIODICITY, REASSESS_WHEN)",
+  "repositorio": "github.com/ramonmorillo/cmoncologia",
+  "commit": "57fc24a",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Valoración en ciclos alternos.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Validación del tratamiento antineoplásico y de soporte."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación de la medicación concomitante."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión de automedicación y medicina complementaria/alternativa."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización de interacciones."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Prevención y minimización de reacciones adversas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Aplicar doble método de seguimiento de adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar la actividad del tratamiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Registrar resultados comunicados por el paciente (PRO) en cada visita."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Realizar entrevista clínica en todos los ciclos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Hacer seguimiento de objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Mantener contacto adicional entre visitas mediante teleasistencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Proporcionar información escrita."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Facilitar herramientas fiables de autogestión."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Atención programada presencial o mediante teleasistencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Valorar un sistema personalizado de dosificación (SPD) coordinado con Farmacia Comunitaria."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Incorporar al paciente al plan farmacoterapéutico."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Entregar material personalizado."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Educar a familiares y cuidadores."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Realizar seguimiento entre visitas."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participación en programas orientados a objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación intrahospitalaria especializada."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Planificar coordinadamente la próxima visita."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar activamente los niveles asistenciales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Emitir informes periódicos al equipo multidisciplinar."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Disponer de sistemas que señalen los pacientes de Prioridad 1 al resto del equipo."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Valoración cada 3 ciclos.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Validación del tratamiento antineoplásico y de soporte."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación de la medicación concomitante."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión de automedicación y medicina complementaria/alternativa."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización de interacciones."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Prevención y minimización de reacciones adversas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Aplicar doble método de seguimiento de adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar la actividad del tratamiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Registrar resultados comunicados por el paciente (PRO) en cada visita."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Proporcionar información escrita."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Facilitar herramientas fiables de autogestión."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Atención programada presencial o mediante teleasistencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Valorar un sistema personalizado de dosificación (SPD) coordinado con Farmacia Comunitaria."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participación en programas orientados a objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación intrahospitalaria especializada."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Valoración cada 6 ciclos.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Validación del tratamiento antineoplásico y de soporte."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación de la medicación concomitante."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión de automedicación y medicina complementaria/alternativa."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización de interacciones."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Prevención y minimización de reacciones adversas."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Proporcionar información escrita."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Facilitar herramientas fiables de autogestión."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participación en programas orientados a objetivos farmacoterapéuticos."
+        }
+      ]
+    }
+  }
+}

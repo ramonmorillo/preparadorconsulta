@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja de consulta</title>
+<style>
+  :root { --tinta:#1d2430; --suave:#5b6574; --linea:#d9dde3; --fondo:#f6f7f9; --tarjeta:#fff;
+          --acento:#0f5c6e; --acento-fondo:#e3f1f4; --alerta:#9a3412; --alerta-fondo:#fdeee6;
+          --ok:#166534; --ok-fondo:#e7f5ec; --aviso:#854d0e; --aviso-fondo:#fdf6e3; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--tinta); background:var(--fondo); }
+  main { max-width: 860px; margin: 0 auto; padding: 20px 16px 48px; }
+  header.cab { border-bottom: 3px solid var(--acento); padding-bottom: 10px; margin-bottom: 16px; }
+  .ficticio { display:inline-block; background:var(--aviso-fondo); color:var(--aviso); border:1px solid #e9d5a1; border-radius:6px; padding:2px 8px; font-size:12px; font-weight:600; margin-bottom:6px; }
+  h1 { font-size: 22px; margin: 2px 0; }
+  .sub { color: var(--suave); font-size: 14px; }
+  section { background: var(--tarjeta); border:1px solid var(--linea); border-radius:10px; padding:14px 16px; margin: 0 0 14px; }
+  h2 { font-size: 16px; margin: 0 0 10px; color: var(--acento); }
+  table { width:100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--linea); vertical-align: top; }
+  th { color: var(--suave); font-weight:600; font-size:12px; text-transform: none; }
+  .cita { color: var(--suave); font-size: 12.5px; font-style: italic; }
+  .etq { display:inline-block; font-size:12px; font-weight:600; border-radius:999px; padding:1px 9px; }
+  .etq.mal { background:var(--alerta-fondo); color:var(--alerta); }
+  .etq.bien { background:var(--ok-fondo); color:var(--ok); }
+  .etq.neutra { background:var(--acento-fondo); color:var(--acento); }
+  .nivel { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .nivel .num { font-size:28px; font-weight:700; color:var(--acento); }
+  .nota { font-size: 12.5px; color: var(--suave); margin: 8px 0 0; }
+  ul.alertas { list-style:none; margin:0; padding:0; }
+  ul.alertas li { border-left: 4px solid var(--alerta); background: var(--alerta-fondo); padding: 8px 10px; margin-bottom: 8px; border-radius: 0 6px 6px 0; }
+  ul.alertas li.info { border-left-color: var(--acento); background: var(--acento-fondo); }
+  .punto { border:1px solid var(--linea); border-radius:8px; padding:10px 12px; margin-bottom:10px; }
+  .punto .motivo { font-size: 12.5px; color: var(--suave); margin-bottom: 4px; }
+  .punto .texto { font-weight: 600; }
+  .estados { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .estados label { border:1px solid var(--linea); border-radius:6px; padding:4px 10px; cursor:pointer; font-size:13px; user-select:none; }
+  .estados input { position:absolute; opacity:0; pointer-events:none; }
+  .estados input:checked + span { font-weight:700; }
+  .estados label:has(input:checked) { background: var(--acento-fondo); border-color: var(--acento); color: var(--acento); }
+  .estados label:has(input:focus-visible) { outline: 2px solid var(--acento); outline-offset: 2px; }
+  textarea, input[type=text] { width:100%; font: inherit; font-size:14px; border:1px solid var(--linea); border-radius:6px; padding:6px 8px; margin-top:8px; }
+  a.enlace { font-size: 13px; color: var(--acento); }
+  details summary { cursor:pointer; color: var(--acento); font-weight:600; }
+  .botones { display:flex; gap:8px; flex-wrap:wrap; }
+  button { font: inherit; font-size:14px; border:1px solid var(--acento); background:var(--acento); color:#fff; border-radius:8px; padding:8px 14px; cursor:pointer; }
+  button.sec { background:#fff; color:var(--acento); }
+  #textoHC { min-height: 220px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+  #avisoCopia { font-size: 13px; color: var(--ok); min-height: 1.2em; }
+  footer { font-size:12px; color:var(--suave); margin-top: 18px; }
+  @media print {
+    body { background:#fff; }
+    section { break-inside: avoid; border-color:#bbb; }
+    .botones, #bloqueHC textarea, #avisoCopia { display:none; }
+    .estados label { display:none; }
+    .estados label:has(input:checked) { display:inline-block; }
+  }
+</style>
+</head>
+<body>
+<main id="app">
+  <p>Cargando…</p>
+</main>
+
+<!-- Los datos de la consulta los inserta herramientas/generar_hoja.mjs. No editar a mano. -->
+<script id="datos-consulta" type="application/json">{"generado_por":"herramientas/generar_hoja.mjs v0.1.0 (cifras de herramientas/calcular.mjs v0.1.0)","paciente":{"id":"VIH-01","ficticio":true,"edad":52,"sexo":"varón","patologia":"Infección por VIH-1","fecha_consulta":"2026-11-16"},"estratificacion":{"herramienta":"CMO-VIH","url":"https://ramonmorillo.github.io/cmo-vih-app/","nivel":"2","ultima_fecha":"2026-03-10","estado":"vencida","fecha_limite":"2026-09-10","periodicidad_texto":"Cada 6 meses / seguimiento de intensidad moderada"},"umbral_pdc_texto":"90 %","ventana_pdc_texto":"180 días","adherencia":[{"grupo":"TAR","pdc_porcentaje":"81,7 %","dias_cubiertos":147,"dias_ventana":180,"ventana_inicio":"2026-05-20","ventana_fin":"2026-11-15","por_debajo_del_umbral":true}],"perfil":[{"dato":"Varón de 52 años con infección por VIH-1","cita":"Infección por VIH-1","fuente":"paciente.json"},{"dato":"TAR activo: bictegravir/emtricitabina/tenofovir alafenamida, 1 comprimido cada 24 h (prescripción hospitalaria)","cita":"bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;TAR;1 comprimido cada 24 h;2024-02-12;;hospitalaria","fuente":"prescripcion.csv"},{"dato":"Atorvastatina 20 mg cada 24 h desde 2026-07-03 (atención primaria)","cita":"atorvastatina 20 mg;hipolipemiante;1 comprimido cada 24 h;2026-07-03;;atención primaria","fuente":"prescripcion.csv"},{"dato":"Buena tolerancia al TAR y carga viral indetectable en la última analítica (nota del 2026-03-10)","cita":"Paciente con buena tolerancia al tratamiento antirretroviral. Carga viral indetectable en la última analítica.","fuente":"notas.md"},{"dato":"Refería olvidos ocasionales de dosis en fin de semana (nota del 2026-03-10)","cita":"Refiere olvidos ocasionales de la dosis los fines de semana, sobre todo cuando sale de casa.","fuente":"notas.md"},{"dato":"Inicia atorvastatina por dislipemia (nota de atención primaria del 2026-07-03)","cita":"Inicia atorvastatina 20 mg por dislipemia.","fuente":"notas.md"}],"alertas":[{"id":"A1","tipo":"accion","regla":"pdc_bajo_umbral","titulo":"Adherencia al TAR por debajo del 90 %","detalle":"PDC 81,7 % (147/180 días) entre 2026-05-20 y 2026-11-15.","origen":"calculo"},{"id":"A2","tipo":"accion","regla":"reestratificacion","titulo":"Reestratificación vencida","detalle":"Última estratificación 2026-03-10 (nivel 2); fecha límite 2026-09-10.","origen":"calculo"},{"id":"A3","tipo":"informativa","regla":"cambio_tratamiento","titulo":"Cambio de tratamiento desde la última estratificación","detalle":"Inicio de atorvastatina 20 mg el 2026-07-03 (atención primaria).","origen":"calculo"},{"id":"A4","tipo":"accion","regla":"senal_nota","titulo":"Olvidos de dosis referidos","detalle":"La nota de la última consulta recoge olvidos de dosis.","origen":"nota","cita":"Refiere olvidos ocasionales de la dosis los fines de semana, sobre todo cuando sale de casa."}],"puntos_clave":[{"id":"K1","alerta_id":"A2","categoria":null,"intervencion_literal":"Reevaluar la estratificación si aparecen nuevos riesgos.","enlace":{"texto":"Abrir CMO-VIH para reestratificar","url":"https://ramonmorillo.github.io/cmo-vih-app/"}},{"id":"K2","alerta_id":"A1","categoria":null,"intervencion_literal":"Abordar barreras de adherencia y necesidades educativas.","enlace":{"texto":"Abrir CMO-VIH","url":"https://ramonmorillo.github.io/cmo-vih-app/"}},{"id":"K3","alerta_id":"A4","categoria":null,"intervencion_literal":"Reforzar autocuidado y hábitos de adherencia.","enlace":{"texto":"Abrir CMO-VIH","url":"https://ramonmorillo.github.io/cmo-vih-app/"}}],"intervenciones_nivel":[{"categoria":null,"texto":"Mantener el seguimiento farmacéutico rutinario del VIH.","nivel_origen":3},{"categoria":null,"texto":"Reforzar autocuidado y hábitos de adherencia.","nivel_origen":3},{"categoria":null,"texto":"Reevaluar la estratificación si aparecen nuevos riesgos.","nivel_origen":3},{"categoria":null,"texto":"Revisar efectividad y tolerabilidad del tratamiento.","nivel_origen":2},{"categoria":null,"texto":"Abordar barreras de adherencia y necesidades educativas.","nivel_origen":2},{"categoria":null,"texto":"Optimizar el control de comorbilidades con seguimiento coordinado.","nivel_origen":2},{"categoria":null,"texto":"Monitorizar cambios psicosociales y barreras de acceso.","nivel_origen":2}]}</script>
+
+<script>
+(function () {
+  "use strict";
+  var datos;
+  try { datos = JSON.parse(document.getElementById("datos-consulta").textContent); }
+  catch (e) { document.getElementById("app").innerHTML = "<p>Error: la hoja no contiene datos válidos.</p>"; return; }
+
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); };
+  var p = datos.paciente, e = datos.estratificacion;
+  var ESTADOS = { realizado: "Realizado", no_realizado: "No realizado", no_procede: "No procede" };
+  var ESTADO_REESTR = { vencida: ["Reestratificación vencida", "mal"], en_intervalo_de_valoracion: ["En intervalo de valoración", "neutra"], en_plazo: ["En plazo", "bien"], sin_plazo_calculable: ["Plazo no calculable por fechas", "neutra"] };
+
+  var h = [];
+  h.push('<header class="cab">');
+  if (p.ficticio) h.push('<span class="ficticio">PACIENTE FICTICIO · material docente</span>');
+  h.push('<h1>Hoja de preparación de consulta</h1>');
+  h.push('<div class="sub">' + esc(p.patologia) + ' · ' + esc(p.edad) + ' años · ' + esc(p.sexo) + ' · Consulta del ' + esc(p.fecha_consulta) + ' · Ref. ' + esc(p.id) + '</div>');
+  h.push('</header>');
+
+  // Estratificación
+  var er = ESTADO_REESTR[e.estado] || [e.estado, "neutra"];
+  h.push('<section><h2>Estratificación CMO</h2><div class="nivel"><div><div class="num">Nivel ' + esc(e.nivel) + '</div><div class="sub">' + esc(e.herramienta) + ' · última estratificación ' + esc(e.ultima_fecha) + '</div></div>');
+  h.push('<div><span class="etq ' + er[1] + '">' + esc(er[0]) + '</span>' + (e.fecha_limite ? '<div class="sub">Fecha límite: ' + esc(e.fecha_limite) + '</div>' : '') + '</div></div>');
+  if (e.periodicidad_texto) h.push('<p class="nota">Periodicidad del modelo: «' + esc(e.periodicidad_texto) + '»</p>');
+  h.push('<p class="nota">El nivel lo asigna la herramienta CMO del hub, no esta hoja. Los niveles no son comparables entre patologías. <a class="enlace" href="' + esc(e.url) + '" target="_blank" rel="noopener">Abrir ' + esc(e.herramienta) + '</a></p></section>');
+
+  // Adherencia
+  h.push('<section><h2>Adherencia (PDC)</h2><table><thead><tr><th>Grupo</th><th>PDC</th><th>Días cubiertos</th><th>Periodo</th></tr></thead><tbody>');
+  (datos.adherencia || []).forEach(function (a) {
+    h.push('<tr><td>' + esc(a.grupo) + '</td><td><span class="etq ' + (a.por_debajo_del_umbral ? 'mal' : 'bien') + '">' + esc(a.pdc_porcentaje) + '</span></td><td>' + esc(a.dias_cubiertos) + ' / ' + esc(a.dias_ventana) + '</td><td>' + esc(a.ventana_inicio) + ' a ' + esc(a.ventana_fin) + '</td></tr>');
+  });
+  h.push('</tbody></table><p class="nota">Calculado por herramientas/calcular.mjs a partir de las dispensaciones (umbral ' + esc(datos.umbral_pdc_texto) + ').</p></section>');
+
+  // Perfil
+  h.push('<section><h2>Perfil del paciente</h2><table><tbody>');
+  (datos.perfil || []).forEach(function (f) {
+    h.push('<tr><td>' + esc(f.dato) + (f.cita ? '<div class="cita">«' + esc(f.cita) + '» · ' + esc(f.fuente) + '</div>' : '') + '</td></tr>');
+  });
+  h.push('</tbody></table></section>');
+
+  // Alertas
+  h.push('<section><h2>Alertas</h2><ul class="alertas">');
+  if (!(datos.alertas || []).length) h.push('<li class="info">Sin alertas.</li>');
+  (datos.alertas || []).forEach(function (a) {
+    h.push('<li class="' + (a.tipo === 'informativa' ? 'info' : '') + '"><strong>' + esc(a.id) + ' · ' + esc(a.titulo) + '</strong><div>' + esc(a.detalle) + '</div>' + (a.cita ? '<div class="cita">«' + esc(a.cita) + '»</div>' : '') + '</li>');
+  });
+  h.push('</ul></section>');
+
+  // Puntos clave
+  h.push('<section><h2>Puntos clave para esta consulta</h2>');
+  (datos.puntos_clave || []).forEach(function (k, i) {
+    h.push('<div class="punto" data-i="' + i + '"><div class="motivo">' + esc(k.id) + ' · por ' + esc(k.alerta_id) + (k.categoria ? ' · ' + esc(k.categoria) : '') + '</div>');
+    h.push('<div class="texto">' + esc(k.intervencion_literal) + '</div>');
+    if (k.enlace) h.push('<a class="enlace" href="' + esc(k.enlace.url) + '" target="_blank" rel="noopener">' + esc(k.enlace.texto) + '</a>');
+    h.push('<div class="estados" role="radiogroup" aria-label="Estado de ' + esc(k.id) + '">');
+    Object.keys(ESTADOS).forEach(function (s) {
+      h.push('<label><input type="radio" name="estado-' + i + '" value="' + s + '"><span>' + ESTADOS[s] + '</span></label>');
+    });
+    h.push('</div><input type="text" class="comentario" placeholder="Comentario (opcional)" aria-label="Comentario de ' + esc(k.id) + '"></div>');
+  });
+  h.push('</section>');
+
+  // Intervenciones del nivel
+  h.push('<section><details><summary>Todas las intervenciones del nivel ' + esc(e.nivel) + ' (' + (datos.intervenciones_nivel || []).length + ')</summary><ul>');
+  (datos.intervenciones_nivel || []).forEach(function (t) { h.push('<li>' + (t.categoria ? '<span class="sub">' + esc(t.categoria) + ':</span> ' : '') + esc(t.texto) + '</li>'); });
+  h.push('</ul><p class="nota">Texto literal de ' + esc(e.herramienta) + '.</p></details></section>');
+
+  // Texto para HC
+  h.push('<section id="bloqueHC"><h2>Texto para la historia clínica</h2><div class="botones"><button id="btnGenerar">Generar texto</button><button id="btnCopiar" class="sec">Copiar</button><button id="btnImprimir" class="sec">Imprimir / PDF</button></div>');
+  h.push('<textarea id="textoHC" aria-label="Texto para la historia clínica" placeholder="Marque el estado de cada punto y pulse «Generar texto»."></textarea><div id="avisoCopia" aria-live="polite"></div></section>');
+
+  h.push('<footer>Herramienta de apoyo. No sustituye el juicio del farmacéutico. Generada por ' + esc(datos.generado_por) + '.</footer>');
+  document.getElementById("app").innerHTML = h.join("");
+
+  function generar() {
+    var L = [];
+    L.push("ATENCIÓN FARMACÉUTICA - CONSULTA " + p.fecha_consulta);
+    L.push("Modelo CMO: " + e.herramienta + ", nivel " + e.nivel + " (última estratificación " + e.ultima_fecha + "; " + (ESTADO_REESTR[e.estado] || [e.estado])[0].toLowerCase() + ").");
+    var ad = (datos.adherencia || []).map(function (a) { return a.grupo + " " + a.pdc_porcentaje; });
+    if (ad.length) L.push("Adherencia (PDC " + datos.ventana_pdc_texto + "): " + ad.join("; ") + ".");
+    var al = (datos.alertas || []).map(function (a) { return a.titulo; });
+    if (al.length) L.push("Alertas: " + al.join("; ") + ".");
+    var grupos = { realizado: [], no_realizado: [], no_procede: [], sin_marcar: [] };
+    document.querySelectorAll(".punto").forEach(function (div) {
+      var k = datos.puntos_clave[Number(div.getAttribute("data-i"))];
+      var sel = div.querySelector("input[type=radio]:checked");
+      var com = div.querySelector(".comentario").value.trim();
+      (grupos[sel ? sel.value : "sin_marcar"]).push("- " + k.intervencion_literal + (com ? " (" + com + ")" : ""));
+    });
+    if (grupos.realizado.length) L.push("Actuaciones realizadas:\n" + grupos.realizado.join("\n"));
+    if (grupos.no_realizado.length) L.push("Actuaciones pendientes:\n" + grupos.no_realizado.join("\n"));
+    if (grupos.no_procede.length) L.push("No proceden:\n" + grupos.no_procede.join("\n"));
+    if (grupos.sin_marcar.length) L.push("Sin valorar:\n" + grupos.sin_marcar.join("\n"));
+    document.getElementById("textoHC").value = L.join("\n");
+    document.getElementById("avisoCopia").textContent = "";
+  }
+  document.getElementById("btnGenerar").addEventListener("click", generar);
+  document.getElementById("btnCopiar").addEventListener("click", function () {
+    var ta = document.getElementById("textoHC");
+    if (!ta.value) generar();
+    var ok = function () { document.getElementById("avisoCopia").textContent = "Texto copiado. Péguelo en la historia clínica."; };
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(ta.value).then(ok, function () { ta.select(); document.execCommand("copy"); ok(); }); }
+    else { ta.select(); document.execCommand("copy"); ok(); }
+  });
+  document.getElementById("btnImprimir").addEventListener("click", function () { window.print(); });
+})();
+</script>
+</body>
+</html>

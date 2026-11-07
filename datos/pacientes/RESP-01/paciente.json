@@ -1,0 +1,13 @@
+{
+  "id": "RESP-01",
+  "ficticio": true,
+  "edad": 45,
+  "sexo": "mujer",
+  "patologia": "Asma grave",
+  "modelo_cmo": "respiratorio",
+  "ultima_estratificacion": {
+    "fecha": "2025-09-20",
+    "nivel": 2
+  },
+  "fecha_consulta": "2026-11-16"
+}

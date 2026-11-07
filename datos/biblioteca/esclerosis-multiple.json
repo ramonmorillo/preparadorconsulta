@@ -1,0 +1,229 @@
+{
+  "id": "esclerosis-multiple",
+  "herramienta": "CMO-Esclerosis Múltiple",
+  "url": "https://ramonmorillo.github.io/estratificacionEM/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "\"Adaptación del Modelo de Atención Farmacéutica CMO al paciente con Esclerosis Múltiple\" (sin URL en el código)",
+  "aviso": "La herramienta no declara periodicidad de reestratificación",
+  "archivo_fuente": "assets/js/model.js (getInterventions)",
+  "repositorio": "github.com/ramonmorillo/estratificacionEM",
+  "commit": "489df35",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": null,
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar el tratamiento para asegurar adecuación, seguridad y efectividad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia y proponer estrategias de mejora."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante, fitoterapia, interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PROM y PREM cuando estén disponibles."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Mantener contacto adicional entre visitas cuando sea necesario mediante teleasistencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Asegurar conciliación de medicación en transiciones asistenciales, ingresos o altas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Intensificar seguimiento de adherencia, seguridad y tolerancia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Programar contactos intermedios o telemáticos según necesidad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Crear planes específicos para abordar reacciones adversas o problemas graves de seguridad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Replantear objetivos farmacoterapéuticos si no se cumplen."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Planificar visitas de alta intensidad y seguimiento estrecho."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Proporcionar información clara sobre enfermedad, tratamiento, adherencia y asociaciones de pacientes."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Ofrecer materiales educativos escritos o digitales."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Promover hábitos de vida saludables y uso correcto de medicamentos."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Proporcionar educación específica a familiares o cuidadores cuando proceda."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Establecer estrategias de autocuidado y autonomía."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Desarrollar programas específicos para detección, prevención o control de factores de riesgo."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Ofrecer educación sanitaria intensiva."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar intervenciones en historia clínica."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Promover comunicación bidireccional con el equipo asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Favorecer programas de seguimiento farmacoterapéutico personalizados."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Activar vías rápidas de comunicación con neurología, enfermería, hospital de día u otros niveles asistenciales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Recomendar comunicación multidisciplinar explícita cuando existan señales de alarma."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": null,
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar el tratamiento para asegurar adecuación, seguridad y efectividad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia y proponer estrategias de mejora."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante, fitoterapia, interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PROM y PREM cuando estén disponibles."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Mantener contacto adicional entre visitas cuando sea necesario mediante teleasistencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Asegurar conciliación de medicación en transiciones asistenciales, ingresos o altas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Intensificar seguimiento de adherencia, seguridad y tolerancia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Programar contactos intermedios o telemáticos según necesidad."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Proporcionar información clara sobre enfermedad, tratamiento, adherencia y asociaciones de pacientes."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Ofrecer materiales educativos escritos o digitales."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Promover hábitos de vida saludables y uso correcto de medicamentos."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Proporcionar educación específica a familiares o cuidadores cuando proceda."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Establecer estrategias de autocuidado y autonomía."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar intervenciones en historia clínica."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Promover comunicación bidireccional con el equipo asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Favorecer programas de seguimiento farmacoterapéutico personalizados."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": null,
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar el tratamiento para asegurar adecuación, seguridad y efectividad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia y proponer estrategias de mejora."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante, fitoterapia, interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PROM y PREM cuando estén disponibles."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Mantener contacto adicional entre visitas cuando sea necesario mediante teleasistencia."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Proporcionar información clara sobre enfermedad, tratamiento, adherencia y asociaciones de pacientes."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Ofrecer materiales educativos escritos o digitales."
+        },
+        {
+          "categoria": "Educación y formación",
+          "texto": "Promover hábitos de vida saludables y uso correcto de medicamentos."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar intervenciones en historia clínica."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Promover comunicación bidireccional con el equipo asistencial."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Favorecer programas de seguimiento farmacoterapéutico personalizados."
+        }
+      ]
+    }
+  }
+}

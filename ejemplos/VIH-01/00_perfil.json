@@ -1,0 +1,8 @@
+{ "items": [
+ { "dato": "Varón de 52 años con infección por VIH-1", "cita": "Infección por VIH-1", "fuente": "paciente.json" },
+ { "dato": "TAR activo: bictegravir/emtricitabina/tenofovir alafenamida, 1 comprimido cada 24 h (prescripción hospitalaria)", "cita": "bictegravir/emtricitabina/tenofovir alafenamida 50/200/25 mg;TAR;1 comprimido cada 24 h;2024-02-12;;hospitalaria", "fuente": "prescripcion.csv" },
+ { "dato": "Atorvastatina 20 mg cada 24 h desde 2026-07-03 (atención primaria)", "cita": "atorvastatina 20 mg;hipolipemiante;1 comprimido cada 24 h;2026-07-03;;atención primaria", "fuente": "prescripcion.csv" },
+ { "dato": "Buena tolerancia al TAR y carga viral indetectable en la última analítica (nota del 2026-03-10)", "cita": "Paciente con buena tolerancia al tratamiento antirretroviral. Carga viral indetectable en la última analítica.", "fuente": "notas.md" },
+ { "dato": "Refería olvidos ocasionales de dosis en fin de semana (nota del 2026-03-10)", "cita": "Refiere olvidos ocasionales de la dosis los fines de semana, sobre todo cuando sale de casa.", "fuente": "notas.md" },
+ { "dato": "Inicia atorvastatina por dislipemia (nota de atención primaria del 2026-07-03)", "cita": "Inicia atorvastatina 20 mg por dislipemia.", "fuente": "notas.md" }
+]}

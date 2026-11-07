@@ -1,0 +1,6 @@
+{ "alertas": [
+ { "id": "A1", "tipo": "accion", "regla": "pdc_bajo_umbral", "titulo": "Adherencia al TAR por debajo del 90 %", "detalle": "PDC 81,7 % (147/180 días) entre 2026-05-20 y 2026-11-15.", "origen": "calculo" },
+ { "id": "A2", "tipo": "accion", "regla": "reestratificacion", "titulo": "Reestratificación vencida", "detalle": "Última estratificación 2026-03-10 (nivel 2); fecha límite 2026-09-10.", "origen": "calculo" },
+ { "id": "A3", "tipo": "informativa", "regla": "cambio_tratamiento", "titulo": "Cambio de tratamiento desde la última estratificación", "detalle": "Inicio de atorvastatina 20 mg el 2026-07-03 (atención primaria).", "origen": "calculo" },
+ { "id": "A4", "tipo": "accion", "regla": "senal_nota", "titulo": "Olvidos de dosis referidos", "detalle": "La nota de la última consulta recoge olvidos de dosis.", "origen": "nota", "cita": "Refiere olvidos ocasionales de la dosis los fines de semana, sobre todo cuando sale de casa." }
+]}

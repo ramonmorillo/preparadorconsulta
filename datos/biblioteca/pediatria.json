@@ -1,0 +1,288 @@
+{
+  "id": "pediatria",
+  "herramienta": "CMO-Pediatría",
+  "url": "https://ramonmorillo.github.io/cmopediatria/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "Documento SEFH de adaptación CMO pediátrica (código: \"Tablas 6, 7 y 8, pp.17-20\"); sin URL en el código",
+  "archivo_fuente": "src/clinical.js (actionsFor, PERIODICITY)",
+  "repositorio": "github.com/ramonmorillo/cmopediatria",
+  "commit": "f03218c",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Valoración cada 3-6 meses.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión y validación del tratamiento (seguridad, efectividad, adecuación según parámetros clínicos)."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación y revisión de medicación concomitante (automedicación, medicina alternativa, etc.) y monitorización de interacciones, ofreciendo al médico una alternativa si fuese necesario."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de la adherencia para garantizar el cumplimiento terapéutico, identificando dificultades del paciente/cuidador y adaptando las estrategias a los distintos grupos de edad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Telefarmacia: uso de tecnologías (dispositivos móviles, televisión, eHealth, mHealth, etc.) para monitorización a distancia entre visitas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Desarrollo de Planes de Acción entre niveles asistenciales: contacto interniveles (farmacia comunitaria, atención primaria, sociosanitario), implantación de Sistemas Personalizados de Dispensación y planificaciones horarias al alta, y seguimiento de la correcta utilización de dispositivos de administración."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización y toma de decisiones multidisciplinares en función de los PROs y PREMs utilizados para el seguimiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Identificación de la persona responsable de la gestión de la medicación del paciente, sobre todo en caso de deterioro cognitivo o funcional."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Planificación de la próxima visita a la Unidad en coordinación con el equipo asistencial para garantizar un estrecho seguimiento multidisciplinar."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Involucración del paciente/cuidador en el Plan Farmacoterapéutico previsto, compartiendo la evolución de sus objetivos y acordando acciones."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Equidad sanitaria: superar barreras relacionadas con el idioma, la alfabetización digital, la discapacidad y el acceso a la tecnología."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Desarrollo de información adecuada a la edad, escrita y/o verbal: patología, importancia del tratamiento, cumplimiento terapéutico y prevención."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Garantizar la comprensión de la medicación y su administración por parte de los cuidadores, para evitar errores en la administración."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Promoción de la adherencia y corresponsabilidad en el resultado del tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Utilización de herramientas para la autogestión: listado de web y apps fiables disponibles."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Asesoramiento sobre los efectos adversos antes y durante el tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Formación para mejorar las habilidades y la autoeficacia en el uso de la medicación, animando a los niños a preguntar sobre los medicamentos (papel activo del niño)."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Educación sanitaria general preventiva (vida saludable, dieta, cumplimiento, responsabilidad) a través de internet: web del servicio de farmacia, SEFH, etc."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Información y apoyo sobre la tramitación administrativa de los tratamientos, cuando sea necesario."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Elaboración de material personalizado para el paciente y/o cuidador (hoja de medicación, diario o similar), en papel o formato electrónico."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Formación y educación a familiares y/o cuidadores para el correcto seguimiento en pacientes de mayor complejidad, incluido el empleo de dispositivos externos si procede."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Fomentar la necesidad de comunicar cualquier proceso nuevo del paciente (nueva enfermedad, nuevo medicamento, problema social, etc.)."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Unificación de criterios y mensajes entre los diferentes profesionales sanitarios del equipo multidisciplinar (comunicación bidireccional)."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Planificación de la próxima visita al Servicio de Farmacia en coordinación con su médico o con el departamento de citaciones."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollo de programas orientados a cumplir objetivos farmacoterapéuticos y colaboración multidisciplinar para el control de la adherencia."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Integración de la información e intervenciones en la Historia Clínica Electrónica (HCE) del paciente."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Fomento del trabajo en equipo con reparto de responsabilidades, evitando la duplicidad de intervenciones y facilitando la transición entre niveles asistenciales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación con oficinas de farmacia, médicos y profesionales farmacéuticos de atención primaria, enfermería y centros de asistencia social, psicología, psiquiatría y Servicios Sociales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollo de Programas de Abordaje de Pacientes Crónicos Pediátricos junto con las unidades clínicas (estrategias de desprescripción, simplificación, etc.)."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Elaboración de informes periódicos para el equipo multidisciplinar (telefónicos, registro en HCE o en sesiones multidisciplinares) y establecimiento de algoritmos de actuación."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Valoración anual, salvo decisión del profesional o cambio en el tratamiento de la enfermedad.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión y validación del tratamiento (seguridad, efectividad, adecuación según parámetros clínicos)."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación y revisión de medicación concomitante (automedicación, medicina alternativa, etc.) y monitorización de interacciones, ofreciendo al médico una alternativa si fuese necesario."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de la adherencia para garantizar el cumplimiento terapéutico, identificando dificultades del paciente/cuidador y adaptando las estrategias a los distintos grupos de edad."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Telefarmacia: uso de tecnologías (dispositivos móviles, televisión, eHealth, mHealth, etc.) para monitorización a distancia entre visitas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Desarrollo de Planes de Acción entre niveles asistenciales: contacto interniveles (farmacia comunitaria, atención primaria, sociosanitario), implantación de Sistemas Personalizados de Dispensación y planificaciones horarias al alta, y seguimiento de la correcta utilización de dispositivos de administración."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización y toma de decisiones multidisciplinares en función de los PROs y PREMs utilizados para el seguimiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Desarrollo de información adecuada a la edad, escrita y/o verbal: patología, importancia del tratamiento, cumplimiento terapéutico y prevención."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Garantizar la comprensión de la medicación y su administración por parte de los cuidadores, para evitar errores en la administración."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Promoción de la adherencia y corresponsabilidad en el resultado del tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Utilización de herramientas para la autogestión: listado de web y apps fiables disponibles."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Asesoramiento sobre los efectos adversos antes y durante el tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Formación para mejorar las habilidades y la autoeficacia en el uso de la medicación, animando a los niños a preguntar sobre los medicamentos (papel activo del niño)."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Educación sanitaria general preventiva (vida saludable, dieta, cumplimiento, responsabilidad) a través de internet: web del servicio de farmacia, SEFH, etc."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Información y apoyo sobre la tramitación administrativa de los tratamientos, cuando sea necesario."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Unificación de criterios y mensajes entre los diferentes profesionales sanitarios del equipo multidisciplinar (comunicación bidireccional)."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Planificación de la próxima visita al Servicio de Farmacia en coordinación con su médico o con el departamento de citaciones."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollo de programas orientados a cumplir objetivos farmacoterapéuticos y colaboración multidisciplinar para el control de la adherencia."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Integración de la información e intervenciones en la Historia Clínica Electrónica (HCE) del paciente."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Fomento del trabajo en equipo con reparto de responsabilidades, evitando la duplicidad de intervenciones y facilitando la transición entre niveles asistenciales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinación con oficinas de farmacia, médicos y profesionales farmacéuticos de atención primaria, enfermería y centros de asistencia social, psicología, psiquiatría y Servicios Sociales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollo de Programas de Abordaje de Pacientes Crónicos Pediátricos junto con las unidades clínicas (estrategias de desprescripción, simplificación, etc.)."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Cuando se detecte la necesidad, por decisión del profesional o cambio en el tratamiento de la enfermedad.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión y validación del tratamiento (seguridad, efectividad, adecuación según parámetros clínicos)."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Conciliación y revisión de medicación concomitante (automedicación, medicina alternativa, etc.) y monitorización de interacciones, ofreciendo al médico una alternativa si fuese necesario."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Seguimiento de la adherencia para garantizar el cumplimiento terapéutico, identificando dificultades del paciente/cuidador y adaptando las estrategias a los distintos grupos de edad."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Desarrollo de información adecuada a la edad, escrita y/o verbal: patología, importancia del tratamiento, cumplimiento terapéutico y prevención."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Garantizar la comprensión de la medicación y su administración por parte de los cuidadores, para evitar errores en la administración."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Promoción de la adherencia y corresponsabilidad en el resultado del tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Utilización de herramientas para la autogestión: listado de web y apps fiables disponibles."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Asesoramiento sobre los efectos adversos antes y durante el tratamiento."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Formación para mejorar las habilidades y la autoeficacia en el uso de la medicación, animando a los niños a preguntar sobre los medicamentos (papel activo del niño)."
+        },
+        {
+          "categoria": "Formación y educación al paciente/cuidador",
+          "texto": "Educación sanitaria general preventiva (vida saludable, dieta, cumplimiento, responsabilidad) a través de internet: web del servicio de farmacia, SEFH, etc."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Unificación de criterios y mensajes entre los diferentes profesionales sanitarios del equipo multidisciplinar (comunicación bidireccional)."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Planificación de la próxima visita al Servicio de Farmacia en coordinación con su médico o con el departamento de citaciones."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollo de programas orientados a cumplir objetivos farmacoterapéuticos y colaboración multidisciplinar para el control de la adherencia."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Integración de la información e intervenciones en la Historia Clínica Electrónica (HCE) del paciente."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Fomento del trabajo en equipo con reparto de responsabilidades, evitando la duplicidad de intervenciones y facilitando la transición entre niveles asistenciales."
+        }
+      ]
+    }
+  }
+}

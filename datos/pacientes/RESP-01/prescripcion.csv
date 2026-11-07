@@ -1,0 +1,4 @@
+medicamento;grupo;pauta;fecha_inicio;fecha_fin;ambito
+mepolizumab 100 mg pluma precargada;biológico;100 mg subcutáneo cada 4 semanas;2023-11-06;;hospitalaria
+budesonida/formoterol 160/4,5 µg inhalador;inhalado;2 inhalaciones cada 12 h;2022-01-15;2026-10-01;atención primaria
+beclometasona/formoterol/glicopirronio 87/5/9 µg inhalador;inhalado;2 inhalaciones cada 12 h;2026-10-02;;atención primaria

@@ -1,0 +1,184 @@
+{
+  "id": "vih",
+  "herramienta": "CMO-VIH",
+  "url": "https://ramonmorillo.github.io/cmo-vih-app/",
+  "tipo_catalogo": "acumulativo por nivel",
+  "documento_fuente_declarado": "No declarado en el código",
+  "archivo_fuente": "assets/modules/config.js (INTERVENTION_KEYS) + data/i18n/es.json",
+  "repositorio": "github.com/ramonmorillo/cmo-vih-app",
+  "commit": "c963da9",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Cada 3 meses / seguimiento de alta intensidad",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Mantener el seguimiento farmacéutico rutinario del VIH.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reforzar autocuidado y hábitos de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reevaluar la estratificación si aparecen nuevos riesgos.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Revisar efectividad y tolerabilidad del tratamiento.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Abordar barreras de adherencia y necesidades educativas.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Optimizar el control de comorbilidades con seguimiento coordinado.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorizar cambios psicosociales y barreras de acceso.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Validar de forma inmediata el TAR y el tratamiento de comorbilidades.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Realizar revisión de adherencia con refuerzo intensivo.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Coordinar revisión multidisciplinar ante alertas de alto riesgo.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Valorar barreras digitales, psicosociales y de fragilidad en el mismo flujo.",
+          "nivel_origen": 1
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Validar de forma inmediata el TAR y el tratamiento de comorbilidades."
+        },
+        {
+          "categoria": null,
+          "texto": "Realizar revisión de adherencia con refuerzo intensivo."
+        },
+        {
+          "categoria": null,
+          "texto": "Coordinar revisión multidisciplinar ante alertas de alto riesgo."
+        },
+        {
+          "categoria": null,
+          "texto": "Valorar barreras digitales, psicosociales y de fragilidad en el mismo flujo."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Cada 6 meses / seguimiento de intensidad moderada",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Mantener el seguimiento farmacéutico rutinario del VIH.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reforzar autocuidado y hábitos de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reevaluar la estratificación si aparecen nuevos riesgos.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Revisar efectividad y tolerabilidad del tratamiento.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Abordar barreras de adherencia y necesidades educativas.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Optimizar el control de comorbilidades con seguimiento coordinado.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorizar cambios psicosociales y barreras de acceso.",
+          "nivel_origen": 2
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Revisar efectividad y tolerabilidad del tratamiento."
+        },
+        {
+          "categoria": null,
+          "texto": "Abordar barreras de adherencia y necesidades educativas."
+        },
+        {
+          "categoria": null,
+          "texto": "Optimizar el control de comorbilidades con seguimiento coordinado."
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorizar cambios psicosociales y barreras de acceso."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Cada 12 meses / seguimiento rutinario",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Mantener el seguimiento farmacéutico rutinario del VIH.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reforzar autocuidado y hábitos de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Reevaluar la estratificación si aparecen nuevos riesgos.",
+          "nivel_origen": 3
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Mantener el seguimiento farmacéutico rutinario del VIH."
+        },
+        {
+          "categoria": null,
+          "texto": "Reforzar autocuidado y hábitos de adherencia."
+        },
+        {
+          "categoria": null,
+          "texto": "Reevaluar la estratificación si aparecen nuevos riesgos."
+        }
+      ]
+    }
+  },
+  "nota_acumulacion": "Acumulativo por decisión de Ramón Morillo (07/11/2026). La versión actual de la herramienta en el hub muestra solo las del nivel propio: discrepancia pendiente de corregir en la herramienta, con revisión clínica."
+}

@@ -1,0 +1,372 @@
+{
+  "id": "coagulopatias",
+  "herramienta": "CMO-Coagulopatías",
+  "url": "https://ramonmorillo.github.io/cmocoagulopatias/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "No declarado en el código",
+  "archivo_fuente": "src/data/interventions.ts (recommendedInterventions, PERIODICITY)",
+  "repositorio": "github.com/ramonmorillo/cmocoagulopatias",
+  "commit": "e113a42",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Cada mes",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar regularmente adecuación, seguridad y efectividad del tratamiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar concentraciones y actividad funcional de FVIII, FIX o niveles de antígeno/actividad del factor von Willebrand según patología."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante para detectar interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Identificar, documentar, prevenir y gestionar problemas relacionados con medicación y administración domiciliaria."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Ofrecer información clara sobre enfermedad y tratamiento."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar sobre conservación y mantenimiento de medicamentos."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Educar sobre adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Facilitar material educativo sobre síntomas, tratamiento y manejo de hemorragias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar entrevista estructurada de adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Reentrenar en autoinfusión cuando corresponda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar telefarmacia proactiva cuando proceda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar para la correcta identificación como paciente con coagulopatía en urgencias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Aplicar medidas de apoyo ante dificultades de acceso o situación socioeconómica adversa."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar educación intensiva durante la transición pediátrico-adulto."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participar en programas docentes multidisciplinares."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones en HCE."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Mantener comunicación bidireccional con profesionales implicados."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar con Hematología en nuevos pacientes, inicio/cambio de tratamiento o ajuste de dosis."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar entre hospitales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollar programas conjuntos de seguimiento farmacoterapéutico."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PROM."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PREM."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Realizar seguimiento específico en ingreso, alta, cambios de terapia, profilaxis extendida, nuevos productos o nuevas vías."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Formar específicamente a familiares y cuidadores."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Habilitar canales directos de comunicación mediante telefarmacia o apps clínicas."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer procedimientos conjuntos para potenciar la autonomía."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer canales de derivación a salud mental."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer canales de derivación a trabajo social."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Establecer planes específicos para detectar y actuar rápidamente ante reacciones adversas."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Aplicar programas específicos de detección, prevención y control de factores de riesgo asociados a las coagulopatías."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer vías rápidas de comunicación entre niveles asistenciales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar específicamente con urgencias."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Cada 6 meses",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar regularmente adecuación, seguridad y efectividad del tratamiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar concentraciones y actividad funcional de FVIII, FIX o niveles de antígeno/actividad del factor von Willebrand según patología."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante para detectar interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Identificar, documentar, prevenir y gestionar problemas relacionados con medicación y administración domiciliaria."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Ofrecer información clara sobre enfermedad y tratamiento."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar sobre conservación y mantenimiento de medicamentos."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Educar sobre adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Facilitar material educativo sobre síntomas, tratamiento y manejo de hemorragias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar entrevista estructurada de adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Reentrenar en autoinfusión cuando corresponda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar telefarmacia proactiva cuando proceda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar para la correcta identificación como paciente con coagulopatía en urgencias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Aplicar medidas de apoyo ante dificultades de acceso o situación socioeconómica adversa."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar educación intensiva durante la transición pediátrico-adulto."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participar en programas docentes multidisciplinares."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones en HCE."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Mantener comunicación bidireccional con profesionales implicados."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar con Hematología en nuevos pacientes, inicio/cambio de tratamiento o ajuste de dosis."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar entre hospitales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollar programas conjuntos de seguimiento farmacoterapéutico."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PROM."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar PREM."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Realizar seguimiento específico en ingreso, alta, cambios de terapia, profilaxis extendida, nuevos productos o nuevas vías."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Formar específicamente a familiares y cuidadores."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Habilitar canales directos de comunicación mediante telefarmacia o apps clínicas."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer procedimientos conjuntos para potenciar la autonomía."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer canales de derivación a salud mental."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Establecer canales de derivación a trabajo social."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Cada 12 meses",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Evaluar y validar regularmente adecuación, seguridad y efectividad del tratamiento."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorizar concentraciones y actividad funcional de FVIII, FIX o niveles de antígeno/actividad del factor von Willebrand según patología."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Supervisar adherencia."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisar medicación concomitante para detectar interacciones y efectos adversos."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Identificar, documentar, prevenir y gestionar problemas relacionados con medicación y administración domiciliaria."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Ofrecer información clara sobre enfermedad y tratamiento."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar sobre conservación y mantenimiento de medicamentos."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Educar sobre adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Facilitar material educativo sobre síntomas, tratamiento y manejo de hemorragias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar entrevista estructurada de adherencia."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Reentrenar en autoinfusión cuando corresponda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar telefarmacia proactiva cuando proceda."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Informar para la correcta identificación como paciente con coagulopatía en urgencias."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Promover hábitos de vida saludables."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Aplicar medidas de apoyo ante dificultades de acceso o situación socioeconómica adversa."
+        },
+        {
+          "categoria": "Educación, formación y seguimiento",
+          "texto": "Realizar educación intensiva durante la transición pediátrico-adulto."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Participar en programas docentes multidisciplinares."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Documentar las intervenciones en HCE."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Mantener comunicación bidireccional con profesionales implicados."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar con Hematología en nuevos pacientes, inicio/cambio de tratamiento o ajuste de dosis."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Coordinar entre hospitales."
+        },
+        {
+          "categoria": "Coordinación con el equipo asistencial",
+          "texto": "Desarrollar programas conjuntos de seguimiento farmacoterapéutico."
+        }
+      ]
+    }
+  }
+}

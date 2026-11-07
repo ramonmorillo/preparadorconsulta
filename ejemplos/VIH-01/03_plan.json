@@ -1,0 +1,5 @@
+{ "puntos_clave": [
+ { "id": "K1", "alerta_id": "A2", "categoria": null, "intervencion_literal": "Reevaluar la estratificación si aparecen nuevos riesgos.", "enlace": { "texto": "Abrir CMO-VIH para reestratificar", "url": "https://ramonmorillo.github.io/cmo-vih-app/" } },
+ { "id": "K2", "alerta_id": "A1", "categoria": null, "intervencion_literal": "Abordar barreras de adherencia y necesidades educativas.", "enlace": { "texto": "Abrir CMO-VIH", "url": "https://ramonmorillo.github.io/cmo-vih-app/" } },
+ { "id": "K3", "alerta_id": "A4", "categoria": null, "intervencion_literal": "Reforzar autocuidado y hábitos de adherencia.", "enlace": { "texto": "Abrir CMO-VIH", "url": "https://ramonmorillo.github.io/cmo-vih-app/" } }
+]}

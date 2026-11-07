@@ -1,0 +1,220 @@
+{
+  "id": "respiratorio",
+  "herramienta": "CMO-Respiratorio",
+  "url": "https://ramonmorillo.github.io/cmorespiratorio/",
+  "tipo_catalogo": "acumulativo por prioridad",
+  "documento_fuente_declarado": "https://www.sefh.es/mapex/images/modelo-CMO-al-paciente-con-patologias-respiratorias.pdf",
+  "archivo_fuente": "src/clinical.js (actionsFor, PERIODICITY)",
+  "repositorio": "github.com/ramonmorillo/cmorespiratorio",
+  "commit": "ac39655",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Recomendación: aplicar al inicio y ante cambios; valorar cada 3–6 meses.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Estratificación o reestratificación según criterios ordinarios o situaciones clínicas extraordinarias."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión, validación y conciliación de medicación concomitante e interacciones, ofreciendo alternativas al médico."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Control y seguimiento de adherencia y uso adecuado de dispositivos con registros y cuestionarios validados."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Valoración multidimensional y análisis de objetivos farmacoterapéuticos (OFT)."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización y decisiones multidisciplinares en función de PROs y PREMs."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Contacto adicional entre visitas mediante teleasistencia si el FH lo considera positivo."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Establecimiento de OFT a corto plazo según patología respiratoria y criterio del FH."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promoción de la adherencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Identificación de no adherentes primarios/secundarios y entrevista motivacional con sistemas de fomento de adherencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Fomento de paciente activo, informado y corresponsable."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Información sobre enfermedad, tratamiento, conservación, interacciones, reacciones adversas, hábitos saludables, higiene ambiental y vacunación (gripe, neumococo, COVID, etc.)."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Formación en manejo de dispositivos, inyectores/perfusión, inhaladores, nebulizadores y ejercicios respiratorios."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Recursos web/apps informativos, monitorización, telefarmacia y dispensación domiciliaria; en P2/P1 también a familiares/cuidadores."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Material personalizado para paciente y/o familiares/cuidador en papel o digital."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Colaboración con Asociaciones de Pacientes."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Programas orientados a cumplir objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Coordinación de próxima visita UPEFH con equipo multidisciplinar y agenda de dispensaciones."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Coordinación intrahospitalaria especializada (Neumología, Psiquiatría y/o Servicios Sociales)."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Sistemas personalizados de dosificación coordinados con Farmacia Comunitaria y Atención Primaria."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Reuniones periódicas del equipo asistencial sobre indicadores de eficacia y adherencia."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Recomendación: aplicar al inicio y ante cambios; valoración anual salvo necesidad según criterio del FH.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Estratificación o reestratificación según criterios ordinarios o situaciones clínicas extraordinarias."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión, validación y conciliación de medicación concomitante e interacciones, ofreciendo alternativas al médico."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Control y seguimiento de adherencia y uso adecuado de dispositivos con registros y cuestionarios validados."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Valoración multidimensional y análisis de objetivos farmacoterapéuticos (OFT)."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Monitorización y decisiones multidisciplinares en función de PROs y PREMs."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Contacto adicional entre visitas mediante teleasistencia si el FH lo considera positivo."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promoción de la adherencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Identificación de no adherentes primarios/secundarios y entrevista motivacional con sistemas de fomento de adherencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Fomento de paciente activo, informado y corresponsable."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Información sobre enfermedad, tratamiento, conservación, interacciones, reacciones adversas, hábitos saludables, higiene ambiental y vacunación (gripe, neumococo, COVID, etc.)."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Formación en manejo de dispositivos, inyectores/perfusión, inhaladores, nebulizadores y ejercicios respiratorios."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Recursos web/apps informativos, monitorización, telefarmacia y dispensación domiciliaria; en P2/P1 también a familiares/cuidadores."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Colaboración con Asociaciones de Pacientes."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Programas orientados a cumplir objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Coordinación de próxima visita UPEFH con equipo multidisciplinar y agenda de dispensaciones."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Coordinación intrahospitalaria especializada (Neumología, Psiquiatría y/o Servicios Sociales)."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Recomendación: aplicar al inicio y ante cambios; reevaluar cuando se detecte necesidad según criterio del FH.",
+      "intervenciones": [
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Estratificación o reestratificación según criterios ordinarios o situaciones clínicas extraordinarias."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Revisión, validación y conciliación de medicación concomitante e interacciones, ofreciendo alternativas al médico."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Control y seguimiento de adherencia y uso adecuado de dispositivos con registros y cuestionarios validados."
+        },
+        {
+          "categoria": "Seguimiento farmacoterapéutico",
+          "texto": "Valoración multidimensional y análisis de objetivos farmacoterapéuticos (OFT)."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Promoción de la adherencia."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Fomento de paciente activo, informado y corresponsable."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Información sobre enfermedad, tratamiento, conservación, interacciones, reacciones adversas, hábitos saludables, higiene ambiental y vacunación (gripe, neumococo, COVID, etc.)."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Formación en manejo de dispositivos, inyectores/perfusión, inhaladores, nebulizadores y ejercicios respiratorios."
+        },
+        {
+          "categoria": "Formación y educación al paciente",
+          "texto": "Recursos web/apps informativos, monitorización, telefarmacia y dispensación domiciliaria; en P2/P1 también a familiares/cuidadores."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Colaboración con Asociaciones de Pacientes."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Programas orientados a cumplir objetivos farmacoterapéuticos."
+        },
+        {
+          "categoria": "Coordinación asistencial",
+          "texto": "Coordinación de próxima visita UPEFH con equipo multidisciplinar y agenda de dispensaciones."
+        }
+      ]
+    }
+  }
+}

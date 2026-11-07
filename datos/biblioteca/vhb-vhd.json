@@ -1,0 +1,265 @@
+{
+  "id": "vhb-vhd",
+  "herramienta": "CMO-VHB/VHD",
+  "url": "https://ramonmorillo.github.io/cmo-vhb-vhd/",
+  "tipo_catalogo": "acumulativo por nivel",
+  "documento_fuente_declarado": "No declarado en el código",
+  "reestratificar_ademas": [
+    "Todos los pacientes VHB/VHB-VHD: evaluación al inicio del tratamiento."
+  ],
+  "aviso": "Herramienta sin batería de pruebas según CMO-CLINICAL-SAFETY.md del hub",
+  "archivo_fuente": "app.js (APP_CONFIG.carePlanByLevel, followUp)",
+  "repositorio": "github.com/ramonmorillo/cmo-vhb-vhd",
+  "commit": "c4a93ef",
+  "fecha_commit": "2026-10-30",
+  "niveles": {
+    "1": {
+      "periodicidad": "Reevaluación cada 3 meses.",
+      "objetivo": "Atención farmacéutica intensiva y manejo proactivo del riesgo.",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Consulta breve de atención farmacéutica.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Confirmación de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización rutinaria de la farmacoterapia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Prevención de futuras complicaciones.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Revisión periódica de la medicación.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Evaluación de adherencia.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Educación al paciente.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización de interacciones potenciales.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Visitas de seguimiento estructuradas.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Posible seguimiento telemático / telefarmacia.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Revisión integral de la medicación.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Evaluación de interacciones farmacológicas.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Valoración e intervención sobre adherencia.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Entrevista clínica estructurada.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Coordinación con el equipo de hepatología.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Seguimiento mediante telefarmacia.",
+          "nivel_origen": 1
+        },
+        {
+          "categoria": null,
+          "texto": "Educación al paciente y apoyo al automanejo.",
+          "nivel_origen": 1
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Revisión integral de la medicación."
+        },
+        {
+          "categoria": null,
+          "texto": "Evaluación de interacciones farmacológicas."
+        },
+        {
+          "categoria": null,
+          "texto": "Valoración e intervención sobre adherencia."
+        },
+        {
+          "categoria": null,
+          "texto": "Entrevista clínica estructurada."
+        },
+        {
+          "categoria": null,
+          "texto": "Coordinación con el equipo de hepatología."
+        },
+        {
+          "categoria": null,
+          "texto": "Seguimiento mediante telefarmacia."
+        },
+        {
+          "categoria": null,
+          "texto": "Educación al paciente y apoyo al automanejo."
+        }
+      ]
+    },
+    "2": {
+      "periodicidad": "Reevaluación cada 6 meses y luego anual salvo criterio profesional o cercanía a cambio de nivel.",
+      "objetivo": "Refuerzo de la adherencia y monitorización de la complejidad terapéutica.",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Consulta breve de atención farmacéutica.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Confirmación de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización rutinaria de la farmacoterapia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Prevención de futuras complicaciones.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Revisión periódica de la medicación.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Evaluación de adherencia.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Educación al paciente.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización de interacciones potenciales.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Visitas de seguimiento estructuradas.",
+          "nivel_origen": 2
+        },
+        {
+          "categoria": null,
+          "texto": "Posible seguimiento telemático / telefarmacia.",
+          "nivel_origen": 2
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Revisión periódica de la medicación."
+        },
+        {
+          "categoria": null,
+          "texto": "Evaluación de adherencia."
+        },
+        {
+          "categoria": null,
+          "texto": "Educación al paciente."
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización de interacciones potenciales."
+        },
+        {
+          "categoria": null,
+          "texto": "Visitas de seguimiento estructuradas."
+        },
+        {
+          "categoria": null,
+          "texto": "Posible seguimiento telemático / telefarmacia."
+        }
+      ]
+    },
+    "3": {
+      "periodicidad": "Reevaluación cada 12 meses y luego anual salvo criterio profesional o cercanía a cambio de nivel.",
+      "objetivo": "Mantenimiento de la estabilidad terapéutica y prevención de complicaciones futuras.",
+      "intervenciones": [
+        {
+          "categoria": null,
+          "texto": "Consulta breve de atención farmacéutica.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Confirmación de adherencia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización rutinaria de la farmacoterapia.",
+          "nivel_origen": 3
+        },
+        {
+          "categoria": null,
+          "texto": "Prevención de futuras complicaciones.",
+          "nivel_origen": 3
+        }
+      ],
+      "intervenciones_nivel_propio": [
+        {
+          "categoria": null,
+          "texto": "Consulta breve de atención farmacéutica."
+        },
+        {
+          "categoria": null,
+          "texto": "Confirmación de adherencia."
+        },
+        {
+          "categoria": null,
+          "texto": "Monitorización rutinaria de la farmacoterapia."
+        },
+        {
+          "categoria": null,
+          "texto": "Prevención de futuras complicaciones."
+        }
+      ]
+    }
+  },
+  "nota_acumulacion": "Acumulativo por decisión de Ramón Morillo (07/11/2026). La versión actual de la herramienta en el hub muestra solo las del nivel propio: discrepancia pendiente de corregir en la herramienta, con revisión clínica."
+}

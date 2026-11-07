@@ -1,0 +1,56 @@
+{
+  "_aviso": "Reglas del preparador de consulta. Los textos de periodicidad son literales de cada herramienta CMO del hub (ver datos/biblioteca). Los campos 'plazo_*_meses' y 'reestratificar_si_cambio' son una INTERPRETACIÓN de esos textos para poder calcular fechas: PENDIENTE DE VALIDAR por Ramón Morillo Verdugo.",
+  "version": "0.1.0",
+  "adherencia": {
+    "indicador": "PDC (proporción de días cubiertos)",
+    "umbral": 0.90,
+    "regla": "Alerta si el PDC de algún grupo terapéutico es inferior al umbral",
+    "ventana_dias": 180,
+    "_pendiente": "Ventana de 180 días antes de la fecha de consulta: PENDIENTE DE VALIDAR"
+  },
+  "periodicidad": {
+    "respiratorio": {
+      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+    },
+    "pediatria": {
+      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+    },
+    "riesgo-cardiovascular": {
+      "1": { "plazo_min_meses": 3, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+    },
+    "vih": {
+      "1": { "plazo_min_meses": null, "plazo_max_meses": 3, "reestratificar_si_cambio": false },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+    },
+    "vhb-vhd": {
+      "1": { "plazo_min_meses": null, "plazo_max_meses": 3, "reestratificar_si_cambio": false },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+    },
+    "migrana": {
+      "1": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": true },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": true }
+    },
+    "coagulopatias": {
+      "1": { "plazo_min_meses": null, "plazo_max_meses": 1, "reestratificar_si_cambio": false },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": 6, "reestratificar_si_cambio": false },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": 12, "reestratificar_si_cambio": false }
+    },
+    "oncohematologia": {
+      "_nota": "Periodicidad por ciclos de tratamiento: no calculable con fechas. Se muestra el texto literal.",
+      "1": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true },
+      "2": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true },
+      "3": { "plazo_min_meses": null, "plazo_max_meses": null, "reestratificar_si_cambio": true }
+    },
+    "esclerosis-multiple": { "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)." },
+    "inmunomediadas": { "_nota": "PENDIENTE: periodicidad del documento publicado (la aporta Ramón)." }
+  }
+}
